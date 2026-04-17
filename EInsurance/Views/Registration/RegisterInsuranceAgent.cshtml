@@ -1,0 +1,64 @@
+@model EInsurance.Models.Auth.InsuranceAgentRegistrationViewModel
+
+@{
+    ViewData["Title"] = "Register Insurance Agent";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <div class="auth-card">
+            <div class="mb-4 text-center">
+                <span class="eyebrow">Internal Registration</span>
+                <h1 class="h3 mt-3">Register insurance agent</h1>
+                <p class="text-muted mb-0">Accessible to Admin and Employee roles.</p>
+            </div>
+
+            @if (TempData["SuccessMessage"] is string successMessage)
+            {
+                <div class="alert alert-success">@successMessage</div>
+            }
+
+            <form asp-action="RegisterInsuranceAgent" method="post" novalidate>
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="FullName" class="form-label"></label>
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Username" class="form-label"></label>
+                        <input asp-for="Username" class="form-control" />
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="ConfirmPassword" class="form-label"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mt-4 d-flex gap-3">
+                    <button type="submit" class="btn btn-dark btn-lg">Register Agent</button>
+                    <a class="btn btn-outline-dark btn-lg" asp-controller="Dashboard" asp-action="Index">Back to Dashboard</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

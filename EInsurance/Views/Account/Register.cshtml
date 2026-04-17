@@ -1,0 +1,72 @@
+@model EInsurance.Models.Auth.CustomerRegistrationViewModel
+
+@{
+    ViewData["Title"] = "Customer Registration";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-7">
+        <div class="auth-card">
+            <div class="mb-4 text-center">
+                <span class="eyebrow">Customer Registration</span>
+                <h1 class="h3 mt-3">Create your customer account</h1>
+                <p class="text-muted mb-0">This registration page is open to the public.</p>
+            </div>
+
+            <form asp-action="Register" method="post" novalidate>
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="FullName" class="form-label"></label>
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Phone" class="form-label"></label>
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="DateOfBirth" class="form-label"></label>
+                        <input asp-for="DateOfBirth" class="form-control" />
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="ConfirmPassword" class="form-label"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    @* add selectionlist for AgentId with none option *@
+                    <div class="col-md-6">
+                        <label asp-for="AgentId" class="form-label"></label>
+                        <select asp-for="AgentId" class="form-select" asp-items="ViewBag.AgentList">
+                            <option value="">None</option>
+                        </select>
+                        <span asp-validation-for="AgentId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="mt-4 d-flex flex-column flex-sm-row gap-3">
+                    <button type="submit" class="btn btn-dark btn-lg">Register</button>
+                    <a class="btn btn-outline-dark btn-lg" asp-action="Login">Already have an account? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

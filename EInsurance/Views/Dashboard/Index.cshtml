@@ -1,0 +1,57 @@
+@model EInsurance.Models.DashboardViewModel
+@using EInsurance.Security
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="hero-card">
+    <span class="eyebrow">Authorized Access</span>
+    <h1 class="display-6 fw-semibold mt-3">Welcome, @Model.DisplayName</h1>
+    <p class="lead mt-3 mb-0">@Model.Message</p>
+</div>
+
+<div class="row g-4 mt-2">
+    <div class="col-lg-4">
+        <div class="info-card h-100">
+            <h2>Your role</h2>
+            <p class="mb-0">@Model.Role</p>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="info-card h-100">
+            <h2>Authentication mode</h2>
+            <p class="mb-0">JWT token stored in an HttpOnly cookie.</p>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="info-card h-100">
+            <h2>Status</h2>
+            <p class="mb-0">You are authenticated and authorized.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mt-2">
+    @if (Model.Role is RoleNames.Admin or RoleNames.Employee)
+    {
+        <div class="col-lg-6">
+            <div class="info-card h-100">
+                <h2>Register Insurance Agent</h2>
+                <p>Admin and employee users can create insurance agent accounts from the internal dashboard.</p>
+                <a class="btn btn-dark" asp-controller="Registration" asp-action="RegisterInsuranceAgent">Open Agent Registration</a>
+            </div>
+        </div>
+    }
+
+    @if (Model.Role == RoleNames.Admin)
+    {
+        <div class="col-lg-6">
+            <div class="info-card h-100">
+                <h2>Register Employee</h2>
+                <p>Only admins can create employee accounts.</p>
+                <a class="btn btn-dark" asp-controller="Registration" asp-action="RegisterEmployee">Open Employee Registration</a>
+            </div>
+        </div>
+    }
+</div>

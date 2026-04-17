@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="hero-card text-center">
+    <span class="eyebrow">Online Insurance Management System</span>
+    <h1 class="display-5 fw-semibold mt-3">Secure policy operations for every role</h1>
+    <p class="lead mt-3">
+        Customers, admins, agents, and employees can sign in through the same portal and reach role-based access after JWT authentication.
+    </p>
+    <div class="mt-4 d-flex flex-column flex-sm-row justify-content-center gap-3">
+        <a class="btn btn-dark btn-lg px-4" asp-controller="Account" asp-action="Login">Go to Login</a>
+        <a class="btn btn-outline-dark btn-lg px-4" asp-controller="Account" asp-action="Register">Customer Sign Up</a>
+        <a class="btn btn-outline-dark btn-lg px-4" asp-controller="Dashboard" asp-action="Index">Open Dashboard</a>
+    </div>
+</div>
+@* 
+<div class="row g-4 mt-2">
+    <div class="col-md-6 col-xl-3">
+        <div class="info-card h-100">
+            <h2>Admin</h2>
+            <p>Manages global system access and operational oversight.</p>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="info-card h-100">
+            <h2>Employee</h2>
+            <p>Handles schemes, policy workflows, and internal operations.</p>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="info-card h-100">
+            <h2>Agent</h2>
+            <p>Works with customers and policy-linked commission records.</p>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="info-card h-100">
+            <h2>Customer</h2>
+            <p>Uses a registered account to access protected insurance features.</p>
+        </div>
+    </div>
+ </div>  *@

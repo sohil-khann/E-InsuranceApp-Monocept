@@ -1,0 +1,18 @@
+2026-04-16 13:01:53.152 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-16 13:01:53.459 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-16 13:01:53.461 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-16 13:01:53.496 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-16 13:01:53.497 +05:30 [INF] Hosting environment: Development
+2026-04-16 13:01:53.498 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-16 13:01:54.195 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-16 13:01:54.393 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-16 13:01:54.435 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-16 13:01:54.449 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-16 13:01:54.561 +05:30 [INF] Executed ViewResult - view Index executed in 115.3022ms.
+2026-04-16 13:01:54.565 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 126.2484ms
+2026-04-16 13:01:54.567 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-16 13:01:54.576 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 392.7566ms
+2026-04-16 13:01:54.607 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-16 13:01:54.624 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 17.3587ms
+2026-04-16 13:01:54.993 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-16 13:01:55.152 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 159.6206ms
