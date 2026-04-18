@@ -1,0 +1,69 @@
+@model EInsurance.Models.Policies.AdminCustomerPoliciesViewModel
+
+@{
+    ViewData["Title"] = "Customer Policies";
+}
+
+<div class="hero-card">
+    <span class="eyebrow">Admin Access</span>
+    <h1 class="display-6 fw-semibold mt-3">Customer policies</h1>
+    <p class="lead mt-3 mb-0">Search for a customer and view policy and payment details.</p>
+</div>
+
+<div class="info-card mt-4">
+    <form method="get" asp-action="CustomerPolicies" class="row g-3 align-items-end">
+        <div class="col-md-9">
+            <label for="searchTerm" class="form-label">Customer name or email</label>
+            <input id="searchTerm" name="searchTerm" value="@Model.SearchTerm" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-dark w-100">Search</button>
+        </div>
+    </form>
+</div>
+
+@if (Model.SearchResults.Count > 0)
+{
+    <div class="info-card mt-4">
+        <h2 class="h4 mb-3">Search results</h2>
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var customer in Model.SearchResults)
+                    {
+                        <tr>
+                            <td>@customer.FullName</td>
+                            <td>@customer.Email</td>
+                            <td class="text-end">
+                                <a class="btn btn-outline-dark btn-sm"
+                                   asp-action="CustomerPolicies"
+                                   asp-route-searchTerm="@Model.SearchTerm"
+                                   asp-route-customerId="@customer.CustomerId">View Policies</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+else if (!string.IsNullOrWhiteSpace(Model.SearchTerm))
+{
+    <div class="info-card mt-4">
+        <p class="mb-0">No customers matched your search.</p>
+    </div>
+}
+
+@if (Model.SelectedCustomerPolicies is not null)
+{
+    <div class="mt-4">
+        <partial name="_CustomerPoliciesPartial" model="Model.SelectedCustomerPolicies" />
+    </div>
+}

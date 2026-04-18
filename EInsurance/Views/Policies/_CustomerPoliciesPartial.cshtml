@@ -1,0 +1,73 @@
+@model EInsurance.Models.Policies.CustomerPoliciesViewModel
+
+<div class="hero-card">
+    <span class="eyebrow">Policy Details</span>
+    <h2 class="h3 mt-3 mb-1">@Model.CustomerName</h2>
+    <p class="text-muted mb-0">@Model.CustomerEmail</p>
+</div>
+
+@if (Model.Policies.Count == 0)
+{
+    <div class="info-card mt-4">
+        <h3 class="h5">No policies found</h3>
+        <p class="mb-0">There are no policies available for this customer yet.</p>
+    </div>
+}
+else
+{
+    <div class="row g-4 mt-2">
+        @foreach (var policy in Model.Policies)
+        {
+            <div class="col-12">
+                <div class="info-card">
+                    <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
+                        <div>
+                            <h3 class="h4 mb-1">Policy #@policy.PolicyId</h3>
+                            <p class="mb-1"><strong>Plan:</strong> @policy.PlanName</p>
+                            <p class="mb-1"><strong>Scheme:</strong> @policy.SchemeName</p>
+                            <p class="mb-0">@policy.PolicyDetails</p>
+                        </div>
+                        <div class="policy-meta">
+                            <p class="mb-1"><strong>Premium:</strong> @policy.Premium.ToString("C")</p>
+                            <p class="mb-1"><strong>Issued:</strong> @policy.DateIssued.ToString("dd MMM yyyy")</p>
+                            <p class="mb-1"><strong>Maturity:</strong> @policy.MaturityPeriod years</p>
+                            <p class="mb-0"><strong>Lapse Date:</strong> @policy.PolicyLapseDate.ToString("dd MMM yyyy")</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h4 class="h5">Payments</h4>
+                        @if (policy.Payments.Count == 0)
+                        {
+                            <p class="mb-0 text-muted">No payment records available.</p>
+                        }
+                        else
+                        {
+                            <div class="table-responsive">
+                                <table class="table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Payment ID</th>
+                                            <th>Amount</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var payment in policy.Payments)
+                                        {
+                                            <tr>
+                                                <td>@payment.PaymentId</td>
+                                                <td>@payment.Amount.ToString("C")</td>
+                                                <td>@payment.PaymentDate.ToString("dd MMM yyyy")</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

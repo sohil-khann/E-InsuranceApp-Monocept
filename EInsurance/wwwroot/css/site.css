@@ -74,3 +74,11 @@ body {
   background-color: rgba(255, 255, 255, 0.85) !important;
   backdrop-filter: blur(10px);
 }
+
+.policy-meta {
+  min-width: 15rem;
+}
+
+.table > :not(caption) > * > * {
+  background: transparent;
+}

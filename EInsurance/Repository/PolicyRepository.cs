@@ -1,0 +1,52 @@
+using EInsurance.Data;
+using EInsurance.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+namespace EInsurance.Repository;
+
+public class PolicyRepository(ApplicationDbContext dbContext) : IPolicyRepository
+{
+    public async Task<List<CustomerLookupDto>> SearchCustomersAsync(string searchTerm, CancellationToken cancellationToken = default)
+    {
+        var normalizedSearchTerm = searchTerm.Trim();
+
+        return await dbContext.Customers.AsNoTracking()
+            .Where(customer => customer.FullName.Contains(normalizedSearchTerm) || customer.Email.Contains(normalizedSearchTerm))
+            .OrderBy(customer => customer.FullName)
+            .Select(customer => new CustomerLookupDto(
+                customer.CustomerId,
+                customer.FullName,
+                customer.Email))
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<CustomerPoliciesDto?> GetCustomerPoliciesAsync(int customerId, CancellationToken cancellationToken = default)
+    {
+        return await dbContext.Customers.AsNoTracking()
+            .Where(customer => customer.CustomerId == customerId)
+            .Select(customer => new CustomerPoliciesDto(
+                customer.CustomerId,
+                customer.FullName,
+                customer.Email,
+                customer.Policies
+                    .OrderByDescending(policy => policy.DateIssued)
+                    .Select(policy => new PolicyDetailsDto(
+                        policy.PolicyId,
+                        policy.Scheme.Plan.PlanName,
+                        policy.Scheme.SchemeName,
+                        policy.PolicyDetails,
+                        policy.Premium,
+                        policy.DateIssued,
+                        policy.MaturityPeriod,
+                        policy.PolicyLapseDate,
+                        policy.Payments
+                            .OrderByDescending(payment => payment.PaymentDate)
+                            .Select(payment => new PaymentDetailsDto(
+                                payment.PaymentId,
+                                payment.Amount,
+                                payment.PaymentDate))
+                            .ToList()))
+                    .ToList()))
+            .FirstOrDefaultAsync(cancellationToken);
+    }
+}

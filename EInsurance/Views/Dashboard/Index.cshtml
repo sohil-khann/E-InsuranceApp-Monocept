@@ -33,6 +33,28 @@
 </div>
 
 <div class="row g-4 mt-2">
+    @if (Model.Role == RoleNames.Customer)
+    {
+        <div class="col-lg-6">
+            <div class="info-card h-100">
+                <h2>My Policies</h2>
+                <p>Customers can view their own policy and payment details.</p>
+                <a class="btn btn-dark" asp-controller="Policies" asp-action="MyPolicies">Open My Policies</a>
+            </div>
+        </div>
+    }
+
+    @if (Model.Role == RoleNames.Admin)
+    {
+        <div class="col-lg-6">
+            <div class="info-card h-100">
+                <h2>Customer Policies</h2>
+                <p>Admins can search customers and review policy and payment details.</p>
+                <a class="btn btn-dark" asp-controller="Policies" asp-action="CustomerPolicies">Open Customer Policies</a>
+            </div>
+        </div>
+    }
+
     @if (Model.Role is RoleNames.Admin or RoleNames.Employee)
     {
         <div class="col-lg-6">

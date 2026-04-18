@@ -3,6 +3,7 @@ using EInsurance.Interfaces;
 using EInsurance.Repository;
 using EInsurance.Security;
 using EInsurance.Services.Authentication;
+using EInsurance.Services.Policies;
 using EInsurance.Services.Registration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -60,8 +61,10 @@ public static class AuthenticationExtensions
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
+        services.AddScoped<IPolicyRepository, PolicyRepository>();
         services.AddScoped<IRegistrationRepository, RegistrationRepository>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
+        services.AddScoped<IPolicyService, PolicyService>();
         services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
         services.AddScoped<IRegistrationService, RegistrationService>();
 
