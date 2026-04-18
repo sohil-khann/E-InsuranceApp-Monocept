@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 @using System.Security.Claims
 <html lang="en">
 <head>
@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - EInsurance</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/EInsurance.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
+            <div class="container-fluid px-md-5">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">EInsurance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +38,9 @@
                             }
                             @if (User.FindFirstValue(ClaimTypes.Role) == EInsurance.Security.RoleNames.Admin)
                             {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Admin" asp-action="ManageUsers">Manage Users</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-controller="Policies" asp-action="CustomerPolicies">Customer Policies</a>
                                 </li>
@@ -65,14 +69,14 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid px-md-5">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container-fluid px-md-5">
             &copy; 2026 - EInsurance - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
