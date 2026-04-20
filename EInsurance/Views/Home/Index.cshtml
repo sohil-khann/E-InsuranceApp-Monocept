@@ -1,43 +1,148 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Guardian Insurance | Veridian Protocol</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        theme: {
+        extend: {
+        fontFamily: {
+        'sans': ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+        },
+        colors: {
+        primary: '#22B590',       // requested vibrant teal-green
+        'primary-dark': '#1a8c70',
+        'primary-light': '#3cc9a3',
+        'primary-soft': '#e0f7f0',
+        }
+        }
+        }
+        }
+    </script>
+    <style>
+        * {
+        transition: all 0.2s ease;
+        }
+        
+        body {
+        background-color: #22B590;
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+        }
 
-<div class="hero-card text-center">
-    <span class="eyebrow">Online Insurance Management System</span>
-    <h1 class="display-5 fw-semibold mt-3">Secure policy operations for every role</h1>
-    <p class="lead mt-3">
-        Customers, admins, agents, and employees can sign in through the same portal and reach role-based access after JWT authentication.
-    </p>
-    <div class="mt-4 d-flex flex-column flex-sm-row justify-content-center gap-3">
-        <a class="btn btn-dark btn-lg px-4" asp-controller="Account" asp-action="Login">Go to Login</a>
-        <a class="btn btn-outline-dark btn-lg px-4" asp-controller="Account" asp-action="Register">Customer Sign Up</a>
-        <a class="btn btn-outline-dark btn-lg px-4" asp-controller="Dashboard" asp-action="Index">Open Dashboard</a>
-    </div>
-</div>
-@* 
-<div class="row g-4 mt-2">
-    <div class="col-md-6 col-xl-3">
-        <div class="info-card h-100">
-            <h2>Admin</h2>
-            <p>Manages global system access and operational oversight.</p>
+        .btn-transition:active {
+        transform: scale(0.98);
+        }
+
+        .focus-ring-teal:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(34, 181, 144, 0.4);
+        }
+
+        .status-badge-custom {
+        background-color: #e0f7f0;
+        color: #1a8c70;
+        }
+
+        .border-primary-custom {
+        border-left-color: #22B590;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12" style="background-color:#C1F6EA;">
+
+        <div class="max-w-2xl w-full bg-white rounded-2xl shadow-lg border border-gray-200/80 overflow-hidden">
+        
+            <div class="p-6 sm:p-8 md:p-10">
+            
+                <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span class="text-primary text-xs font-bold">⛊</span>
+                        </div>
+                        <span class="text-xs font-medium text-gray-500 tracking-wide uppercase">Guardian Insurance</span>
+                    </div>
+                    <div></div>
+                </div>
+
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                    Secure access to your <span class="text-primary">insurance system</span>
+                </h1>
+            
+                <p class="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg">
+                    Manage policies, payments, and customer data with a secure and scalable platform.
+                </p>
+            
+                <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <a asp-controller="Account" asp-action="Login"
+                           class="inline-flex justify-center items-center px-6 py-3 bg-primary text-white font-semibold rounded-xl shadow-sm hover:bg-primary-dark focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 transition-all btn-transition">
+                        Login
+                    </a>
+                    <a asp-controller="Account" asp-action="Register"
+                           class="inline-flex justify-center items-center px-6 py-3 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary/5 transition-all btn-transition">
+                        Register
+                    </a>
+                </div>
+            
+                <hr class="my-8 border-gray-200">
+            
+                <div class="space-y-6">
+                    <div class="flex flex-wrap items-baseline justify-between gap-2">
+                        <h2 class="text-xl font-bold text-gray-800">System Status</h2>
+                        <div class="flex items-center gap-1.5">
+                            <span class="relative flex h-2.5 w-2.5">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+                            </span>
+                            <span class="text-sm font-semibold text-primary-dark bg-primary-soft px-3 py-1 rounded-full">Secure & Operational</span>
+                        </div>
+                    </div>
+                
+                    <div class="grid grid-cols-2 gap-5 border border-gray-100 rounded-xl bg-gray-50/40 p-4">
+                        <div class="text-center">
+                            <p class="text-3xl md:text-4xl font-black text-primary tracking-tight">12k+</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mt-1 font-medium">Users</p>
+                        </div>
+                        <div class="text-center border-l border-gray-200">
+                            <p class="text-3xl md:text-4xl font-black text-primary tracking-tight">99.9%</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wide mt-1 font-medium">Uptime</p>
+                        </div>
+                    </div>
+                
+                    <div class="flex flex-wrap items-center justify-between gap-3 bg-primary-soft/40 rounded-xl p-4 border-l-4 border-primary">
+                        <div>
+                            <p class="font-bold text-gray-800 text-base flex items-center gap-1.5">
+                                <span class="text-primary text-xl">◆</span> System Active
+                            </p>
+                        </div>
+                        <p class="text-sm text-gray-600 font-medium">All services running smoothly</p>
+                    </div>
+                </div>
+            
+                <div class="mt-10 pt-4 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
+                    <span>© 2026 —</span>
+                    <div class="flex gap-4">
+                        <a href="https://www.einsurance.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary transition-colors font-medium text-xs underline-offset-2 hover:underline">
+                            Eininsurance
+                        </a>
+                        <span class="text-gray-300">|</span>
+                        <a href="#" class="text-gray-500 hover:text-primary transition-colors text-xs hover:underline">Privacy</a>
+                    </div>
+                    <span class="sm:ml-auto">All rights reserved.</span>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-md-6 col-xl-3">
-        <div class="info-card h-100">
-            <h2>Employee</h2>
-            <p>Handles schemes, policy workflows, and internal operations.</p>
-        </div>
-    </div>
-    <div class="col-md-6 col-xl-3">
-        <div class="info-card h-100">
-            <h2>Agent</h2>
-            <p>Works with customers and policy-linked commission records.</p>
-        </div>
-    </div>
-    <div class="col-md-6 col-xl-3">
-        <div class="info-card h-100">
-            <h2>Customer</h2>
-            <p>Uses a registered account to access protected insurance features.</p>
-        </div>
-    </div>
- </div>  *@
+
+    <script>
+        (function() {
+        console.log("Guardian Insurance | Veridian Protocol — protected with #22B590 identity");
+        })();
+    </script>
+</body>
+</html>

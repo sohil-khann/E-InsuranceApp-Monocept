@@ -4285,3 +4285,1618 @@ RolesAuthorizationRequirement:User.IsInRole must be true for one of the followin
 2026-04-18 16:02:25.991 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.1375ms
 2026-04-18 16:02:26.022 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
 2026-04-18 16:02:26.038 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.6624ms
+2026-04-18 16:07:00.959 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:07:01.034 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:07:01.047 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:07:01.059 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:07:01.089 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-18 16:07:01.115 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-18 16:07:01.420 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:07:01.439 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:07:01.455 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:07:01.470 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:07:01.484 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsurancePlan] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:07:01.508 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Scheme] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:07:01.523 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:07:01.681 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-18 16:07:01.908 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-18 16:07:01.909 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-18 16:07:01.940 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-18 16:07:01.941 +05:30 [INF] Hosting environment: Development
+2026-04-18 16:07:01.942 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-18 16:07:02.907 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:07:03.163 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:07:03.176 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:07:03.198 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-18 16:07:03.361 +05:30 [INF] Executed ViewResult - view Login executed in 166.8897ms.
+2026-04-18 16:07:03.368 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 188.5203ms
+2026-04-18 16:07:03.370 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:07:03.381 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 485.9562ms
+2026-04-18 16:07:03.450 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:07:03.465 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 15.2931ms
+2026-04-18 16:07:03.485 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:07:03.543 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.0293ms
+2026-04-18 16:07:05.706 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7183/ - application/x-www-form-urlencoded 220
+2026-04-18 16:07:05.718 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:07:05.733 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EInsurance.Models.Auth.LoginViewModel, System.Threading.CancellationToken) on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:07:06.087 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@__identifier_0='?' (Size = 50), @__identifier_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+WHERE [a].[Username] = @__identifier_0 OR [a].[Email] = @__identifier_0_1
+2026-04-18 16:07:06.183 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard/Index.
+2026-04-18 16:07:06.185 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 449.721ms
+2026-04-18 16:07:06.186 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:07:06.189 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7183/ - 302 null null 483.7003ms
+2026-04-18 16:07:06.195 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:07:06.238 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:07:06.240 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:07:06.244 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:07:06.278 +05:30 [INF] Executed ViewResult - view Index executed in 35.41ms.
+2026-04-18 16:07:06.281 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 39.1602ms
+2026-04-18 16:07:06.282 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:07:06.283 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 88.7696ms
+2026-04-18 16:07:06.337 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:07:06.342 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.5442ms
+2026-04-18 16:07:06.343 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:07:06.370 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.752ms
+2026-04-18 16:07:09.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Admin/ManageUsers - null null
+2026-04-18 16:07:09.447 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:07:09.452 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers() on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-18 16:07:09.649 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-18 16:07:09.668 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-18 16:07:09.685 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-18 16:07:09.703 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+2026-04-18 16:07:09.712 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-18 16:07:09.728 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 16.837ms.
+2026-04-18 16:07:09.730 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 276.3796ms
+2026-04-18 16:07:09.731 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:07:09.733 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Admin/ManageUsers - 200 null text/html; charset=utf-8 293.9972ms
+2026-04-18 16:07:09.774 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:07:09.776 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:07:09.782 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.7147ms
+2026-04-18 16:07:09.791 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.9194ms
+2026-04-18 16:07:15.557 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:07:15.562 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:07:15.564 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:07:15.566 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:07:15.574 +05:30 [INF] Executed ViewResult - view Index executed in 8.2835ms.
+2026-04-18 16:07:15.576 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 11.0747ms
+2026-04-18 16:07:15.577 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:07:15.579 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 21.9731ms
+2026-04-18 16:07:15.620 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:07:15.624 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:07:15.628 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.8203ms
+2026-04-18 16:07:15.640 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.502ms
+2026-04-18 16:07:16.602 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:07:16.608 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:07:16.609 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:07:16.611 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:07:16.615 +05:30 [INF] Executed ViewResult - view Index executed in 3.7849ms.
+2026-04-18 16:07:16.617 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 6.0776ms
+2026-04-18 16:07:16.618 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:07:16.620 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 17.9628ms
+2026-04-18 16:07:16.661 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:07:16.666 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:07:16.674 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 8.4119ms
+2026-04-18 16:07:16.687 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.693ms
+2026-04-18 16:07:20.422 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Admin/ManageUsers - null null
+2026-04-18 16:07:20.428 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:07:20.429 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers() on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-18 16:07:20.558 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-18 16:07:20.571 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-18 16:07:20.585 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-18 16:07:20.600 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+2026-04-18 16:07:20.603 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-18 16:07:20.609 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 6.4007ms.
+2026-04-18 16:07:20.611 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 179.9701ms
+2026-04-18 16:07:20.612 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:07:20.613 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Admin/ManageUsers - 200 null text/html; charset=utf-8 191.3593ms
+2026-04-18 16:07:20.660 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:07:20.665 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:07:20.672 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 7.7029ms
+2026-04-18 16:07:20.676 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.6593ms
+2026-04-18 16:11:12.749 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:11:12.820 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:11:12.832 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:11:12.841 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:11:12.871 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-18 16:11:12.896 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-18 16:11:13.173 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:11:13.190 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:11:13.204 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:11:13.218 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:11:13.232 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsurancePlan] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:11:13.254 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Scheme] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:11:13.268 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:11:13.388 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-18 16:11:13.596 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-18 16:11:13.597 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-18 16:11:13.624 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-18 16:11:13.625 +05:30 [INF] Hosting environment: Development
+2026-04-18 16:11:13.626 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-18 16:11:14.232 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:11:14.233 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Admin/ManageUsers - null null
+2026-04-18 16:11:14.562 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:11:14.565 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:11:14.577 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers() on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-18 16:11:14.577 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:11:14.600 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard/Index.
+2026-04-18 16:11:14.606 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 21.0616ms
+2026-04-18 16:11:14.608 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:11:14.618 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 302 null null 397.57ms
+2026-04-18 16:11:14.633 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:11:14.649 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:11:14.652 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:11:14.674 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:11:14.813 +05:30 [INF] Executed ViewResult - view Index executed in 154.5676ms.
+2026-04-18 16:11:14.820 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 166.3208ms
+2026-04-18 16:11:14.823 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:11:14.832 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 198.5348ms
+2026-04-18 16:11:14.838 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-18 16:11:14.867 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-18 16:11:14.894 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-18 16:11:14.895 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:11:14.915 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:11:14.916 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 20.7072ms
+2026-04-18 16:11:14.925 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+2026-04-18 16:11:14.945 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-18 16:11:14.976 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.2524ms
+2026-04-18 16:11:14.991 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 47.1971ms.
+2026-04-18 16:11:14.999 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 418.8055ms
+2026-04-18 16:11:15.006 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:11:15.013 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Admin/ManageUsers - 200 null text/html; charset=utf-8 793.2123ms
+2026-04-18 16:11:15.118 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:11:15.121 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.3856ms
+2026-04-18 16:11:19.175 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Admin/ManageUsers - null null
+2026-04-18 16:11:19.183 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:11:19.185 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers() on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-18 16:11:19.382 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-18 16:11:19.396 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-18 16:11:19.409 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-18 16:11:19.423 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+2026-04-18 16:11:19.425 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-18 16:11:19.433 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 7.9042ms.
+2026-04-18 16:11:19.434 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 248.2163ms
+2026-04-18 16:11:19.436 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:11:19.437 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Admin/ManageUsers - 200 null text/html; charset=utf-8 263.058ms
+2026-04-18 16:11:19.475 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:11:19.478 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:11:19.483 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.7022ms
+2026-04-18 16:11:19.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.7283ms
+2026-04-18 16:11:24.911 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:11:24.917 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:11:24.920 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:11:24.923 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:11:24.931 +05:30 [INF] Executed ViewResult - view Index executed in 8.085ms.
+2026-04-18 16:11:24.933 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 11.4542ms
+2026-04-18 16:11:24.934 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:11:24.936 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 25.1254ms
+2026-04-18 16:11:24.981 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:11:24.990 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:11:24.999 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 8.9977ms
+2026-04-18 16:11:25.010 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.2682ms
+2026-04-18 16:13:27.497 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:13:27.567 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:13:27.578 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:13:27.587 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:13:27.613 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-18 16:13:27.639 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-18 16:13:27.901 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:13:27.917 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:13:27.930 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:13:27.942 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:13:27.954 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsurancePlan] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:13:27.974 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Scheme] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:13:27.987 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:13:28.107 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-18 16:13:28.308 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-18 16:13:28.309 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-18 16:13:28.335 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-18 16:13:28.336 +05:30 [INF] Hosting environment: Development
+2026-04-18 16:13:28.336 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-18 16:13:28.986 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:13:28.986 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:13:29.362 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:13:29.362 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:13:29.381 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:13:29.381 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:13:29.401 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:13:29.404 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard/Index.
+2026-04-18 16:13:29.419 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 31.0156ms
+2026-04-18 16:13:29.422 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:13:29.433 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 302 null null 457.4061ms
+2026-04-18 16:13:29.444 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:13:29.462 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:13:29.465 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:13:29.469 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:13:29.545 +05:30 [INF] Executed ViewResult - view Index executed in 151.5882ms.
+2026-04-18 16:13:29.545 +05:30 [INF] Executed ViewResult - view Index executed in 75.6709ms.
+2026-04-18 16:13:29.553 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 167.2298ms
+2026-04-18 16:13:29.553 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 86.0113ms
+2026-04-18 16:13:29.556 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:13:29.557 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:13:29.562 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 586.6368ms
+2026-04-18 16:13:29.562 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 118.5745ms
+2026-04-18 16:13:29.647 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:13:29.658 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:13:29.659 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 11.9449ms
+2026-04-18 16:13:29.718 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:13:29.719 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.2058ms
+2026-04-18 16:13:29.724 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.8805ms
+2026-04-18 16:13:39.382 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Admin/ManageUsers - null null
+2026-04-18 16:13:39.389 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:13:39.395 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers() on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-18 16:13:39.585 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-18 16:13:39.604 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-18 16:13:39.620 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-18 16:13:39.638 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+2026-04-18 16:13:39.651 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-18 16:13:39.680 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 29.9031ms.
+2026-04-18 16:13:39.681 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 284.376ms
+2026-04-18 16:13:39.683 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:13:39.687 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Admin/ManageUsers - 200 null text/html; charset=utf-8 304.6175ms
+2026-04-18 16:13:39.732 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:13:39.736 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.7057ms
+2026-04-18 16:13:39.765 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:13:39.791 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.2838ms
+2026-04-18 16:13:46.253 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Policies/CustomerPolicies - null null
+2026-04-18 16:13:46.262 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.CustomerPolicies (EInsurance)'
+2026-04-18 16:13:46.271 +05:30 [INF] Route matched with {action = "CustomerPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CustomerPolicies(System.String, System.Nullable`1[System.Int32], System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-18 16:13:46.280 +05:30 [INF] Executing ViewResult, running view CustomerPolicies.
+2026-04-18 16:13:46.288 +05:30 [INF] Executed ViewResult - view CustomerPolicies executed in 8.3421ms.
+2026-04-18 16:13:46.291 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.CustomerPolicies (EInsurance) in 18.6828ms
+2026-04-18 16:13:46.292 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.CustomerPolicies (EInsurance)'
+2026-04-18 16:13:46.293 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Policies/CustomerPolicies - 200 null text/html; charset=utf-8 40.9797ms
+2026-04-18 16:13:46.336 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:13:46.339 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:13:46.344 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.4049ms
+2026-04-18 16:13:46.354 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.1294ms
+2026-04-18 16:13:49.790 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Admin/ManageUsers - null null
+2026-04-18 16:13:49.796 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:13:49.798 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers() on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-18 16:13:49.984 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-18 16:13:49.998 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-18 16:13:50.012 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-18 16:13:50.027 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+2026-04-18 16:13:50.030 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-18 16:13:50.037 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 6.9869ms.
+2026-04-18 16:13:50.038 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 238.7073ms
+2026-04-18 16:13:50.039 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:13:50.041 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Admin/ManageUsers - 200 null text/html; charset=utf-8 250.7431ms
+2026-04-18 16:13:50.088 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:13:50.089 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:13:50.098 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 9.4612ms
+2026-04-18 16:13:50.114 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.154ms
+2026-04-18 16:13:51.123 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:13:51.127 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:13:51.129 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:13:51.130 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:13:51.134 +05:30 [INF] Executed ViewResult - view Index executed in 3.8571ms.
+2026-04-18 16:13:51.136 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 6.1459ms
+2026-04-18 16:13:51.137 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:13:51.138 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 16.1082ms
+2026-04-18 16:13:51.184 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:13:51.187 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:13:51.192 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.4581ms
+2026-04-18 16:13:51.201 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.8517ms
+2026-04-18 16:13:53.705 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Admin/ManageUsers - null null
+2026-04-18 16:13:53.712 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:13:53.713 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers() on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-18 16:13:53.839 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-18 16:13:53.852 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-18 16:13:53.864 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-18 16:13:53.877 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+2026-04-18 16:13:53.880 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-18 16:13:53.887 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 7.2918ms.
+2026-04-18 16:13:53.888 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 173.2449ms
+2026-04-18 16:13:53.889 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:13:53.891 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Admin/ManageUsers - 200 null text/html; charset=utf-8 185.9899ms
+2026-04-18 16:13:53.940 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:13:53.945 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:13:53.952 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 7.3743ms
+2026-04-18 16:13:53.958 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.1602ms
+2026-04-18 16:14:04.882 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:14:04.887 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:14:04.888 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:14:04.889 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:14:04.893 +05:30 [INF] Executed ViewResult - view Index executed in 3.273ms.
+2026-04-18 16:14:04.895 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 5.1741ms
+2026-04-18 16:14:04.896 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:14:04.897 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 15.2344ms
+2026-04-18 16:14:04.936 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:14:04.944 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:14:04.948 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.9622ms
+2026-04-18 16:14:04.954 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.8524ms
+2026-04-18 16:16:10.705 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:16:10.779 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:16:10.790 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:16:10.799 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:16:10.827 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-18 16:16:10.852 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-18 16:16:11.112 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:16:11.129 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:16:11.144 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:16:11.156 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:16:11.169 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsurancePlan] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:16:11.189 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Scheme] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:16:11.203 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:16:11.342 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-18 16:16:11.529 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-18 16:16:11.530 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-18 16:16:11.556 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-18 16:16:11.557 +05:30 [INF] Hosting environment: Development
+2026-04-18 16:16:11.558 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-18 16:16:12.214 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:16:12.214 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:16:12.630 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:16:12.630 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:16:12.649 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:16:12.649 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:16:12.674 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:16:12.675 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard/Index.
+2026-04-18 16:16:12.692 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 23.7259ms
+2026-04-18 16:16:12.695 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:16:12.707 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 302 null null 507.2421ms
+2026-04-18 16:16:12.724 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:16:12.743 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:16:12.747 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:16:12.755 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:16:12.847 +05:30 [INF] Executed ViewResult - view Index executed in 183.7856ms.
+2026-04-18 16:16:12.847 +05:30 [INF] Executed ViewResult - view Index executed in 93.7835ms.
+2026-04-18 16:16:12.855 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 105.2862ms
+2026-04-18 16:16:12.855 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 202.9303ms
+2026-04-18 16:16:12.859 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:16:12.860 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:16:12.866 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 667.4553ms
+2026-04-18 16:16:12.866 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 143.0815ms
+2026-04-18 16:16:12.941 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/css/site.css?v=dUgpiPaKUikzL3VUbKptXNgHRwk27_alsrUdTr3dOuE - null null
+2026-04-18 16:16:12.941 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:16:12.946 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:16:12.953 +05:30 [INF] The file /css/site.css was not modified
+2026-04-18 16:16:12.957 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 16.0033ms
+2026-04-18 16:16:12.957 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/css/site.css?v=dUgpiPaKUikzL3VUbKptXNgHRwk27_alsrUdTr3dOuE - 304 null text/css 16.8166ms
+2026-04-18 16:16:12.996 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:16:13.001 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.4422ms
+2026-04-18 16:16:13.013 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.0455ms
+2026-04-18 16:16:16.867 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:16:16.874 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:16:16.875 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:16:16.877 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:16:16.882 +05:30 [INF] Executed ViewResult - view Index executed in 5.2602ms.
+2026-04-18 16:16:16.885 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 7.9909ms
+2026-04-18 16:16:16.886 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:16:16.888 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 21.7228ms
+2026-04-18 16:16:16.933 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:16:16.941 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:16:16.949 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 8.9954ms
+2026-04-18 16:16:16.969 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.7873ms
+2026-04-18 16:16:18.500 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:16:18.506 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:16:18.507 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:16:18.508 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:16:18.512 +05:30 [INF] Executed ViewResult - view Index executed in 3.3848ms.
+2026-04-18 16:16:18.514 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 6.208ms
+2026-04-18 16:16:18.515 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:16:18.517 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 16.8331ms
+2026-04-18 16:16:18.546 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:16:18.547 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:16:18.553 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.8973ms
+2026-04-18 16:16:18.567 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.7803ms
+2026-04-18 16:16:19.399 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:16:19.405 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:16:19.406 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:16:19.407 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:16:19.411 +05:30 [INF] Executed ViewResult - view Index executed in 4.4882ms.
+2026-04-18 16:16:19.413 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 6.1085ms
+2026-04-18 16:16:19.414 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:16:19.416 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 17.212ms
+2026-04-18 16:16:19.447 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:16:19.448 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:16:19.455 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.7872ms
+2026-04-18 16:16:19.465 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.6479ms
+2026-04-18 16:18:49.980 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:18:50.052 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:18:50.063 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:18:50.073 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:18:50.098 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-18 16:18:50.123 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-18 16:18:50.401 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:18:50.418 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:18:50.433 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:18:50.446 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:18:50.459 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsurancePlan] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:18:50.484 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Scheme] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:18:50.498 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:18:50.620 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-18 16:18:50.836 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-18 16:18:50.837 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-18 16:18:50.866 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-18 16:18:50.867 +05:30 [INF] Hosting environment: Development
+2026-04-18 16:18:50.868 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-18 16:18:51.547 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:18:51.547 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:18:51.892 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:18:51.892 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:18:51.909 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:18:51.909 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:18:51.924 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:18:51.928 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard/Index.
+2026-04-18 16:18:51.943 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 26.3354ms
+2026-04-18 16:18:51.945 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:18:51.955 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 302 null null 417.4689ms
+2026-04-18 16:18:51.965 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:18:51.982 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:18:51.984 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:18:51.989 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:18:52.062 +05:30 [INF] Executed ViewResult - view Index executed in 73.8275ms.
+2026-04-18 16:18:52.062 +05:30 [INF] Executed ViewResult - view Index executed in 143.0351ms.
+2026-04-18 16:18:52.071 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 85.0852ms
+2026-04-18 16:18:52.071 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 159.3931ms
+2026-04-18 16:18:52.074 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:18:52.075 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:18:52.080 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 115.3511ms
+2026-04-18 16:18:52.080 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 543.188ms
+2026-04-18 16:18:52.150 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:18:52.156 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:18:52.160 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 10.4535ms
+2026-04-18 16:18:52.190 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:18:52.195 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.0263ms
+2026-04-18 16:18:52.214 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.2888ms
+2026-04-18 16:18:54.004 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:18:54.013 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:18:54.015 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:18:54.018 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:18:54.024 +05:30 [INF] Executed ViewResult - view Index executed in 6.9381ms.
+2026-04-18 16:18:54.027 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 9.7606ms
+2026-04-18 16:18:54.028 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:18:54.030 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 26.5242ms
+2026-04-18 16:18:54.111 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:18:54.114 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:18:54.120 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.585ms
+2026-04-18 16:18:54.141 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.6789ms
+2026-04-18 16:19:06.428 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7183/Account/Logout - application/x-www-form-urlencoded 225
+2026-04-18 16:19:06.435 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Logout (EInsurance)'
+2026-04-18 16:19:06.438 +05:30 [INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Logout() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:19:06.447 +05:30 [INF] Executing RedirectResult, redirecting to /.
+2026-04-18 16:19:06.449 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Logout (EInsurance) in 8.956ms
+2026-04-18 16:19:06.450 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Logout (EInsurance)'
+2026-04-18 16:19:06.451 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7183/Account/Logout - 302 null null 23.3849ms
+2026-04-18 16:19:06.457 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:19:06.461 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:19:06.462 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:19:06.470 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-18 16:19:06.504 +05:30 [INF] Executed ViewResult - view Login executed in 35.0128ms.
+2026-04-18 16:19:06.506 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 42.4029ms
+2026-04-18 16:19:06.507 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:19:06.509 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 52.0367ms
+2026-04-18 16:19:06.551 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:19:06.555 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.5114ms
+2026-04-18 16:19:06.571 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:19:06.592 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.0293ms
+2026-04-18 16:19:11.422 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:19:11.427 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:19:11.428 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:19:11.430 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:19:11.434 +05:30 [INF] Executed ViewResult - view Index executed in 3.9009ms.
+2026-04-18 16:19:11.436 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 6.4522ms
+2026-04-18 16:19:11.437 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:19:11.438 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 17.2518ms
+2026-04-18 16:19:11.467 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:19:11.469 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:19:11.475 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.0904ms
+2026-04-18 16:19:11.488 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.685ms
+2026-04-18 16:27:44.070 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:27:44.084 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:27:44.086 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:27:44.089 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:27:44.106 +05:30 [INF] Executed ViewResult - view Index executed in 17.1821ms.
+2026-04-18 16:27:44.107 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 19.2305ms
+2026-04-18 16:27:44.109 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:27:44.110 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 40.4853ms
+2026-04-18 16:27:44.275 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:27:44.282 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 7.8279ms
+2026-04-18 16:27:44.295 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/js/site.js?v=y_Ngd8W21UpuCUhEqGbUKDEqFnNfTjAfb24GhJJGUyM - null null
+2026-04-18 16:27:44.298 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:27:44.310 +05:30 [INF] The file /js/site.js was not modified
+2026-04-18 16:27:44.324 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/js/site.js?v=y_Ngd8W21UpuCUhEqGbUKDEqFnNfTjAfb24GhJJGUyM - 304 null text/javascript 29.2232ms
+2026-04-18 16:27:44.333 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.1539ms
+2026-04-18 16:27:49.421 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:27:49.427 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:27:49.429 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:27:49.430 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:27:49.434 +05:30 [INF] Executed ViewResult - view Index executed in 3.9665ms.
+2026-04-18 16:27:49.437 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 6.5697ms
+2026-04-18 16:27:49.438 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:27:49.439 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 19.0118ms
+2026-04-18 16:27:49.472 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:27:49.476 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.0716ms
+2026-04-18 16:27:49.493 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:27:49.506 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.4631ms
+2026-04-18 16:28:05.902 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:28:05.907 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:28:05.910 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:28:05.912 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-18 16:28:05.918 +05:30 [INF] Executed ViewResult - view Login executed in 5.8885ms.
+2026-04-18 16:28:05.920 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 8.6692ms
+2026-04-18 16:28:05.921 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:28:05.923 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 20.7643ms
+2026-04-18 16:28:05.966 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:28:05.970 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.241ms
+2026-04-18 16:28:05.984 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:28:05.997 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.7262ms
+2026-04-18 16:28:08.969 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:28:08.973 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.8312ms
+2026-04-18 16:29:55.834 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:29:55.845 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:29:55.847 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:29:55.850 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:29:55.861 +05:30 [INF] Executed ViewResult - view Index executed in 12.1502ms.
+2026-04-18 16:29:55.864 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 14.9597ms
+2026-04-18 16:29:55.865 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:29:55.866 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 32.8534ms
+2026-04-18 16:29:55.987 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:29:55.992 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.5842ms
+2026-04-18 16:29:56.010 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:29:56.026 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.6529ms
+2026-04-18 16:29:59.283 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:29:59.289 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:29:59.290 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:29:59.292 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:29:59.295 +05:30 [INF] Executed ViewResult - view Index executed in 2.9732ms.
+2026-04-18 16:29:59.297 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 5.2712ms
+2026-04-18 16:29:59.298 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:29:59.299 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 16.5285ms
+2026-04-18 16:29:59.331 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:29:59.335 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.3925ms
+2026-04-18 16:29:59.351 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:29:59.364 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.3304ms
+2026-04-18 16:31:45.261 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:31:45.273 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:31:45.275 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:31:45.279 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:31:45.294 +05:30 [INF] Executed ViewResult - view Index executed in 16.5131ms.
+2026-04-18 16:31:45.301 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 23.9007ms
+2026-04-18 16:31:45.303 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:31:45.304 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 44.0408ms
+2026-04-18 16:31:45.387 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/css/site.css?v=dUgpiPaKUikzL3VUbKptXNgHRwk27_alsrUdTr3dOuE - null null
+2026-04-18 16:31:45.391 +05:30 [INF] The file /css/site.css was not modified
+2026-04-18 16:31:45.393 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/css/site.css?v=dUgpiPaKUikzL3VUbKptXNgHRwk27_alsrUdTr3dOuE - 304 null text/css 6.0443ms
+2026-04-18 16:31:45.470 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:31:45.475 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.146ms
+2026-04-18 16:31:45.490 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:31:45.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.3614ms
+2026-04-18 16:31:47.556 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:31:47.562 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:31:47.563 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:31:47.564 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:31:47.568 +05:30 [INF] Executed ViewResult - view Index executed in 3.8638ms.
+2026-04-18 16:31:47.575 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 11.3725ms
+2026-04-18 16:31:47.577 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:31:47.578 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 22.3152ms
+2026-04-18 16:31:47.607 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:31:47.610 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.0069ms
+2026-04-18 16:31:47.612 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:31:47.628 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.5616ms
+2026-04-18 16:31:48.836 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:31:48.840 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:31:48.841 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:31:48.843 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:31:48.846 +05:30 [INF] Executed ViewResult - view Index executed in 2.8486ms.
+2026-04-18 16:31:48.848 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 5.0819ms
+2026-04-18 16:31:48.849 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:31:48.851 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 15.2202ms
+2026-04-18 16:31:48.881 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:31:48.882 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:31:48.884 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.8229ms
+2026-04-18 16:31:48.898 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.1824ms
+2026-04-18 16:32:12.325 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:32:12.330 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:12.332 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:32:12.335 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:32:12.349 +05:30 [INF] Executed ViewResult - view Index executed in 14.399ms.
+2026-04-18 16:32:12.352 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 17.1821ms
+2026-04-18 16:32:12.353 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:12.354 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 29.3634ms
+2026-04-18 16:32:12.429 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:32:12.431 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:32:12.433 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.3549ms
+2026-04-18 16:32:12.447 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.9582ms
+2026-04-18 16:32:14.731 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:32:14.736 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:14.737 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:32:14.739 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:32:14.743 +05:30 [INF] Executed ViewResult - view Index executed in 3.8921ms.
+2026-04-18 16:32:14.749 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 9.7606ms
+2026-04-18 16:32:14.750 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:14.751 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 20.7883ms
+2026-04-18 16:32:14.783 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:32:14.786 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:32:14.787 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.2764ms
+2026-04-18 16:32:14.802 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.851ms
+2026-04-18 16:32:15.599 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:32:15.603 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:15.604 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:32:15.606 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:32:15.609 +05:30 [INF] Executed ViewResult - view Index executed in 3.0125ms.
+2026-04-18 16:32:15.611 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 5.4622ms
+2026-04-18 16:32:15.613 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:15.614 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 15.4504ms
+2026-04-18 16:32:15.651 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:32:15.652 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:32:15.655 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.1115ms
+2026-04-18 16:32:15.669 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.6682ms
+2026-04-18 16:32:16.481 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:32:16.485 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:16.486 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:32:16.488 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:32:16.491 +05:30 [INF] Executed ViewResult - view Index executed in 3.1204ms.
+2026-04-18 16:32:16.494 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 5.7085ms
+2026-04-18 16:32:16.495 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:16.497 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 16.2898ms
+2026-04-18 16:32:16.525 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:32:16.528 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.5351ms
+2026-04-18 16:32:16.534 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:32:16.548 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.0921ms
+2026-04-18 16:32:17.291 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:32:17.295 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:17.296 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:32:17.298 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:32:17.301 +05:30 [INF] Executed ViewResult - view Index executed in 2.8165ms.
+2026-04-18 16:32:17.303 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 4.8832ms
+2026-04-18 16:32:17.304 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:32:17.305 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 14.673ms
+2026-04-18 16:32:17.337 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:32:17.340 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:32:17.342 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.8072ms
+2026-04-18 16:32:17.362 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.697ms
+2026-04-18 16:32:23.573 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Account/Register - null null
+2026-04-18 16:32:23.581 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-18 16:32:23.583 +05:30 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:32:23.799 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [i].[AgentID]), [i].[AgentID], [i].[FullName]
+FROM [InsuranceAgent] AS [i]
+ORDER BY [i].[FullName]
+2026-04-18 16:32:23.833 +05:30 [INF] Executing ViewResult, running view Register.
+2026-04-18 16:32:23.900 +05:30 [INF] Executed ViewResult - view Register executed in 67.4598ms.
+2026-04-18 16:32:23.901 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Register (EInsurance) in 316.8236ms
+2026-04-18 16:32:23.903 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-18 16:32:23.906 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Account/Register - 200 null text/html; charset=utf-8 333.7113ms
+2026-04-18 16:32:23.943 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:32:23.946 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.9084ms
+2026-04-18 16:32:23.962 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:32:23.976 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.0533ms
+2026-04-18 16:32:26.095 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:32:26.098 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.6976ms
+2026-04-18 16:32:27.490 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:32:27.494 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:32:27.496 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:32:27.498 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-18 16:32:27.502 +05:30 [INF] Executed ViewResult - view Login executed in 4.33ms.
+2026-04-18 16:32:27.505 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 6.8609ms
+2026-04-18 16:32:27.506 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:32:27.507 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 17.6133ms
+2026-04-18 16:32:27.547 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:32:27.550 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.8796ms
+2026-04-18 16:32:27.570 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:32:27.584 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.2198ms
+2026-04-18 16:32:29.723 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:32:29.726 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.488ms
+2026-04-18 16:33:39.276 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:33:39.287 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:33:39.290 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:33:39.293 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:33:39.304 +05:30 [INF] Executed ViewResult - view Index executed in 11.8905ms.
+2026-04-18 16:33:39.306 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 14.6624ms
+2026-04-18 16:33:39.307 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:33:39.309 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 32.9267ms
+2026-04-18 16:33:39.408 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:33:39.413 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.7848ms
+2026-04-18 16:33:39.471 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:33:39.488 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.8657ms
+2026-04-18 16:33:40.813 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:33:40.818 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:33:40.819 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:33:40.821 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:33:40.824 +05:30 [INF] Executed ViewResult - view Index executed in 2.7864ms.
+2026-04-18 16:33:40.826 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 5.1291ms
+2026-04-18 16:33:40.827 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:33:40.828 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 15.8168ms
+2026-04-18 16:33:40.861 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:33:40.865 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.9018ms
+2026-04-18 16:33:40.866 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:33:40.881 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.7134ms
+2026-04-18 16:38:20.169 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:38:20.240 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:38:20.251 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:38:20.261 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:38:20.288 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-18 16:38:20.316 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-18 16:38:20.580 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:20.597 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:20.610 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:20.623 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:20.636 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsurancePlan] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:20.656 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Scheme] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:20.669 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:20.810 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-18 16:38:21.000 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-18 16:38:21.001 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-18 16:38:21.027 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-18 16:38:21.028 +05:30 [INF] Hosting environment: Development
+2026-04-18 16:38:21.029 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-18 16:38:21.725 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:38:21.787 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:38:21.812 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 24.2352ms
+2026-04-18 16:38:22.011 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:22.026 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:38:22.051 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-18 16:38:22.214 +05:30 [INF] Executed ViewResult - view Login executed in 166.8641ms.
+2026-04-18 16:38:22.220 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 190.8076ms
+2026-04-18 16:38:22.223 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:22.232 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 515.7707ms
+2026-04-18 16:38:22.264 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:38:22.270 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.2998ms
+2026-04-18 16:38:22.293 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:38:22.357 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 64.3478ms
+2026-04-18 16:38:31.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:38:31.450 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:31.451 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:38:31.454 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-18 16:38:31.462 +05:30 [INF] Executed ViewResult - view Login executed in 8.3224ms.
+2026-04-18 16:38:31.465 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 12.4426ms
+2026-04-18 16:38:31.466 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:31.468 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 29.7151ms
+2026-04-18 16:38:31.496 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:38:31.496 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:38:31.503 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.8392ms
+2026-04-18 16:38:31.524 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.0077ms
+2026-04-18 16:38:37.553 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:38:37.563 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:37.564 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:38:37.570 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-18 16:38:37.575 +05:30 [INF] Executed ViewResult - view Login executed in 5.023ms.
+2026-04-18 16:38:37.578 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 11.7955ms
+2026-04-18 16:38:37.579 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:37.580 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 27.3272ms
+2026-04-18 16:38:37.621 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:38:37.623 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:38:37.629 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.4255ms
+2026-04-18 16:38:37.640 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.698ms
+2026-04-18 16:38:47.327 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:38:47.408 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:38:47.420 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:38:47.430 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:38:47.462 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-18 16:38:47.490 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-18 16:38:47.807 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:47.825 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:47.841 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:47.855 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:47.869 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsurancePlan] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:47.893 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Scheme] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:47.909 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:38:48.049 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-18 16:38:48.250 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-18 16:38:48.251 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-18 16:38:48.277 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-18 16:38:48.278 +05:30 [INF] Hosting environment: Development
+2026-04-18 16:38:48.279 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-18 16:38:49.118 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:38:49.323 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:49.340 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:38:49.363 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-18 16:38:49.490 +05:30 [INF] Executed ViewResult - view Login executed in 131.4617ms.
+2026-04-18 16:38:49.497 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 154.1944ms
+2026-04-18 16:38:49.499 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:49.508 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 398.0617ms
+2026-04-18 16:38:49.550 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:38:49.562 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 11.9021ms
+2026-04-18 16:38:49.597 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:38:49.649 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.5504ms
+2026-04-18 16:38:53.091 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7183/ - application/x-www-form-urlencoded 220
+2026-04-18 16:38:53.102 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:53.118 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EInsurance.Models.Auth.LoginViewModel, System.Threading.CancellationToken) on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:38:53.447 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[@__identifier_0='?' (Size = 50), @__identifier_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+WHERE [a].[Username] = @__identifier_0 OR [a].[Email] = @__identifier_0_1
+2026-04-18 16:38:53.564 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard/Index.
+2026-04-18 16:38:53.566 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 446.3786ms
+2026-04-18 16:38:53.568 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:38:53.572 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7183/ - 302 null null 481.3245ms
+2026-04-18 16:38:53.579 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:38:53.628 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:38:53.630 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:38:53.635 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:38:53.676 +05:30 [INF] Executed ViewResult - view Index executed in 42.3987ms.
+2026-04-18 16:38:53.684 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 51.911ms
+2026-04-18 16:38:53.686 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:38:53.688 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 109.6928ms
+2026-04-18 16:38:53.754 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:38:53.759 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.5258ms
+2026-04-18 16:38:53.761 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:38:53.789 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.7837ms
+2026-04-18 16:38:55.720 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:38:55.727 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:38:55.729 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:38:55.733 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:38:55.742 +05:30 [INF] Executed ViewResult - view Index executed in 9.4825ms.
+2026-04-18 16:38:55.744 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 12.7837ms
+2026-04-18 16:38:55.746 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:38:55.747 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 27.0507ms
+2026-04-18 16:38:55.795 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:38:55.799 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.0911ms
+2026-04-18 16:38:55.808 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:38:55.825 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.4154ms
+2026-04-18 16:39:12.657 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Account/Register - null null
+2026-04-18 16:39:12.666 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-18 16:39:12.668 +05:30 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:39:12.683 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard/Index.
+2026-04-18 16:39:12.684 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Register (EInsurance) in 13.7477ms
+2026-04-18 16:39:12.685 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-18 16:39:12.686 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Account/Register - 302 null null 29.0659ms
+2026-04-18 16:39:12.692 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:39:12.698 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:39:12.699 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:39:12.700 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:39:12.704 +05:30 [INF] Executed ViewResult - view Index executed in 3.6505ms.
+2026-04-18 16:39:12.706 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 6.0716ms
+2026-04-18 16:39:12.707 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:39:12.708 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 16.8584ms
+2026-04-18 16:39:12.752 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:39:12.758 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:39:12.765 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 8.2304ms
+2026-04-18 16:39:12.774 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.6034ms
+2026-04-18 16:39:36.472 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:39:36.480 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:39:36.482 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:39:36.485 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:39:36.490 +05:30 [INF] Executed ViewResult - view Index executed in 5.6746ms.
+2026-04-18 16:39:36.492 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 8.4928ms
+2026-04-18 16:39:36.494 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:39:36.495 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 23.4692ms
+2026-04-18 16:39:36.535 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:39:36.535 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:39:36.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.2295ms
+2026-04-18 16:39:36.551 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.6815ms
+2026-04-18 16:39:39.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:39:39.568 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:39:39.569 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:39:39.572 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:39:39.582 +05:30 [INF] Executed ViewResult - view Index executed in 11.0522ms.
+2026-04-18 16:39:39.584 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 12.8748ms
+2026-04-18 16:39:39.585 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:39:39.586 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 24.5085ms
+2026-04-18 16:39:39.620 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:39:39.624 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.3246ms
+2026-04-18 16:39:39.624 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:39:39.642 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.0223ms
+2026-04-18 16:39:40.829 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:39:41.015 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:39:41.016 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:39:41.019 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:39:41.023 +05:30 [INF] Executed ViewResult - view Index executed in 3.6659ms.
+2026-04-18 16:39:41.025 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 6.2726ms
+2026-04-18 16:39:41.027 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:39:41.029 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 199.3685ms
+2026-04-18 16:39:41.069 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:39:41.070 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:39:41.073 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.4513ms
+2026-04-18 16:39:41.087 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.4624ms
+2026-04-18 16:40:23.697 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:40:23.772 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:40:23.784 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-18 16:40:23.793 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-18 16:40:23.820 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-18 16:40:23.846 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-18 16:40:24.120 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:40:24.138 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:40:24.153 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:40:24.166 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:40:24.179 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsurancePlan] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:40:24.201 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Scheme] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:40:24.216 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-18 16:40:24.333 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-18 16:40:24.527 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-18 16:40:24.528 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-18 16:40:24.563 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-18 16:40:24.564 +05:30 [INF] Hosting environment: Development
+2026-04-18 16:40:24.565 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-18 16:40:25.050 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-18 16:40:25.050 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:40:25.375 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:40:25.375 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:25.389 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:40:25.389 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:40:25.404 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:40:25.407 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard/Index.
+2026-04-18 16:40:25.419 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 18.4573ms
+2026-04-18 16:40:25.421 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-18 16:40:25.429 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 302 null null 388.7137ms
+2026-04-18 16:40:25.441 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:40:25.458 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:40:25.461 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:40:25.467 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:40:25.544 +05:30 [INF] Executed ViewResult - view Index executed in 77.7892ms.
+2026-04-18 16:40:25.544 +05:30 [INF] Executed ViewResult - view Index executed in 146.4546ms.
+2026-04-18 16:40:25.554 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 89.965ms
+2026-04-18 16:40:25.554 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 162.4441ms
+2026-04-18 16:40:25.557 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:40:25.558 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:25.564 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 123.2082ms
+2026-04-18 16:40:25.564 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 523.6922ms
+2026-04-18 16:40:25.659 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:40:25.660 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:40:25.671 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 12.0507ms
+2026-04-18 16:40:25.696 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:40:25.702 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.1146ms
+2026-04-18 16:40:25.721 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.4995ms
+2026-04-18 16:40:27.282 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:40:27.292 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:27.294 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:40:27.297 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:40:27.306 +05:30 [INF] Executed ViewResult - view Index executed in 8.8191ms.
+2026-04-18 16:40:27.308 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 12.0817ms
+2026-04-18 16:40:27.310 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:27.311 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 30.5814ms
+2026-04-18 16:40:27.444 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:40:27.449 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.7583ms
+2026-04-18 16:40:27.456 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:40:27.490 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.9541ms
+2026-04-18 16:40:45.650 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:40:45.658 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:45.661 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:40:45.664 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:40:45.677 +05:30 [INF] Executed ViewResult - view Index executed in 13.5227ms.
+2026-04-18 16:40:45.678 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:40:45.679 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 16.2821ms
+2026-04-18 16:40:45.683 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:45.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 34.6402ms
+2026-04-18 16:40:45.686 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:45.689 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:40:45.691 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:40:45.696 +05:30 [INF] Executed ViewResult - view Index executed in 4.0302ms.
+2026-04-18 16:40:45.698 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 6.6909ms
+2026-04-18 16:40:45.699 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:45.700 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 22.8354ms
+2026-04-18 16:40:45.741 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:40:45.745 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.1613ms
+2026-04-18 16:40:45.747 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:40:45.770 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:40:45.772 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:40:45.774 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.0748ms
+2026-04-18 16:40:45.776 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.3396ms
+2026-04-18 16:40:45.799 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.5256ms
+2026-04-18 16:40:50.902 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:40:50.907 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:50.908 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:40:50.910 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:40:50.913 +05:30 [INF] Executed ViewResult - view Index executed in 3.7567ms.
+2026-04-18 16:40:50.916 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 6.1815ms
+2026-04-18 16:40:50.917 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:40:50.919 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 17.3202ms
+2026-04-18 16:40:50.942 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:40:50.943 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:40:50.946 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.3213ms
+2026-04-18 16:40:50.964 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.5869ms
+2026-04-18 16:41:59.422 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:41:59.435 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:41:59.437 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:41:59.440 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:41:59.454 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:41:59.454 +05:30 [INF] Executed ViewResult - view Index executed in 14.9293ms.
+2026-04-18 16:41:59.464 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 24.6169ms
+2026-04-18 16:41:59.466 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:41:59.466 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:41:59.467 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 45.4502ms
+2026-04-18 16:41:59.468 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:41:59.473 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:41:59.476 +05:30 [INF] Executed ViewResult - view Index executed in 3.8455ms.
+2026-04-18 16:41:59.479 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 6.3479ms
+2026-04-18 16:41:59.480 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:41:59.482 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 27.3339ms
+2026-04-18 16:41:59.617 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:41:59.621 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.6775ms
+2026-04-18 16:41:59.647 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:41:59.663 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.4747ms
+2026-04-18 16:41:59.671 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:41:59.676 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.1627ms
+2026-04-18 16:41:59.722 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:41:59.738 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.6562ms
+2026-04-18 16:42:04.529 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:42:04.533 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:42:04.534 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:42:04.536 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:42:04.542 +05:30 [INF] Executed ViewResult - view Index executed in 5.8621ms.
+2026-04-18 16:42:04.549 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 12.7289ms
+2026-04-18 16:42:04.550 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:42:04.551 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 23.1234ms
+2026-04-18 16:42:04.608 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:42:04.611 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.1313ms
+2026-04-18 16:42:04.624 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:42:04.637 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.022ms
+2026-04-18 16:42:06.653 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:42:06.658 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:42:06.659 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:42:06.661 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:42:06.665 +05:30 [INF] Executed ViewResult - view Index executed in 3.5693ms.
+2026-04-18 16:42:06.667 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 5.881ms
+2026-04-18 16:42:06.668 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:42:06.669 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 16.9033ms
+2026-04-18 16:42:06.703 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:42:06.705 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:42:06.707 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.6393ms
+2026-04-18 16:42:06.722 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.6283ms
+2026-04-18 16:42:07.351 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:42:07.357 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:42:07.359 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:42:07.361 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:42:07.366 +05:30 [INF] Executed ViewResult - view Index executed in 5.1178ms.
+2026-04-18 16:42:07.376 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 14.614ms
+2026-04-18 16:42:07.377 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:42:07.378 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 27.344ms
+2026-04-18 16:42:07.490 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:42:07.492 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:42:07.494 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.1651ms
+2026-04-18 16:42:07.510 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.8897ms
+2026-04-18 16:44:14.406 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:44:14.419 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:44:14.421 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:44:14.424 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:44:14.439 +05:30 [INF] Executed ViewResult - view Index executed in 15.2205ms.
+2026-04-18 16:44:14.440 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:44:14.445 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 21.581ms
+2026-04-18 16:44:14.451 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:44:14.453 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 46.9953ms
+2026-04-18 16:44:14.453 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:44:14.457 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:44:14.459 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:44:14.464 +05:30 [INF] Executed ViewResult - view Index executed in 4.6525ms.
+2026-04-18 16:44:14.466 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 7.5629ms
+2026-04-18 16:44:14.468 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:44:14.469 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 29.2194ms
+2026-04-18 16:44:14.615 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:44:14.619 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.1748ms
+2026-04-18 16:44:14.645 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:44:14.662 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.781ms
+2026-04-18 16:44:14.666 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:44:14.672 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.7642ms
+2026-04-18 16:44:14.720 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:44:14.736 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.3383ms
+2026-04-18 16:46:33.350 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:46:33.361 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:46:33.364 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:46:33.366 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:46:33.380 +05:30 [INF] Executed ViewResult - view Index executed in 14.1507ms.
+2026-04-18 16:46:33.380 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:46:33.385 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 19.2905ms
+2026-04-18 16:46:33.389 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:46:33.391 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 41.2348ms
+2026-04-18 16:46:33.391 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:46:33.395 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:46:33.397 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:46:33.402 +05:30 [INF] Executed ViewResult - view Index executed in 4.4076ms.
+2026-04-18 16:46:33.407 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 10.1883ms
+2026-04-18 16:46:33.409 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:46:33.410 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 29.6225ms
+2026-04-18 16:46:33.548 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:46:33.552 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.1688ms
+2026-04-18 16:46:33.572 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:46:33.592 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.5755ms
+2026-04-18 16:46:33.600 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:46:33.603 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.0986ms
+2026-04-18 16:46:33.662 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:46:33.678 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.7929ms
+2026-04-18 16:46:42.324 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Account/Register - null null
+2026-04-18 16:46:42.332 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-18 16:46:42.334 +05:30 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-18 16:46:42.351 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard/Index.
+2026-04-18 16:46:42.352 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Register (EInsurance) in 15.7935ms
+2026-04-18 16:46:42.353 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-18 16:46:42.354 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Account/Register - 302 null null 30.1384ms
+2026-04-18 16:46:42.359 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:46:42.366 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:46:42.367 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:46:42.369 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:46:42.373 +05:30 [INF] Executed ViewResult - view Index executed in 4.6604ms.
+2026-04-18 16:46:42.376 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 7.2721ms
+2026-04-18 16:46:42.377 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:46:42.378 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 18.8025ms
+2026-04-18 16:46:42.431 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:46:42.434 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.6956ms
+2026-04-18 16:46:42.445 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:46:42.459 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.7015ms
+2026-04-18 16:46:44.644 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Admin/ManageUsers - null null
+2026-04-18 16:46:44.651 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:46:44.657 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers() on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-18 16:46:44.854 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-18 16:46:44.874 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-18 16:46:44.890 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-18 16:46:44.908 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+2026-04-18 16:46:44.922 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-18 16:46:44.952 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 30.7066ms.
+2026-04-18 16:46:44.953 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 294.7519ms
+2026-04-18 16:46:44.955 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-18 16:46:44.958 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Admin/ManageUsers - 200 null text/html; charset=utf-8 314.2901ms
+2026-04-18 16:46:44.992 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:46:44.996 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.6693ms
+2026-04-18 16:46:45.011 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:46:45.025 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.1884ms
+2026-04-18 16:46:47.984 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard/Index - null null
+2026-04-18 16:46:47.989 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:46:47.990 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-18 16:46:47.991 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:46:47.995 +05:30 [INF] Executed ViewResult - view Index executed in 3.4899ms.
+2026-04-18 16:46:47.997 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 6.0436ms
+2026-04-18 16:46:47.998 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-18 16:46:47.999 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard/Index - 200 null text/html; charset=utf-8 15.2931ms
+2026-04-18 16:46:48.038 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:46:48.042 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.4984ms
+2026-04-18 16:46:49.177 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Home/Index - null null
+2026-04-18 16:46:49.182 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:46:49.183 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-18 16:46:49.184 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-18 16:46:49.187 +05:30 [INF] Executed ViewResult - view Index executed in 3.1416ms.
+2026-04-18 16:46:49.190 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 5.9126ms
+2026-04-18 16:46:49.192 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-18 16:46:49.193 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Home/Index - 200 null text/html; charset=utf-8 16.3685ms
+2026-04-18 16:46:49.237 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-18 16:46:49.241 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.8378ms
+2026-04-18 16:46:49.244 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-18 16:46:49.258 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.1845ms
