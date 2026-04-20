@@ -3017,3 +3017,594 @@ WHERE [a].[Username] = @__identifier_0 OR [a].[Email] = @__identifier_0_1
 2026-04-20 12:44:49.903 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.9205ms
 2026-04-20 12:44:49.912 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
 2026-04-20 12:44:49.926 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.1246ms
+2026-04-20 14:13:30.636 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-20 14:13:30.712 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-20 14:13:30.724 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-20 14:13:30.734 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-20 14:13:30.763 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-20 14:13:30.791 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-20 14:13:31.111 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 14:13:31.132 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 14:13:31.149 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 14:13:31.167 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 14:13:31.183 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsurancePlan] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 14:13:31.208 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Scheme] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 14:13:31.363 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-20 14:13:31.520 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-20 14:13:31.764 +05:30 [INF] Now listening on: https://localhost:7183
+2026-04-20 14:13:31.765 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-20 14:13:31.797 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-20 14:13:31.798 +05:30 [INF] Hosting environment: Development
+2026-04-20 14:13:31.799 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-20 14:13:32.337 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-20 14:13:32.533 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-20 14:13:32.546 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-20 14:13:32.560 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:13:32.674 +05:30 [INF] Executed ViewResult - view Index executed in 118.7033ms.
+2026-04-20 14:13:32.681 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 131.839ms
+2026-04-20 14:13:32.682 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-20 14:13:32.690 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 357.6907ms
+2026-04-20 14:13:32.718 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:13:32.728 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 9.8367ms
+2026-04-20 14:13:32.741 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:13:32.789 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.0639ms
+2026-04-20 14:13:39.989 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Account/Login - null null
+2026-04-20 14:13:40.003 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-20 14:13:40.008 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-20 14:13:40.014 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-20 14:13:40.065 +05:30 [INF] Executed ViewResult - view Login executed in 51.1796ms.
+2026-04-20 14:13:40.067 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 56.6391ms
+2026-04-20 14:13:40.068 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-20 14:13:40.071 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Account/Login - 200 null text/html; charset=utf-8 82.1581ms
+2026-04-20 14:13:40.126 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:13:40.131 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.6735ms
+2026-04-20 14:13:40.148 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:13:40.173 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.5689ms
+2026-04-20 14:13:53.021 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7183/Account/Login - application/x-www-form-urlencoded 245
+2026-04-20 14:13:53.032 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-20 14:13:53.049 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EInsurance.Models.Auth.LoginViewModel, System.Threading.CancellationToken) on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-20 14:13:53.336 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@__identifier_0='?' (Size = 50), @__identifier_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+WHERE [a].[Username] = @__identifier_0 OR [a].[Email] = @__identifier_0_1
+2026-04-20 14:13:53.363 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__identifier_0='?' (Size = 50), @__identifier_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+WHERE [e].[Username] = @__identifier_0 OR [e].[Email] = @__identifier_0_1
+2026-04-20 14:13:53.385 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__identifier_0='?' (Size = 50), @__identifier_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[AgentID], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+WHERE [i].[Username] = @__identifier_0 OR [i].[Email] = @__identifier_0_1
+2026-04-20 14:13:53.405 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+WHERE [c].[Email] = @__identifier_0
+2026-04-20 14:13:53.509 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard.
+2026-04-20 14:13:53.510 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 458.5245ms
+2026-04-20 14:13:53.511 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-20 14:13:53.514 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7183/Account/Login - 302 null null 493.075ms
+2026-04-20 14:13:53.518 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard - null null
+2026-04-20 14:13:53.570 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:13:53.572 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-20 14:13:53.576 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:13:53.624 +05:30 [INF] Executed ViewResult - view Index executed in 48.5764ms.
+2026-04-20 14:13:53.625 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 51.962ms
+2026-04-20 14:13:53.627 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:13:53.629 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard - 200 null text/html; charset=utf-8 110.9065ms
+2026-04-20 14:13:53.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:13:53.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:13:53.808 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 7.0448ms
+2026-04-20 14:13:53.818 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.1184ms
+2026-04-20 14:13:57.242 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/ - null null
+2026-04-20 14:13:57.249 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-20 14:13:57.250 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-20 14:13:57.252 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:13:57.256 +05:30 [INF] Executed ViewResult - view Index executed in 4.4297ms.
+2026-04-20 14:13:57.259 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 7.1099ms
+2026-04-20 14:13:57.260 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-20 14:13:57.261 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/ - 200 null text/html; charset=utf-8 19.6905ms
+2026-04-20 14:13:57.364 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:13:57.367 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.2318ms
+2026-04-20 14:13:57.378 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:13:57.391 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.2937ms
+2026-04-20 14:14:05.125 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Claims - null null
+2026-04-20 14:14:05.130 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Claims - 404 null null 5.8475ms
+2026-04-20 14:14:05.134 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7183/Claims, Response status code: 404
+2026-04-20 14:14:06.854 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard - null null
+2026-04-20 14:14:06.860 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:06.862 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-20 14:14:06.863 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:14:06.871 +05:30 [INF] Executed ViewResult - view Index executed in 7.0741ms.
+2026-04-20 14:14:06.877 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 13.3321ms
+2026-04-20 14:14:06.878 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:06.879 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard - 200 null text/html; charset=utf-8 25.3808ms
+2026-04-20 14:14:06.956 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:14:06.959 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.8145ms
+2026-04-20 14:14:08.417 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Claims - null null
+2026-04-20 14:14:08.422 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Claims - 404 null null 5.9875ms
+2026-04-20 14:14:08.425 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7183/Claims, Response status code: 404
+2026-04-20 14:14:09.716 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard - null null
+2026-04-20 14:14:09.722 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:09.723 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-20 14:14:09.725 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:14:09.732 +05:30 [INF] Executed ViewResult - view Index executed in 6.9187ms.
+2026-04-20 14:14:09.733 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 8.4753ms
+2026-04-20 14:14:09.735 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:09.736 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard - 200 null text/html; charset=utf-8 20.6618ms
+2026-04-20 14:14:09.796 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:14:09.800 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.6513ms
+2026-04-20 14:14:10.719 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Documents - null null
+2026-04-20 14:14:10.725 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Documents - 404 null null 5.8359ms
+2026-04-20 14:14:10.728 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7183/Documents, Response status code: 404
+2026-04-20 14:14:11.908 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard - null null
+2026-04-20 14:14:11.913 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:11.914 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-20 14:14:11.915 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:14:11.922 +05:30 [INF] Executed ViewResult - view Index executed in 6.4674ms.
+2026-04-20 14:14:11.923 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 8.0848ms
+2026-04-20 14:14:11.924 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:11.926 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard - 200 null text/html; charset=utf-8 18.6123ms
+2026-04-20 14:14:11.983 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:14:11.987 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.9239ms
+2026-04-20 14:14:13.379 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard - null null
+2026-04-20 14:14:13.384 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:13.385 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-20 14:14:13.387 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:14:13.393 +05:30 [INF] Executed ViewResult - view Index executed in 5.787ms.
+2026-04-20 14:14:13.394 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 7.4617ms
+2026-04-20 14:14:13.396 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:13.397 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard - 200 null text/html; charset=utf-8 18.1743ms
+2026-04-20 14:14:13.507 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:14:13.510 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:14:13.511 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.5619ms
+2026-04-20 14:14:13.526 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.5214ms
+2026-04-20 14:14:17.706 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Policies/MyPolicies - null null
+2026-04-20 14:14:17.712 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:14:17.716 +05:30 [INF] Route matched with {action = "MyPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyPolicies(System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-20 14:14:17.862 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-04-20 14:14:18.009 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-20 14:14:18.019 +05:30 [INF] Executing ViewResult, running view MyPolicies.
+2026-04-20 14:14:18.029 +05:30 [INF] Executed ViewResult - view MyPolicies executed in 10.5787ms.
+2026-04-20 14:14:18.030 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance) in 312.7267ms
+2026-04-20 14:14:18.032 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:14:18.033 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Policies/MyPolicies - 200 null text/html; charset=utf-8 326.8974ms
+2026-04-20 14:14:18.073 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:14:18.074 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:14:18.080 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 6.5052ms
+2026-04-20 14:14:18.093 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.5104ms
+2026-04-20 14:14:20.798 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard - null null
+2026-04-20 14:14:20.802 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:20.804 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-20 14:14:20.806 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:14:20.812 +05:30 [INF] Executed ViewResult - view Index executed in 6.0094ms.
+2026-04-20 14:14:20.813 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 7.4186ms
+2026-04-20 14:14:20.814 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:14:20.815 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard - 200 null text/html; charset=utf-8 17.7364ms
+2026-04-20 14:14:20.852 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:14:20.855 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.478ms
+2026-04-20 14:14:26.404 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/PolicyPurchase/AvailableSchemes - null null
+2026-04-20 14:14:26.409 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-20 14:14:26.412 +05:30 [INF] Route matched with {action = "AvailableSchemes", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AvailableSchemes() on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:14:26.556 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+ORDER BY [s].[SchemeName]
+2026-04-20 14:14:26.564 +05:30 [INF] Executing ViewResult, running view AvailableSchemes.
+2026-04-20 14:14:26.570 +05:30 [INF] Executed ViewResult - view AvailableSchemes executed in 6.4771ms.
+2026-04-20 14:14:26.572 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance) in 158.1593ms
+2026-04-20 14:14:26.573 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-20 14:14:26.574 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/PolicyPurchase/AvailableSchemes - 200 null text/html; charset=utf-8 170.2012ms
+2026-04-20 14:14:26.620 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:14:26.622 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:14:26.627 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.8134ms
+2026-04-20 14:14:26.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.7064ms
+2026-04-20 14:14:29.389 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/PolicyPurchase/CalculatePremium?schemeId=1 - null null
+2026-04-20 14:14:29.394 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-20 14:14:29.397 +05:30 [INF] Route matched with {action = "CalculatePremium", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CalculatePremium(Int32) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:14:29.529 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+ORDER BY [s].[SchemeName]
+2026-04-20 14:14:29.551 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-20 14:14:29.555 +05:30 [INF] Executing ViewResult, running view CalculatePremium.
+2026-04-20 14:14:29.585 +05:30 [INF] Executed ViewResult - view CalculatePremium executed in 31.0351ms.
+2026-04-20 14:14:29.587 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance) in 187.6876ms
+2026-04-20 14:14:29.588 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-20 14:14:29.589 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/PolicyPurchase/CalculatePremium?schemeId=1 - 200 null text/html; charset=utf-8 199.9341ms
+2026-04-20 14:14:29.631 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:14:29.635 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:14:29.635 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.3972ms
+2026-04-20 14:14:29.649 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.8774ms
+2026-04-20 14:15:27.212 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7183/PolicyPurchase/CalculatePremium - application/x-www-form-urlencoded 429
+2026-04-20 14:15:27.222 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-20 14:15:27.232 +05:30 [INF] Route matched with {action = "CalculatePremium", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CalculatePremium(EInsurance.Models.Policies.PremiumCalculationInputViewModel) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:15:27.443 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__schemeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+WHERE [s].[SchemeID] = @__schemeId_0
+2026-04-20 14:15:27.632 +05:30 [INF] Executing RedirectResult, redirecting to /PolicyPurchase/ConfirmPremium?schemeId=1.
+2026-04-20 14:15:27.635 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance) in 401.0449ms
+2026-04-20 14:15:27.637 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-20 14:15:27.638 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7183/PolicyPurchase/CalculatePremium - 302 null null 425.9653ms
+2026-04-20 14:15:27.645 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/PolicyPurchase/ConfirmPremium?schemeId=1 - null null
+2026-04-20 14:15:27.651 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-20 14:15:27.654 +05:30 [INF] Route matched with {action = "ConfirmPremium", controller = "PolicyPurchase"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ConfirmPremium(Int32) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:15:27.662 +05:30 [INF] Executing ViewResult, running view ConfirmPremium.
+2026-04-20 14:15:27.787 +05:30 [INF] Executed ViewResult - view ConfirmPremium executed in 125.6432ms.
+2026-04-20 14:15:27.789 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance) in 133.3666ms
+2026-04-20 14:15:27.791 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-20 14:15:27.793 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/PolicyPurchase/ConfirmPremium?schemeId=1 - 200 null text/html; charset=utf-8 148.2734ms
+2026-04-20 14:15:27.879 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:15:27.887 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:15:27.895 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 7.5061ms
+2026-04-20 14:15:27.908 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.6186ms
+2026-04-20 14:16:10.782 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7183/PolicyPurchase/ConfirmPremium - application/x-www-form-urlencoded 407
+2026-04-20 14:16:10.797 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-20 14:16:10.804 +05:30 [INF] Route matched with {action = "ConfirmPremium", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ConfirmPremium(EInsurance.Models.Policies.PremiumConfirmationViewModel) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:16:10.962 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__schemeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+WHERE [s].[SchemeID] = @__schemeId_0
+2026-04-20 14:16:11.085 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Date), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Date), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Policy] ([CreatedAt], [CustomerID], [DateIssued], [MaturityPeriod], [PolicyDetails], [PolicyLapseDate], [Premium], [SchemeID])
+OUTPUT INSERTED.[PolicyID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-04-20 14:16:11.128 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Date), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payment] ([Amount], [CreatedAt], [CustomerID], [PaymentDate], [PolicyID])
+OUTPUT INSERTED.[PaymentID]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-04-20 14:16:11.133 +05:30 [INF] Executing RedirectResult, redirecting to /PolicyPurchase/Confirmation?policyId=3.
+2026-04-20 14:16:11.134 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance) in 327.9989ms
+2026-04-20 14:16:11.135 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-20 14:16:11.136 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7183/PolicyPurchase/ConfirmPremium - 302 null null 353.4816ms
+2026-04-20 14:16:11.141 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/PolicyPurchase/Confirmation?policyId=3 - null null
+2026-04-20 14:16:11.145 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.Confirmation (EInsurance)'
+2026-04-20 14:16:11.148 +05:30 [INF] Route matched with {action = "Confirmation", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Confirmation(Int32) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:16:11.151 +05:30 [INF] Executing ViewResult, running view Confirmation.
+2026-04-20 14:16:11.156 +05:30 [INF] Executed ViewResult - view Confirmation executed in 6.0618ms.
+2026-04-20 14:16:11.158 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.Confirmation (EInsurance) in 8.4535ms
+2026-04-20 14:16:11.159 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.Confirmation (EInsurance)'
+2026-04-20 14:16:11.160 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/PolicyPurchase/Confirmation?policyId=3 - 200 null text/html; charset=utf-8 18.9619ms
+2026-04-20 14:16:11.213 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:16:11.216 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.9406ms
+2026-04-20 14:16:11.230 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:16:11.250 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.5234ms
+2026-04-20 14:16:14.751 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Policies/MyPolicies - null null
+2026-04-20 14:16:14.756 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:16:14.757 +05:30 [INF] Route matched with {action = "MyPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyPolicies(System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-20 14:16:14.916 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-20 14:16:14.919 +05:30 [INF] Executing ViewResult, running view MyPolicies.
+2026-04-20 14:16:14.923 +05:30 [INF] Executed ViewResult - view MyPolicies executed in 4.1012ms.
+2026-04-20 14:16:14.924 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance) in 165.9517ms
+2026-04-20 14:16:14.926 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:16:14.927 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Policies/MyPolicies - 200 null text/html; charset=utf-8 176.1836ms
+2026-04-20 14:16:14.988 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:16:14.989 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:16:14.992 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.0241ms
+2026-04-20 14:16:15.007 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.3824ms
+2026-04-20 14:16:52.501 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/PolicyPurchase/AvailableSchemes - null null
+2026-04-20 14:16:52.509 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-20 14:16:52.513 +05:30 [INF] Route matched with {action = "AvailableSchemes", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AvailableSchemes() on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:16:52.656 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+ORDER BY [s].[SchemeName]
+2026-04-20 14:16:52.659 +05:30 [INF] Executing ViewResult, running view AvailableSchemes.
+2026-04-20 14:16:52.663 +05:30 [INF] Executed ViewResult - view AvailableSchemes executed in 3.9227ms.
+2026-04-20 14:16:52.668 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance) in 153.3398ms
+2026-04-20 14:16:52.669 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-20 14:16:52.670 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/PolicyPurchase/AvailableSchemes - 200 null text/html; charset=utf-8 170.0735ms
+2026-04-20 14:16:52.736 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:16:52.741 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:16:52.745 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.6843ms
+2026-04-20 14:16:52.760 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.4574ms
+2026-04-20 14:16:54.731 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Policies/MyPolicies - null null
+2026-04-20 14:16:54.736 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:16:54.737 +05:30 [INF] Route matched with {action = "MyPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyPolicies(System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-20 14:16:54.878 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-20 14:16:54.880 +05:30 [INF] Executing ViewResult, running view MyPolicies.
+2026-04-20 14:16:54.884 +05:30 [INF] Executed ViewResult - view MyPolicies executed in 3.1022ms.
+2026-04-20 14:16:54.885 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance) in 146.3964ms
+2026-04-20 14:16:54.886 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:16:54.888 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Policies/MyPolicies - 200 null text/html; charset=utf-8 156.6911ms
+2026-04-20 14:16:54.936 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:16:54.940 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.074ms
+2026-04-20 14:16:57.618 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard - null null
+2026-04-20 14:16:57.623 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:16:57.624 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-20 14:16:57.626 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:16:57.632 +05:30 [INF] Executed ViewResult - view Index executed in 5.8272ms.
+2026-04-20 14:16:57.633 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 7.0979ms
+2026-04-20 14:16:57.634 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:16:57.635 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard - 200 null text/html; charset=utf-8 17.3908ms
+2026-04-20 14:16:57.696 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:16:57.696 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:16:57.699 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.1843ms
+2026-04-20 14:16:57.713 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.0103ms
+2026-04-20 14:17:04.321 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Policies/MyPolicies - null null
+2026-04-20 14:17:04.326 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:17:04.327 +05:30 [INF] Route matched with {action = "MyPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyPolicies(System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-20 14:17:04.459 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-20 14:17:04.462 +05:30 [INF] Executing ViewResult, running view MyPolicies.
+2026-04-20 14:17:04.465 +05:30 [INF] Executed ViewResult - view MyPolicies executed in 3.2218ms.
+2026-04-20 14:17:04.467 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance) in 139.4295ms
+2026-04-20 14:17:04.469 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:17:04.470 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Policies/MyPolicies - 200 null text/html; charset=utf-8 149.3233ms
+2026-04-20 14:17:04.519 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:17:04.526 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:17:04.534 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 7.6227ms
+2026-04-20 14:17:04.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.7361ms
+2026-04-20 14:17:06.102 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Dashboard - null null
+2026-04-20 14:17:06.106 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:17:06.107 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-20 14:17:06.109 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-20 14:17:06.115 +05:30 [INF] Executed ViewResult - view Index executed in 5.8615ms.
+2026-04-20 14:17:06.116 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 7.3435ms
+2026-04-20 14:17:06.117 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-20 14:17:06.118 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Dashboard - 200 null text/html; charset=utf-8 16.9735ms
+2026-04-20 14:17:06.164 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:17:06.167 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.6406ms
+2026-04-20 14:17:18.087 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/PolicyPurchase/AvailableSchemes - null null
+2026-04-20 14:17:18.091 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-20 14:17:18.092 +05:30 [INF] Route matched with {action = "AvailableSchemes", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AvailableSchemes() on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:17:18.218 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+ORDER BY [s].[SchemeName]
+2026-04-20 14:17:18.221 +05:30 [INF] Executing ViewResult, running view AvailableSchemes.
+2026-04-20 14:17:18.224 +05:30 [INF] Executed ViewResult - view AvailableSchemes executed in 3.4652ms.
+2026-04-20 14:17:18.226 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance) in 132.6442ms
+2026-04-20 14:17:18.227 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-20 14:17:18.228 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/PolicyPurchase/AvailableSchemes - 200 null text/html; charset=utf-8 141.4102ms
+2026-04-20 14:17:18.279 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:17:18.280 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:17:18.285 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 5.1349ms
+2026-04-20 14:17:18.294 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.6312ms
+2026-04-20 14:17:19.485 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/PolicyPurchase/CalculatePremium?schemeId=1 - null null
+2026-04-20 14:17:19.489 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-20 14:17:19.490 +05:30 [INF] Route matched with {action = "CalculatePremium", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CalculatePremium(Int32) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:17:19.612 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+ORDER BY [s].[SchemeName]
+2026-04-20 14:17:19.634 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-20 14:17:19.636 +05:30 [INF] Executing ViewResult, running view CalculatePremium.
+2026-04-20 14:17:19.641 +05:30 [INF] Executed ViewResult - view CalculatePremium executed in 4.4286ms.
+2026-04-20 14:17:19.642 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance) in 150.7216ms
+2026-04-20 14:17:19.643 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-20 14:17:19.644 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/PolicyPurchase/CalculatePremium?schemeId=1 - 200 null text/html; charset=utf-8 159.9542ms
+2026-04-20 14:17:19.704 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:17:19.704 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:17:19.708 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.4663ms
+2026-04-20 14:17:19.721 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.1699ms
+2026-04-20 14:18:12.049 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7183/PolicyPurchase/CalculatePremium - application/x-www-form-urlencoded 432
+2026-04-20 14:18:12.062 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-20 14:18:12.063 +05:30 [INF] Route matched with {action = "CalculatePremium", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CalculatePremium(EInsurance.Models.Policies.PremiumCalculationInputViewModel) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:18:12.198 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__schemeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+WHERE [s].[SchemeID] = @__schemeId_0
+2026-04-20 14:18:12.237 +05:30 [INF] Executing RedirectResult, redirecting to /PolicyPurchase/ConfirmPremium?schemeId=1.
+2026-04-20 14:18:12.238 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance) in 174.0376ms
+2026-04-20 14:18:12.239 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-20 14:18:12.240 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7183/PolicyPurchase/CalculatePremium - 302 null null 190.9423ms
+2026-04-20 14:18:12.247 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/PolicyPurchase/ConfirmPremium?schemeId=1 - null null
+2026-04-20 14:18:12.251 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-20 14:18:12.252 +05:30 [INF] Route matched with {action = "ConfirmPremium", controller = "PolicyPurchase"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ConfirmPremium(Int32) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:18:12.254 +05:30 [INF] Executing ViewResult, running view ConfirmPremium.
+2026-04-20 14:18:12.259 +05:30 [INF] Executed ViewResult - view ConfirmPremium executed in 5.2454ms.
+2026-04-20 14:18:12.265 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance) in 12.0326ms
+2026-04-20 14:18:12.267 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-20 14:18:12.268 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/PolicyPurchase/ConfirmPremium?schemeId=1 - 200 null text/html; charset=utf-8 21.1116ms
+2026-04-20 14:18:12.329 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:18:12.335 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:18:12.346 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 11.3711ms
+2026-04-20 14:18:12.351 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.8012ms
+2026-04-20 14:18:51.119 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7183/PolicyPurchase/ConfirmPremium - application/x-www-form-urlencoded 419
+2026-04-20 14:18:51.124 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-20 14:18:51.125 +05:30 [INF] Route matched with {action = "ConfirmPremium", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ConfirmPremium(EInsurance.Models.Policies.PremiumConfirmationViewModel) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:18:51.271 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__schemeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+WHERE [s].[SchemeID] = @__schemeId_0
+2026-04-20 14:18:51.287 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Date), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Date), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Policy] ([CreatedAt], [CustomerID], [DateIssued], [MaturityPeriod], [PolicyDetails], [PolicyLapseDate], [Premium], [SchemeID])
+OUTPUT INSERTED.[PolicyID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-04-20 14:18:51.301 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Date), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payment] ([Amount], [CreatedAt], [CustomerID], [PaymentDate], [PolicyID])
+OUTPUT INSERTED.[PaymentID]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-04-20 14:18:51.304 +05:30 [INF] Executing RedirectResult, redirecting to /PolicyPurchase/Confirmation?policyId=4.
+2026-04-20 14:18:51.305 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance) in 178.0465ms
+2026-04-20 14:18:51.306 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-20 14:18:51.307 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7183/PolicyPurchase/ConfirmPremium - 302 null null 187.8348ms
+2026-04-20 14:18:51.313 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/PolicyPurchase/Confirmation?policyId=4 - null null
+2026-04-20 14:18:51.317 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.Confirmation (EInsurance)'
+2026-04-20 14:18:51.318 +05:30 [INF] Route matched with {action = "Confirmation", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Confirmation(Int32) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-20 14:18:51.320 +05:30 [INF] Executing ViewResult, running view Confirmation.
+2026-04-20 14:18:51.321 +05:30 [INF] Executed ViewResult - view Confirmation executed in 1.7057ms.
+2026-04-20 14:18:51.322 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.Confirmation (EInsurance) in 3.0495ms
+2026-04-20 14:18:51.324 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.Confirmation (EInsurance)'
+2026-04-20 14:18:51.325 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/PolicyPurchase/Confirmation?policyId=4 - 200 null text/html; charset=utf-8 12.8031ms
+2026-04-20 14:18:51.380 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:18:51.383 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 3.9891ms
+2026-04-20 14:18:51.398 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:18:51.417 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.9047ms
+2026-04-20 14:19:04.586 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/Policies/MyPolicies - null null
+2026-04-20 14:19:04.590 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:19:04.591 +05:30 [INF] Route matched with {action = "MyPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyPolicies(System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-20 14:19:04.731 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-20 14:19:04.734 +05:30 [INF] Executing ViewResult, running view MyPolicies.
+2026-04-20 14:19:04.737 +05:30 [INF] Executed ViewResult - view MyPolicies executed in 3.5991ms.
+2026-04-20 14:19:04.742 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance) in 149.7112ms
+2026-04-20 14:19:04.744 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-20 14:19:04.745 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/Policies/MyPolicies - 200 null text/html; charset=utf-8 159.3022ms
+2026-04-20 14:19:04.796 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-20 14:19:04.797 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7183/_vs/browserLink - null null
+2026-04-20 14:19:04.800 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_framework/aspnetcore-browser-refresh.js - 200 14925 application/javascript; charset=utf-8 4.3354ms
+2026-04-20 14:19:04.814 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7183/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.5002ms

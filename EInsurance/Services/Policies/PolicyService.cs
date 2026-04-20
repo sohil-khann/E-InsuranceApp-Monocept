@@ -20,6 +20,7 @@ public class PolicyService(IPolicyRepository policyRepository) : IPolicyService
             CustomerId = customerPolicies.CustomerId,
             CustomerName = customerPolicies.FullName,
             CustomerEmail = customerPolicies.Email,
+            DateOfBirth = customerPolicies.DateOfBirth,
             Policies = customerPolicies.Policies.Select(policy => new PolicyDetailsViewModel
             {
                 PolicyId = policy.PolicyId,

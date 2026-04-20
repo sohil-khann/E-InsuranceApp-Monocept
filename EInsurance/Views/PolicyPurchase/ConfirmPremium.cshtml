@@ -1,0 +1,386 @@
+@model EInsurance.Models.Policies.PremiumConfirmationViewModel
+
+@{
+    ViewData["Title"] = "Premium Confirmation | Guardian Insurance";
+}
+
+<style>
+    :root {
+        --primary-color: #006b54;
+        --primary-light: #22b590;
+        --surface: #f4fbf6;
+        --surface-container: #eff5f0;
+        --on-surface: #1a1b1a;
+    }
+
+    body {
+        background-color: var(--surface);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .confirmation-container {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    /* Left Panel - Policy Details */
+    .confirmation-left {
+        background: white;
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .confirmation-header {
+        margin-bottom: 2rem;
+    }
+
+    .confirmation-header .protocol-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+
+    .confirmation-header h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        color: var(--on-surface);
+    }
+
+    .confirmation-header .subtitle {
+        color: #6b7280;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .quote-details {
+        background: var(--surface-container);
+        border-radius: 1rem;
+        padding: 2rem;
+        margin: 2rem 0;
+    }
+
+    .detail-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .detail-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detail-label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+    }
+
+    .detail-value {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--on-surface);
+    }
+
+    .detail-subvalue {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-top: 0.25rem;
+    }
+
+    .premium-highlight {
+        grid-column: 1 / -1;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e5e7eb;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .premium-box {
+        text-align: center;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 0.75rem;
+        border: 2px solid var(--primary-light);
+    }
+
+    .premium-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .premium-amount {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--primary-light);
+    }
+
+    /* Right Panel - Form */
+    .confirmation-right {
+        background: white;
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .confirmation-form h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: var(--on-surface);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--on-surface);
+        display: block;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        transition: all 0.2s;
+        background-color: var(--surface);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(0, 107, 84, 0.1);
+    }
+
+    .terms-notice {
+        background: #fef3c7;
+        border-left: 4px solid #f59e0b;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin: 2rem 0;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: #78350f;
+    }
+
+    .terms-notice strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #92400e;
+    }
+
+    .action-buttons {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .btn-submit {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        box-shadow: 0 4px 12px rgba(0, 107, 84, 0.2);
+    }
+
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 107, 84, 0.3);
+    }
+
+    .btn-cancel {
+        background: var(--surface-container);
+        color: var(--on-surface);
+        border: none;
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .btn-cancel:hover {
+        background: #e5e7eb;
+    }
+
+    .validation-error {
+        color: #dc2626;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+        display: block;
+    }
+
+    @@media (max-width: 1024px) {
+        .confirmation-container {
+            grid-template-columns: 1fr;
+        }
+
+        .detail-row {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .confirmation-left,
+        .confirmation-right {
+            padding: 2rem;
+        }
+
+        .confirmation-header h2 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<div class="confirmation-container">
+    <!-- Left Panel: Premium Summary -->
+    <div class="confirmation-left">
+        <div class="confirmation-header">
+            <span class="protocol-label">Veridian Protocol</span>
+            <h2>Premium<br /><span style="color: var(--primary-light);">Confirmation.</span></h2>
+            <p class="subtitle">Review your calculated premium and complete your policy purchase securely.</p>
+        </div>
+
+        <div class="quote-details">
+            <div class="detail-row">
+                <div class="detail-item">
+                    <span class="detail-label">Quote ID</span>
+                    <span class="detail-value">@Model.QuoteId</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Policy Scheme</span>
+                    <span class="detail-value">@Model.SchemeName</span>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-item">
+                    <span class="detail-label">Coverage Amount</span>
+                    <span class="detail-value">@Model.SumAssured.ToString("C")</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Maturity Period</span>
+                    <span class="detail-value">@(Model.MaturityPeriodMonths) mo</span>
+                    <span class="detail-subvalue">@(Model.MaturityPeriodMonths / 12.0):F1 years</span>
+                </div>
+            </div>
+
+            <div class="premium-highlight">
+                <div class="premium-box">
+                    <div class="premium-label">Total Premium</div>
+                    <div class="premium-amount">@Model.CalculatedPremium.ToString("C")</div>
+                </div>
+                <div class="premium-box">
+                    <div class="premium-label">Monthly EMI</div>
+                    <div class="premium-amount">@((Model.CalculatedPremium / Model.MaturityPeriodMonths).ToString("C"))</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel: Confirmation Form -->
+    <div class="confirmation-right">
+        <div class="confirmation-form">
+            <h3>Complete Your Purchase</h3>
+
+            <form asp-action="ConfirmPremium" method="post" novalidate>
+                @Html.AntiForgeryToken()
+
+                @if (ViewBag.Errors != null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Errors
+                    </div>
+                }
+
+                <!-- Hidden fields -->
+                <input type="hidden" asp-for="SchemeId" />
+                <input type="hidden" asp-for="SchemeName" />
+                <input type="hidden" asp-for="CalculatedPremium" />
+                <input type="hidden" asp-for="MaturityPeriodMonths" />
+                <input type="hidden" asp-for="SumAssured" />
+                <input type="hidden" asp-for="QuoteId" />
+
+                <!-- Beneficiary Name -->
+                <div class="form-group">
+                    <label asp-for="BeneficiaryName">Beneficiary Name</label>
+                    <input asp-for="BeneficiaryName" type="text" placeholder="Enter beneficiary's full name" />
+                    <span asp-validation-for="BeneficiaryName" class="validation-error"></span>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="form-group">
+                    <label asp-for="PaymentMethod">Payment Method</label>
+                    <select asp-for="PaymentMethod">
+                        <option value="">-- Select Payment Method --</option>
+                        <option value="Credit Card">💳 Credit Card</option>
+                        <option value="Debit Card">💳 Debit Card</option>
+                        <option value="Net Banking">🏦 Net Banking</option>
+                        <option value="UPI">📱 UPI</option>
+                        <option value="Cheque">📄 Cheque</option>
+                    </select>
+                    <span asp-validation-for="PaymentMethod" class="validation-error"></span>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="terms-notice">
+                    <strong>⚠️ Terms & Conditions</strong>
+                    By proceeding, you agree to the terms and conditions of the policy. 
+                    The calculated premium is valid for 24 hours from calculation. 
+                    Final approval is subject to document verification.
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button type="submit" class="btn-submit">✓ Proceed to Payment</button>
+                    <a href="@Url.Action("AvailableSchemes")" class="btn-cancel">← Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

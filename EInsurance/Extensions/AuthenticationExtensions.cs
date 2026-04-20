@@ -4,6 +4,7 @@ using EInsurance.Repository;
 using EInsurance.Security;
 using EInsurance.Services.Authentication;
 using EInsurance.Services.Policies;
+using EInsurance.Services.Premium;
 using EInsurance.Services.Registration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -67,6 +68,7 @@ public static class AuthenticationExtensions
         services.AddScoped<IPolicyService, PolicyService>();
         services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
         services.AddScoped<IRegistrationService, RegistrationService>();
+        services.AddScoped<IPremiumCalculationService, PremiumCalculationService>();
 
         return services;
     }

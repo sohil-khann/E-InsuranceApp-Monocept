@@ -1,0 +1,403 @@
+@model EInsurance.Models.Policies.PremiumCalculationInputViewModel
+
+@{
+    ViewData["Title"] = "Premium Calculator | Guardian Insurance";
+}
+
+<style>
+    :root {
+        --primary-color: #006b54;
+        --primary-light: #22b590;
+        --surface: #f4fbf6;
+        --surface-container: #eff5f0;
+        --on-surface: #1a1b1a;
+    }
+
+    body {
+        background-color: var(--surface);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .calculator-wrapper {
+        min-height: 100vh;
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    /* Left Section - Branding */
+    .calculator-branding {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .branding-header {
+        margin-bottom: 3rem;
+    }
+
+    .branding-header .brand-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .branding-header h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 1rem;
+        color: var(--on-surface);
+    }
+
+    .branding-header h1 .highlight {
+        color: var(--primary-light);
+        display: block;
+    }
+
+    .branding-header .description {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: #6b7280;
+        margin-bottom: 2rem;
+    }
+
+    .branding-image {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+        border-radius: 1rem;
+        padding: 3rem;
+        color: white;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .branding-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="400" height="400" fill="url(%23grid)"/></svg>');
+        opacity: 0.5;
+    }
+
+    .branding-quote {
+        position: relative;
+        z-index: 1;
+        font-size: 1rem;
+        font-style: italic;
+        line-height: 1.8;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.15);
+        border-left: 4px solid white;
+        border-radius: 0.5rem;
+    }
+
+    .branding-quote p {
+        margin: 0;
+    }
+
+    .branding-quote .attribution {
+        font-size: 0.875rem;
+        margin-top: 1rem;
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    /* Right Section - Calculator Form */
+    .calculator-form-section {
+        background: white;
+        border-radius: 1rem;
+        padding: 3rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .calculator-form-section h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        color: var(--on-surface);
+    }
+
+    .form-group {
+        margin-bottom: 2rem;
+    }
+
+    .form-group label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #6b7280;
+        display: block;
+        margin-bottom: 0.75rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        background-color: var(--surface-container);
+        color: var(--on-surface);
+        transition: all 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(0, 107, 84, 0.1);
+    }
+
+    .form-group input::placeholder {
+        color: #9ca3af;
+    }
+
+    .input-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .input-wrapper input {
+        flex: 1;
+    }
+
+    .input-unit {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #6b7280;
+        background: var(--surface-container);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid #e5e7eb;
+        white-space: nowrap;
+    }
+
+    .form-hint {
+        font-size: 0.875rem;
+        color: #9ca3af;
+        margin-top: 0.5rem;
+    }
+
+    .info-box {
+        background: linear-gradient(135deg, rgba(0, 107, 84, 0.05) 0%, rgba(34, 181, 144, 0.05) 100%);
+        border-left: 4px solid var(--primary-light);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        margin: 2rem 0;
+    }
+
+    .info-box strong {
+        display: block;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .info-box p {
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: #6b7280;
+        margin: 0;
+    }
+
+    .formula {
+        font-family: 'Courier New', monospace;
+        background: var(--surface-container);
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+        color: var(--primary-color);
+    }
+
+    .button-group {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .btn-calculate {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        box-shadow: 0 4px 12px rgba(0, 107, 84, 0.2);
+    }
+
+    .btn-calculate:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 107, 84, 0.3);
+    }
+
+    .btn-back {
+        background: var(--surface-container);
+        color: var(--on-surface);
+        border: none;
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+    }
+
+    .btn-back:hover {
+        background: #e5e7eb;
+    }
+
+    .validation-error {
+        color: #dc2626;
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+    }
+
+    @@media (max-width: 1200px) {
+        .calculator-wrapper {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .branding-header h1 {
+            font-size: 2.5rem;
+        }
+
+        .branding-image {
+            min-height: 300px;
+        }
+    }
+
+    @@media (max-width: 768px) {
+        .calculator-wrapper {
+            padding: 1rem;
+        }
+
+        .calculator-form-section {
+            padding: 1.5rem;
+        }
+
+        .button-group {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="calculator-wrapper">
+    <!-- Left: Branding & Introduction -->
+    <div class="calculator-branding">
+        <div class="branding-header">
+            <span class="brand-label">Veridian Protocol</span>
+            <h1>Premium<span class="highlight">Calculator.</span></h1>
+            <p class="description">Quantify your security with our institutional-grade estimation engine. Transparent, data-driven, and tailored to your risk profile.</p>
+        </div>
+
+        <div class="branding-image">
+            <div class="branding-quote">
+                <p>"The most accurate forecasting tool in the modern insurance market."</p>
+                <div class="attribution">— Veridian Report 2024</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right: Calculator Form -->
+    <div class="calculator-form-section">
+        <h2>Calculate Your Premium</h2>
+
+        <form asp-action="CalculatePremium" method="post" novalidate>
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="SchemeId" />
+            <input type="hidden" asp-for="SchemeName" />
+
+            <!-- Scheme Display -->
+            <div class="form-group">
+                <label>Policy Scheme</label>
+                <input type="text" value="@Model.SchemeName" readonly style="opacity: 0.7;" />
+            </div>
+
+            <!-- Your Age -->
+            <div class="form-group">
+                <label asp-for="CustomerAge">Your Age</label>
+                <input asp-for="CustomerAge" type="number" placeholder="Auto-detected from profile" readonly style="background-color: #f3f4f6; cursor: not-allowed;" />
+                <span asp-validation-for="CustomerAge" class="validation-error"></span>
+                <p class="form-hint">Automatically calculated from your date of birth</p>
+            </div>
+
+            <!-- Coverage Amount -->
+            <div class="form-group">
+                <label asp-for="SumAssured">Coverage Amount</label>
+                <div class="input-wrapper">
+                    <span style="font-weight: 700; color: #6b7280;">₹</span>
+                    <input asp-for="SumAssured" type="number" step="10000" placeholder="1,000,000" />
+                </div>
+                <span asp-validation-for="SumAssured" class="validation-error"></span>
+                <p class="form-hint">Range: ₹1,000 - ₹10,000,000 | Your protection amount</p>
+            </div>
+
+            <!-- Maturity Period -->
+            <div class="form-group">
+                <label asp-for="MaturityPeriodMonths">Maturity Period</label>
+                <div class="input-wrapper">
+                    <input asp-for="MaturityPeriodMonths" type="number" placeholder="60" />
+                    <span class="input-unit">Months</span>
+                </div>
+                <span asp-validation-for="MaturityPeriodMonths" class="validation-error"></span>
+                <p class="form-hint">Range: 12 - 360 months (1 - 30 years)</p>
+            </div>
+
+            <!-- Beneficiary Name -->
+            <div class="form-group">
+                <label asp-for="BeneficiaryName">Beneficiary Name <span style="color: #9ca3af;">(Optional)</span></label>
+                <input asp-for="BeneficiaryName" type="text" placeholder="Full name of beneficiary" />
+                <span asp-validation-for="BeneficiaryName" class="validation-error"></span>
+            </div>
+
+            <!-- Information Box -->
+            <div class="info-box">
+                <strong>⚙️ How Premium is Calculated</strong>
+                <p>
+                    Premium = <span class="formula">(Sum Assured × (Rate + Risk Factor)) ÷ Period</span>
+                    <br /><br />
+                    Risk factor is dynamically adjusted based on your age to ensure precise premium calculation.
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button type="submit" class="btn-calculate">
+                    📊 Calculate Premium
+                </button>
+                <a href="@Url.Action("AvailableSchemes")" class="btn-back">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

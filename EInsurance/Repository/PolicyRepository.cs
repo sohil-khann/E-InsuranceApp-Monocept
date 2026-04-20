@@ -30,6 +30,7 @@ public class PolicyRepository(ApplicationDbContext dbContext) : IPolicyRepositor
                 customer.CustomerId,
                 customer.FullName,
                 customer.Email,
+                customer.DateOfBirth,
                 customer.Policies
                     .OrderByDescending(policy => policy.DateIssued)
                     .Select(policy => new PolicyDetailsDto(
