@@ -3,85 +3,321 @@
 
 @{
     ViewData["Title"] = "Dashboard";
+    var isCustomer = Model.Role == RoleNames.Customer;
+    var isAdmin = Model.Role == RoleNames.Admin;
+    var isEmployee = Model.Role == RoleNames.Employee;
 }
 
-<div class="hero-card">
-    <span class="eyebrow">Authorized Access</span>
-    <h1 class="display-6 fw-semibold mt-3">Welcome, @Model.DisplayName</h1>
-    <p class="lead mt-3 mb-0">@Model.Message</p>
-</div>
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardian Portal | @ViewData["Title"]</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet" />
+    <style>
+        body {
 
-<div class="row g-4 mt-2">
-    <div class="col-lg-4">
-        <div class="info-card h-100">
-            <h2>Your role</h2>
-            <p class="mb-0">@Model.Role</p>
+        font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+        darkMode: "class",
+        theme: {
+        extend: {
+        colors: {
+        "on-primary-fixed-variant": "#00513e",
+        "surface-bright": "#f4fbf6",
+        "primary": "#006b54",
+        "primary-container": "#22b590",
+        "tertiary": "#9e4035",
+        "outline": "#6c7a74",
+        "inverse-on-surface": "#ecf2ed",
+        "on-error": "#ffffff",
+        "surface-container-high": "#e3eae5",
+        "on-surface": "#171d1a",
+        "error": "#ba1a1a",
+        "surface-container-lowest": "#ffffff",
+        "secondary-container": "#bcedd9",
+        "surface-container-highest": "#dde4df",
+        "on-tertiary-fixed": "#410001",
+        "tertiary-fixed": "#ffdad5",
+        "on-secondary-fixed": "#002117",
+        "on-background": "#171d1a",
+        "on-error-container": "#93000a",
+        "background": "#f4fbf6",
+        "surface-dim": "#d5dcd7",
+        "on-surface-variant": "#3d4a44",
+        "on-secondary": "#ffffff",
+        "surface-container-low": "#eff5f0",
+        "tertiary-container": "#f28071",
+        "error-container": "#ffdad6",
+        "surface-variant": "#dde4df",
+        "inverse-surface": "#2b322f",
+        "secondary": "#3a6757",
+        "on-primary": "#ffffff",
+        "on-primary-container": "#004030",
+        "outline-variant": "#bbcac2",
+        "on-primary-fixed": "#002117",
+        "on-tertiary-fixed-variant": "#7f2920",
+        "surface-container": "#e9efea",
+        "primary-fixed": "#77f9d0",
+        "secondary-fixed": "#bcedd9",
+        "primary-fixed-dim": "#58dcb5",
+        "secondary-fixed-dim": "#a1d1be",
+        "on-secondary-fixed-variant": "#214f40",
+        "on-secondary-container": "#406d5d",
+        "on-tertiary": "#ffffff",
+        "surface": "#f4fbf6",
+        "inverse-primary": "#58dcb5",
+        "on-tertiary-container": "#6b1a13",
+        "surface-tint": "#006b54",
+        "tertiary-fixed-dim": "#ffb4a9"
+        },
+        borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
+        },
+        fontFamily: {
+        headline: ["Inter"],
+        body: ["Inter"],
+        label: ["Inter"]
+        }
+        }
+        }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+
+    <!-- Top Navigation with functional links and Logout -->
+    <nav class="w-full top-0 sticky z-50 bg-[#eff5f0] flex justify-between items-center px-12 py-6 max-w-full">
+        <div class="flex items-center space-x-12">
+            <span class="text-2xl font-black tracking-tighter text-[#006b54]">Guardian Insurance</span>
+            <div class="hidden md:flex space-x-8">
+                <a asp-controller="Claims" asp-action="Index" class="font-sans font-medium text-sm tracking-tight text-[#406d5d] hover:text-[#22b590] transition-colors duration-200">Claims</a>
+                <a asp-controller="Policies" asp-action="MyPolicies" class="font-sans font-medium text-sm tracking-tight text-[#006b54] border-b-2 border-[#006b54] pb-1">Policies</a>
+                <a asp-controller="Support" asp-action="Index" class="font-sans font-medium text-sm tracking-tight text-[#406d5d] hover:text-[#22b590] transition-colors duration-200">Support</a>
+                <a asp-controller="Agents" asp-action="FindAgent" class="font-sans font-medium text-sm tracking-tight text-[#406d5d] hover:text-[#22b590] transition-colors duration-200">Find Agent</a>
+            </div>
         </div>
+        <div class="flex items-center space-x-6">
+            <div class="hidden lg:flex items-center bg-surface-container-high rounded-full px-4 py-2 border-none">
+                <span class="material-symbols-outlined text-outline text-sm">search</span>
+                <input class="bg-transparent border-none focus:ring-0 text-sm ml-2 w-48" placeholder="Search portal..." type="text" />
+            </div>
+            <div class="flex space-x-4">
+                <button class="material-symbols-outlined text-[#006b54] active:scale-95 transition-transform duration-200">notifications</button>
+                <!-- Logout button as a form -->
+                <form asp-controller="Account" asp-action="Logout" method="post" class="inline">
+                    <button type="submit" class="material-symbols-outlined text-[#006b54] active:scale-95 transition-transform duration-200 hover:text-red-600" title="Logout">logout</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex flex-1">
+        <!-- Sidebar with functional links -->
+        <aside class="hidden md:flex flex-col h-[calc(100vh-88px)] w-72 py-8 px-6 space-y-2 bg-[#eff5f0] sticky top-[88px]">
+            <div class="mb-8 px-4">
+                <h2 class="text-lg font-bold text-[#006b54]">Guardian Portal</h2>
+                <p class="text-[10px] tracking-widest uppercase font-bold text-outline">Veridian Protocol</p>
+            </div>
+            <nav class="flex-1 space-y-1">
+                <a asp-controller="Dashboard" asp-action="Index" class="flex items-center space-x-3 text-[#406d5d] px-4 py-3 hover:bg-[#dde4df] transition-all duration-300 rounded-lg active:translate-x-1">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="font-sans text-sm tracking-tight">Dashboard</span>
+                </a>
+                <a asp-controller="Policies" asp-action="MyPolicies" class="flex items-center space-x-3 bg-[#dde4df] text-[#006b54] font-semibold rounded-lg px-4 py-3 shadow-sm active:translate-x-1">
+                    <span class="material-symbols-outlined">description</span>
+                    <span class="font-sans text-sm tracking-tight">My Policies</span>
+                </a>
+                <a asp-controller="Claims" asp-action="Index" class="flex items-center space-x-3 text-[#406d5d] px-4 py-3 hover:bg-[#dde4df] transition-all duration-300 rounded-lg active:translate-x-1">
+                    <span class="material-symbols-outlined">emergency</span>
+                    <span class="font-sans text-sm tracking-tight">Claims Center</span>
+                </a>
+                <a asp-controller="Documents" asp-action="Index" class="flex items-center space-x-3 text-[#406d5d] px-4 py-3 hover:bg-[#dde4df] transition-all duration-300 rounded-lg active:translate-x-1">
+                    <span class="material-symbols-outlined">folder_shared</span>
+                    <span class="font-sans text-sm tracking-tight">Documents</span>
+                </a>
+                <a asp-controller="Billing" asp-action="Index" class="flex items-center space-x-3 text-[#406d5d] px-4 py-3 hover:bg-[#dde4df] transition-all duration-300 rounded-lg active:translate-x-1">
+                    <span class="material-symbols-outlined">payments</span>
+                    <span class="font-sans text-sm tracking-tight">Billing</span>
+                </a>
+            </nav>
+            <a asp-controller="Claims" asp-action="NewClaim" class="w-full mt-auto py-4 bg-gradient-to-br from-[#006b54] to-[#22b590] text-white rounded-lg font-bold text-sm shadow-md active:scale-95 transition-all text-center block">New Claim</a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8 lg:p-12 overflow-y-auto bg-surface">
+            <!-- Welcome Section -->
+            <header class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 items-end">
+                <div class="lg:col-span-8">
+                    <label class="text-[10px] tracking-widest uppercase font-black text-primary mb-2 block">Customer Dashboard</label>
+                    <h1 class="text-5xl font-extrabold tracking-tighter text-on-surface mb-4">Good morning, @Model.DisplayName.</h1>
+                    <p class="text-body-lg text-on-surface-variant max-w-xl">@Model.Message</p>
+                </div>
+                <div class="lg:col-span-4">
+                    <div class="bg-surface-container-lowest p-6 rounded-xl flex items-center space-x-4 shadow-[0_16px_32px_rgba(23,29,26,0.06)]">
+                        <img alt="Agent" class="w-16 h-16 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmfGoLZjzzqMEOkCxgyBw7Js2aLr7lcCicHNLqA8W2YSoDlFm4VsJNk9e6c0nAVfqMwXoGH5x0VRxCXPg1FrvEbplu6RtWRkhfdoSqejSyBX4RV1UU1rkvjjV1HsQbJwb_963drcQ1XUdx3gH-lSkIwbv4XnNUEdO_TRaQ_nkT4akUI1926PCeP4t2quTDrO7m95Kcl6jl-HcjH7qQurEIrxDPkAbN-t7acZB9Nn_vax5eimBdVPXksgx52pA-PvPwEa6GQtbESlI" />
+                        <div>
+                            <p class="text-[10px] tracking-widest uppercase font-bold text-primary">Your Dedicated Agent</p>
+                            <h3 class="text-lg font-bold text-on-surface">Marcus Thorne</h3>
+                            <div class="flex space-x-3 mt-2">
+                                <a asp-controller="Messages" asp-action="Compose" asp-route-agentId="1" class="text-primary hover:underline text-xs font-semibold">Message</a>
+                                <a asp-controller="Appointments" asp-action="Schedule" class="text-primary hover:underline text-xs font-semibold">Schedule Call</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Role-specific content -->
+            @if (isCustomer)
+            {
+                <section class="space-y-6">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold tracking-tight text-on-surface">Active Policies</h2>
+                        <a asp-controller="Policies" asp-action="DownloadAllStatements" class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">Download All Statements</a>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Featured Policy Card -->
+                        <div class="lg:col-span-2 bg-surface-container-low rounded-xl overflow-hidden group">
+                            <div class="h-48 relative">
+                                <img alt="Home Insurance" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_H1rAXDj3xRsINhk-J3uCZiNxWaHAfyYh5YmL19WkAIPmvP2DZbw4S-NM0IgHQL71RymQMY1gCnXWEwVBFHFHrnXXuFk5XjAKu1xPBCPX6SpzjniCyNHu5op63Cb77PDXD-cg0HOKlL2oWJZ0Ar-ndONnmchYe1RIZebF8lYFeNzt0gm4vLD6Vq5b8QbO8NquHOdfrw8x-5oi6O38__tkkedfGAeNXGZk1V9wpkMoV7NqUxhJqM7kZJ0PFnvOsZiutAKlnNfgR_M" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/80 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6">
+                                    <span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Active</span>
+                                    <h3 class="text-2xl font-bold text-white mt-2">Residential Premier Plus</h3>
+                                </div>
+                            </div>
+                            <div class="p-8 grid grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div><p class="text-[10px] tracking-widest uppercase font-bold text-outline mb-1">Policy Number</p><p class="font-bold text-on-surface">HME-88294-G</p></div>
+                                <div><p class="text-[10px] tracking-widest uppercase font-bold text-outline mb-1">Monthly Premium</p><p class="font-bold text-on-surface">$245.00</p></div>
+                                <div><p class="text-[10px] tracking-widest uppercase font-bold text-outline mb-1">Next Payment</p><p class="font-bold text-on-surface">Oct 12, 2024</p></div>
+                                <div class="flex items-center justify-end">
+                                    <a asp-controller="Policies" asp-action="MyPolicies" class="bg-gradient-to-br from-[#006b54] to-[#22b590] text-white px-6 py-3 rounded-lg font-bold text-sm shadow-sm active:scale-95 transition-all">View Payments</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Auto Policy Card -->
+                        <div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between shadow-[0_16px_32px_rgba(23,29,26,0.04)]">
+                            <div>
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-primary">directions_car</span></div>
+                                    <span class="text-[10px] font-black text-primary-container uppercase tracking-widest">Auto</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-on-surface mb-2">Full Coverage Auto</h3>
+                                <p class="text-sm text-on-surface-variant mb-6">Insured: Tesla Model S Plaid (2023)</p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between border-b border-outline-variant/20 pb-2"><span class="text-xs text-outline font-medium">Policy #</span><span class="text-xs font-bold">AUT-11029-K</span></div>
+                                    <div class="flex justify-between border-b border-outline-variant/20 pb-2"><span class="text-xs text-outline font-medium">Premium</span><span class="text-xs font-bold">$189.50</span></div>
+                                </div>
+                            </div>
+                            <a asp-controller="Policies" asp-action="MyPolicies" class="mt-8 text-primary font-bold text-sm flex items-center group">Payment Details <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span></a>
+                        </div>
+                        <!-- Life Policy Card -->
+                        <div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between shadow-[0_16px_32px_rgba(23,29,26,0.04)]">
+                            <div>
+                                <div class="flex justify-between items-start mb-6">
+                                    <div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-primary">health_and_safety</span></div>
+                                    <span class="text-[10px] font-black text-primary-container uppercase tracking-widest">Life</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-on-surface mb-2">Guardian Life Term 30</h3>
+                                <p class="text-sm text-on-surface-variant mb-6">Benefit Amount: $1,500,000</p>
+                                <div class="space-y-4">
+                                    <div class="flex justify-between border-b border-outline-variant/20 pb-2"><span class="text-xs text-outline font-medium">Policy #</span><span class="text-xs font-bold">LIF-99201-P</span></div>
+                                    <div class="flex justify-between border-b border-outline-variant/20 pb-2"><span class="text-xs text-outline font-medium">Premium</span><span class="text-xs font-bold">$82.00</span></div>
+                                </div>
+                            </div>
+                            <a asp-controller="Policies" asp-action="MyPolicies" class="mt-8 text-primary font-bold text-sm flex items-center group">Payment Details <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span></a>
+                        </div>
+                        <!-- Explore New Schemes -->
+                        <div class="lg:col-span-2 bg-gradient-to-r from-emerald-900 to-[#006b54] p-8 rounded-xl relative overflow-hidden flex items-center">
+                            <div class="relative z-10 max-w-lg">
+                                <h3 class="text-2xl font-bold text-white mb-2">Explore New Schemes</h3>
+                                <p class="text-emerald-100/80 text-sm mb-6">Combine your policies and save up to 15% on your annual premiums. Our new Veridian Protocol bundles are now available.</p>
+                                <a asp-controller="PolicyPurchase" asp-action="AvailableSchemes" class="bg-white text-[#006b54] px-6 py-2 rounded-lg font-bold text-sm hover:bg-emerald-50 transition-colors">View Bundle Options</a>
+                            </div>
+                            <div class="absolute right-[-5%] top-[-10%] opacity-20"><span class="material-symbols-outlined text-[200px] text-white">verified_user</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+                        <h2 class="text-xl font-bold text-on-surface mb-2">Purchase New Policy</h2>
+                        <p class="text-on-surface-variant text-sm mb-4">Browse our available insurance schemes and secure your future with the Veridian Protocol.</p>
+                        <a asp-controller="PolicyPurchase" asp-action="AvailableSchemes" class="inline-block bg-primary text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-primary-dark transition">Browse Policies</a>
+                    </div>
+                    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+                        <h2 class="text-xl font-bold text-on-surface mb-2">My Policies</h2>
+                        <p class="text-on-surface-variant text-sm mb-4">View all your active policies, payment history, and coverage details.</p>
+                        <a asp-controller="Policies" asp-action="MyPolicies" class="inline-block bg-primary text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-primary-dark transition">Open My Policies</a>
+                    </div>
+                </div>
+            }
+            else if (isAdmin || isEmployee)
+            {
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    @if (isAdmin)
+                    {
+                        <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+                            <h2 class="text-xl font-bold text-on-surface mb-2">Manage Users</h2>
+                            <p class="text-on-surface-variant text-sm mb-4">Admins can perform CRUD operations on users, agents, and employees.</p>
+                            <a asp-controller="Admin" asp-action="ManageUsers" class="inline-block bg-primary text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-primary-dark transition">Open Manage Users</a>
+                        </div>
+                        <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+                            <h2 class="text-xl font-bold text-on-surface mb-2">Customer Policies</h2>
+                            <p class="text-on-surface-variant text-sm mb-4">Admins can search customers and review policy and payment details.</p>
+                            <a asp-controller="Policies" asp-action="CustomerPolicies" class="inline-block bg-primary text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-primary-dark transition">Open Customer Policies</a>
+                        </div>
+                    }
+                    @if (isAdmin || isEmployee)
+                    {
+                        <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+                            <h2 class="text-xl font-bold text-on-surface mb-2">Register Insurance Agent</h2>
+                            <p class="text-on-surface-variant text-sm mb-4">Admin and employee users can create insurance agent accounts from the internal dashboard.</p>
+                            <a asp-controller="Registration" asp-action="RegisterInsuranceAgent" class="inline-block bg-primary text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-primary-dark transition">Open Agent Registration</a>
+                        </div>
+                    }
+                    @if (isAdmin)
+                    {
+                        <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm">
+                            <h2 class="text-xl font-bold text-on-surface mb-2">Register Employee</h2>
+                            <p class="text-on-surface-variant text-sm mb-4">Only admins can create employee accounts.</p>
+                            <a asp-controller="Registration" asp-action="RegisterEmployee" class="inline-block bg-primary text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-primary-dark transition">Open Employee Registration</a>
+                        </div>
+                    }
+                </div>
+            }
+        </main>
     </div>
-    <div class="col-lg-4">
-        <div class="info-card h-100">
-            <h2>Authentication mode</h2>
-            <p class="mb-0">JWT token stored in an HttpOnly cookie.</p>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="info-card h-100">
-            <h2>Status</h2>
-            <p class="mb-0">You are authenticated and authorized.</p>
-        </div>
-    </div>
-</div>
 
-<div class="row g-4 mt-2">
-    @if (Model.Role == RoleNames.Customer)
-    {
-        <div class="col-lg-6">
-            <div class="info-card h-100">
-                <h2>My Policies</h2>
-                <p>Customers can view their own policy and payment details.</p>
-                <a class="btn btn-dark" asp-controller="Policies" asp-action="MyPolicies">Open My Policies</a>
+    <footer class="flex justify-between items-center px-16 py-12 w-full bg-[#dde4df] mt-auto">
+        <div class="flex flex-col space-y-4">
+            <span class="text-sm font-black text-[#006b54]">Guardian Insurance</span>
+            <p class="font-sans text-xs tracking-widest uppercase font-bold text-[#406d5d]">© 2024 Guardian Insurance. All rights reserved.</p>
+        </div>
+        <div class="flex space-x-12">
+            <div class="flex flex-col space-y-2">
+                <a asp-controller="Home" asp-action="Privacy" class="font-sans text-xs tracking-widest uppercase font-bold text-[#406d5d] hover:text-[#22b590] transition-all opacity-80 hover:opacity-100">Privacy Policy</a>
+                <a asp-controller="Home" asp-action="Terms" class="font-sans text-xs tracking-widest uppercase font-bold text-[#406d5d] hover:text-[#22b590] transition-all opacity-80 hover:opacity-100">Terms of Service</a>
+            </div>
+            <div class="flex flex-col space-y-2">
+                <a asp-controller="Home" asp-action="Accessibility" class="font-sans text-xs tracking-widest uppercase font-bold text-[#406d5d] hover:text-[#22b590] transition-all opacity-80 hover:opacity-100">Accessibility</a>
+                <a asp-controller="Support" asp-action="Contact" class="font-sans text-xs tracking-widest uppercase font-bold text-[#406d5d] hover:text-[#22b590] transition-all opacity-80 hover:opacity-100">Contact Support</a>
             </div>
         </div>
-    }
-
-    @if (Model.Role == RoleNames.Admin)
-    {
-        <div class="col-lg-6">
-            <div class="info-card h-100">
-                <h2>Manage Users</h2>
-                <p>Admins can perform CRUD operations on users, agents, and employees.</p>
-                <a class="btn btn-dark" asp-controller="Admin" asp-action="ManageUsers">Open Manage Users</a>
-            </div>
-        </div>
-
-        <div class="col-lg-6">
-            <div class="info-card h-100">
-                <h2>Customer Policies</h2>
-                <p>Admins can search customers and review policy and payment details.</p>
-                <a class="btn btn-dark" asp-controller="Policies" asp-action="CustomerPolicies">Open Customer Policies</a>
-            </div>
-        </div>
-    }
-
-    @if (Model.Role is RoleNames.Admin or RoleNames.Employee)
-    {
-        <div class="col-lg-6">
-            <div class="info-card h-100">
-                <h2>Register Insurance Agent</h2>
-                <p>Admin and employee users can create insurance agent accounts from the internal dashboard.</p>
-                <a class="btn btn-dark" asp-controller="Registration" asp-action="RegisterInsuranceAgent">Open Agent Registration</a>
-            </div>
-        </div>
-    }
-
-    @if (Model.Role == RoleNames.Admin)
-    {
-        <div class="col-lg-6">
-            <div class="info-card h-100">
-                <h2>Register Employee</h2>
-                <p>Only admins can create employee accounts.</p>
-                <a class="btn btn-dark" asp-controller="Registration" asp-action="RegisterEmployee">Open Employee Registration</a>
-            </div>
-        </div>
-    }
-</div>
+    </footer>
+</body>
+</html>

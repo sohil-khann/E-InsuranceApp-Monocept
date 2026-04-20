@@ -1,3 +1,4 @@
+using EInsurance.Domain.Entities;
 using EInsurance.Interfaces;
 using EInsurance.Models.Policies;
 
@@ -54,5 +55,56 @@ public class PolicyService(IPolicyRepository policyRepository) : IPolicyService
             FullName = customer.FullName,
             Email = customer.Email
         }).ToList();
+    }
+
+    public async Task<List<SchemeListItemViewModel>> GetAvailableSchemesAsync(CancellationToken cancellationToken = default)
+    {
+        var schemes = await policyRepository.GetAvailableSchemesAsync(cancellationToken);
+
+        return schemes.Select(s => new SchemeListItemViewModel
+        {
+            SchemeId = s.SchemeId,
+            SchemeName = s.SchemeName,
+            SchemeDetails = s.SchemeDetails,
+            PlanName = s.Plan.PlanName
+        }).ToList();
+    }
+
+    public async Task<PurchaseConfirmationViewModel?> PurchasePolicyAsync(int customerId, PurchasePolicyViewModel model, CancellationToken cancellationToken = default)
+    {
+        var scheme = await policyRepository.GetSchemeByIdAsync(model.SchemeId, cancellationToken);
+        if (scheme is null) return null;
+
+        var policy = new Policy
+        {
+            CustomerId = customerId,
+            SchemeId = model.SchemeId,
+            PolicyDetails = $"Beneficiary: {model.BeneficiaryName}, Coverage: {model.CoverageAmount:C}, Maturity: {model.MaturityPeriod} months",
+            Premium = model.CoverageAmount * 0.05m, 
+            DateIssued = DateOnly.FromDateTime(DateTime.UtcNow),
+            MaturityPeriod = model.MaturityPeriod,
+            PolicyLapseDate = DateOnly.FromDateTime(DateTime.UtcNow.AddMonths(model.MaturityPeriod))
+        };
+
+        var createdPolicy = await policyRepository.CreatePolicyAsync(policy, cancellationToken);
+
+        var payment = new Payment
+        {
+            CustomerId = customerId,
+            PolicyId = createdPolicy.PolicyId,
+            Amount = createdPolicy.Premium,
+            PaymentDate = DateOnly.FromDateTime(DateTime.UtcNow)
+        };
+
+        await policyRepository.CreatePaymentAsync(payment, cancellationToken);
+
+        return new PurchaseConfirmationViewModel
+        {
+            PolicyId = createdPolicy.PolicyId,
+            PolicyNumber = $"POL-{createdPolicy.PolicyId:D6}",
+            SchemeName = scheme.SchemeName,
+            PremiumPaid = createdPolicy.Premium,
+            ExpiryDate = createdPolicy.PolicyLapseDate
+        };
     }
 }

@@ -1,0 +1,118 @@
+@model EInsurance.Models.Policies.PurchasePolicyViewModel
+
+@{
+    ViewData["Title"] = "Purchase Policy | Guardian Portal";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .btn-primary-gradient {
+            background: linear-gradient(135deg, #006b54 0%, #22b590 100%);
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#006b54",
+                      "primary-container": "#22b590",
+                      "surface": "#f4fbf6",
+                      "surface-container-low": "#eff5f0",
+                      "surface-container-highest": "#dde4df",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface": "#171d1a",
+                      "on-surface-variant": "#3d4a44"
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface flex items-center justify-center min-h-screen p-6">
+    <div class="w-full max-w-2xl bg-surface-container-lowest rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden border border-white/60">
+        <div class="absolute top-0 left-0 w-full h-2 btn-primary-gradient"></div>
+        
+        <div class="mb-10 text-center">
+            <h1 class="text-3xl font-black tracking-tight text-primary mb-2">Finalize Your Policy</h1>
+            <p class="text-on-surface-variant font-medium">Provisioning credentials for <span class="text-primary font-bold">@Model.SchemeName</span></p>
+        </div>
+
+        <form asp-action="Purchase" method="post" class="space-y-8">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="SchemeId" />
+            <input type="hidden" asp-for="SchemeName" />
+            
+            <div asp-validation-summary="ModelOnly" class="text-red-500 text-sm font-bold bg-red-50 p-4 rounded-xl border border-red-100"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Beneficiary -->
+                <div class="space-y-2">
+                    <label asp-for="BeneficiaryName" class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant/60 ml-1"></label>
+                    <div class="relative group">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary transition-transform group-focus-within:scale-110">person</span>
+                        <input asp-for="BeneficiaryName" class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 text-sm font-bold transition-all" placeholder="Legal full name" />
+                    </div>
+                    <span asp-validation-for="BeneficiaryName" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                </div>
+
+                <!-- Coverage Amount -->
+                <div class="space-y-2">
+                    <label asp-for="CoverageAmount" class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant/60 ml-1"></label>
+                    <div class="relative group">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary transition-transform group-focus-within:scale-110">payments</span>
+                        <input asp-for="CoverageAmount" type="number" class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 text-sm font-bold transition-all" placeholder="e.g. 50000" />
+                    </div>
+                    <span asp-validation-for="CoverageAmount" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                </div>
+
+                <!-- Maturity Period -->
+                <div class="space-y-2">
+                    <label asp-for="MaturityPeriod" class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant/60 ml-1"></label>
+                    <div class="relative group">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary transition-transform group-focus-within:scale-110">calendar_month</span>
+                        <input asp-for="MaturityPeriod" type="number" class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 text-sm font-bold transition-all" placeholder="Months (1-60)" />
+                    </div>
+                    <span asp-validation-for="MaturityPeriod" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="space-y-2">
+                    <label asp-for="PaymentMethod" class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant/60 ml-1"></label>
+                    <div class="relative group">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary transition-transform group-focus-within:scale-110">account_balance_wallet</span>
+                        <select asp-for="PaymentMethod" class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-10 focus:ring-2 focus:ring-primary/20 text-sm font-bold transition-all appearance-none">
+                            <option value="CreditCard">Credit / Debit Card</option>
+                            <option value="BankTransfer">Direct Bank Transfer</option>
+                            <option value="VeridianWallet">Veridian Digital Wallet</option>
+                        </select>
+                    </div>
+                    <span asp-validation-for="PaymentMethod" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                </div>
+            </div>
+
+            <div class="pt-6">
+                <button type="submit" class="w-full py-5 rounded-2xl btn-primary-gradient text-white font-black uppercase tracking-[0.2em] text-sm shadow-xl shadow-primary/20 hover:brightness-110 active:scale-[0.98] transition-all">
+                    Authorize & Purchase
+                </button>
+                <a asp-action="AvailableSchemes" class="block text-center mt-6 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors no-underline uppercase tracking-widest">
+                    Cancel and Return
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

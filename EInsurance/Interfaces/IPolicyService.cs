@@ -6,4 +6,6 @@ public interface IPolicyService
 {
     Task<CustomerPoliciesViewModel?> GetCustomerPoliciesAsync(int customerId, CancellationToken cancellationToken = default);
     Task<List<CustomerLookupViewModel>> SearchCustomersAsync(string searchTerm, CancellationToken cancellationToken = default);
+    Task<List<SchemeListItemViewModel>> GetAvailableSchemesAsync(CancellationToken cancellationToken = default);
+    Task<PurchaseConfirmationViewModel?> PurchasePolicyAsync(int customerId, PurchasePolicyViewModel model, CancellationToken cancellationToken = default);
 }

@@ -1,5 +1,7 @@
 using EInsurance.Data;
+using EInsurance.Domain.Entities;
 using EInsurance.Interfaces;
+using EInsurance.Services.Policies;
 using Microsoft.EntityFrameworkCore;
 
 namespace EInsurance.Repository;
@@ -48,5 +50,35 @@ public class PolicyRepository(ApplicationDbContext dbContext) : IPolicyRepositor
                             .ToList()))
                     .ToList()))
             .FirstOrDefaultAsync(cancellationToken);
+    }
+
+    public async Task<List<Scheme>> GetAvailableSchemesAsync(CancellationToken cancellationToken = default)
+    {
+        return await dbContext.Schemes
+            .Include(s => s.Plan)
+            .AsNoTracking()
+            .OrderBy(s => s.SchemeName)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<Scheme?> GetSchemeByIdAsync(int schemeId, CancellationToken cancellationToken = default)
+    {
+        return await dbContext.Schemes
+            .Include(s => s.Plan)
+            .FirstOrDefaultAsync(s => s.SchemeId == schemeId, cancellationToken);
+    }
+
+    public async Task<Policy> CreatePolicyAsync(Policy policy, CancellationToken cancellationToken = default)
+    {
+        dbContext.Policies.Add(policy);
+        await dbContext.SaveChangesAsync(cancellationToken);
+        return policy;
+    }
+
+    public async Task<Payment> CreatePaymentAsync(Payment payment, CancellationToken cancellationToken = default)
+    {
+        dbContext.Payments.Add(payment);
+        await dbContext.SaveChangesAsync(cancellationToken);
+        return payment;
     }
 }

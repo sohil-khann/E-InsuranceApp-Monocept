@@ -1,0 +1,72 @@
+@model int
+
+@{
+    ViewData["Title"] = "Purchase Confirmed | Guardian Portal";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#006b54",
+                      "primary-container": "#22b590",
+                      "surface": "#f4fbf6",
+                      "on-surface": "#171d1a"
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface flex items-center justify-center min-h-screen p-6">
+    <div class="w-full max-w-md bg-white rounded-3xl p-10 text-center shadow-2xl border border-primary/5">
+        <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+            <span class="material-symbols-outlined text-primary text-5xl">verified</span>
+        </div>
+        
+        <h1 class="text-3xl font-black tracking-tight text-primary mb-4">Purchase Confirmed</h1>
+        <p class="text-on-surface-variant font-medium mb-8">
+            Your Veridian Protocol policy has been successfully provisioned and added to your account.
+        </p>
+
+        <div class="bg-surface p-6 rounded-2xl border border-primary/10 mb-10 text-left">
+            <div class="flex justify-between items-center mb-4 pb-4 border-b border-primary/5">
+                <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant/60">Policy ID</span>
+                <span class="text-sm font-black text-primary">POL-@Model.ToString("D6")</span>
+            </div>
+            <div class="flex justify-between items-center">
+                <span class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant/60">Status</span>
+                <span class="flex items-center gap-2 text-sm font-black text-primary">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    ACTIVE
+                </span>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <a asp-controller="Policies" asp-action="MyPolicies" class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:brightness-110 active:scale-[0.98] transition-all block no-underline uppercase tracking-widest text-xs">
+                View My Policies
+            </a>
+            <a asp-controller="Dashboard" asp-action="Index" class="w-full py-4 bg-white text-primary font-bold rounded-xl border border-primary/10 hover:shadow-md transition-all block no-underline uppercase tracking-widest text-xs">
+                Return to Dashboard
+            </a>
+        </div>
+    </div>
+</body>
+</html>
