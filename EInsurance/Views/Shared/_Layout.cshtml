@@ -38,6 +38,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-controller="Policies" asp-action="MyPolicies">My Policies</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Payment" asp-action="PaymentHistory">Payment History</a>
+                                </li>
                             }
                             @if (User.FindFirstValue(ClaimTypes.Role) == EInsurance.Security.RoleNames.Admin)
                             {

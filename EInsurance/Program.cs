@@ -32,7 +32,6 @@ public class Program
 
         var app = builder.Build();
 
-        // Only seed development data in Development environment
         if (app.Environment.IsDevelopment())
         {
             app.SeedDevelopmentData();
