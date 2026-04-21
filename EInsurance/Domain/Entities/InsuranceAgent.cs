@@ -14,6 +14,10 @@ public class InsuranceAgent : AccountEntity
     [Column("AgentID")]
     public int AgentId { get; set; }
 
+  
+    [Precision(5, 4)]
+    public decimal CommissionRate { get; set; } = 0.10m;
+
     public ICollection<Customer> Customers { get; set; } = new List<Customer>();
     public ICollection<Commission> Commissions { get; set; } = new List<Commission>();
 }

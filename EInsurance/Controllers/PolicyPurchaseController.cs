@@ -19,9 +19,6 @@ public class PolicyPurchaseController(
         return View(new AvailableSchemesViewModel { Schemes = schemes });
     }
 
-    /// <summary>
-    /// UC-5 Step 1-2: User selects a plan/scheme and system fetches details
-    /// </summary>
     [HttpGet]
     public async Task<IActionResult> CalculatePremium(int schemeId)
     {
@@ -31,7 +28,6 @@ public class PolicyPurchaseController(
         if (selectedScheme == null)
             return NotFound();
 
-        // Get customer's date of birth to calculate age
         var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var customerId))
             return Challenge();
@@ -49,9 +45,7 @@ public class PolicyPurchaseController(
         return View(model);
     }
 
-    /// <summary>
-    /// UC-5 Step 4: Calculate premium based on user inputs
-    /// </summary>
+ 
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> CalculatePremium(PremiumCalculationInputViewModel model)
@@ -70,7 +64,6 @@ public class PolicyPurchaseController(
                 model.CustomerAge.Value,
                 model.MaturityPeriodMonths);
 
-            // Store calculation result in session/TempData for the next step
             TempData["PremiumCalculation"] = System.Text.Json.JsonSerializer.Serialize(result);
             TempData["BeneficiaryName"] = model.BeneficiaryName;
 
@@ -83,9 +76,6 @@ public class PolicyPurchaseController(
         }
     }
 
-    /// <summary>
-    /// UC-5 Step 5: Display calculated premium for confirmation
-    /// </summary>
     [HttpGet]
     public IActionResult ConfirmPremium(int schemeId)
     {
@@ -111,9 +101,7 @@ public class PolicyPurchaseController(
         return View(confirmModel);
     }
 
-    /// <summary>
-    /// UC-5 Postconditions: Create policy with calculated premium
-    /// </summary>
+ 
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> ConfirmPremium(PremiumConfirmationViewModel model)
@@ -125,7 +113,6 @@ public class PolicyPurchaseController(
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var customerId))
             return Challenge();
 
-        // Convert to purchase model (for compatibility with existing service)
         var purchaseModel = new PurchasePolicyViewModel
         {
             SchemeId = model.SchemeId,
@@ -147,10 +134,6 @@ public class PolicyPurchaseController(
         TempData["SuccessMessage"] = $"Policy purchased successfully! Premium Amount: {model.CalculatedPremium:C}";
         return RedirectToAction(nameof(Confirmation), new { policyId = confirmation.PolicyId });
     }
-
-    /// <summary>
-    /// Legacy purchase flow (kept for backwards compatibility)
-    /// </summary>
     [HttpGet]
     public async Task<IActionResult> Purchase(int schemeId)
     {

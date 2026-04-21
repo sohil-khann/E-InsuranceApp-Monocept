@@ -2,10 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EInsurance.Models.Policies;
 
-/// <summary>
-/// ViewModel for collecting user input for premium calculation.
-/// Maps to UC-5 Step 3: User inputs Sum Assured, Age (from DateOfBirth), Maturity Period
-/// </summary>
+
 public class PremiumCalculationInputViewModel
 {
     [Required]
@@ -33,10 +30,7 @@ public class PremiumCalculationInputViewModel
     public string? BeneficiaryName { get; set; }
 }
 
-/// <summary>
-/// ViewModel for displaying the calculated premium.
-/// Maps to UC-5 Step 5: System displays final amount
-/// </summary>
+
 public class PremiumCalculationResultViewModel
 {
     public int SchemeId { get; set; }
@@ -70,16 +64,11 @@ public class PremiumCalculationResultViewModel
 
     public DateTime CalculatedAtUtc { get; set; }
 
-    /// <summary>
-    /// Temporary quote ID for reference (can be used to generate Quote ID mentioned in postconditions)
-    /// </summary>
+   
     [Display(Name = "Quote ID")]
     public string QuoteId => $"Q-{SchemeId}-{DateOnly.FromDateTime(CalculatedAtUtc):yyyyMMdd}-{Guid.NewGuid().ToString()[..8].ToUpper()}";
 }
 
-/// <summary>
-/// ViewModel for scheme information with calculation details.
-/// </summary>
 public class SchemeCalculationViewModel
 {
     public int SchemeId { get; set; }
@@ -96,10 +85,6 @@ public class SchemeCalculationViewModel
     public string SchemeDetails { get; set; } = string.Empty;
 }
 
-/// <summary>
-/// ViewModel for confirming premium and proceeding with purchase.
-/// Maps to UC-5 Postconditions: Premium is validated and ready for Policy table
-/// </summary>
 public class PremiumConfirmationViewModel
 {
     public int SchemeId { get; set; }

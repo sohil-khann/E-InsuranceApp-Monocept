@@ -2,6 +2,14 @@
 
 @{
     ViewData["Title"] = "My Policies";
+    Layout = "_Layout";
 }
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="h3 fw-bold">My Policies</h1>
+        <p class="text-muted">View all your active policies and payment history</p>
+    </div>
+</div>
 
 <partial name="_CustomerPoliciesPartial" model="Model" />

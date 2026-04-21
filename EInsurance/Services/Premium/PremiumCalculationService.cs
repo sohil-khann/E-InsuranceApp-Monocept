@@ -7,19 +7,13 @@ using System.Text.Json;
 
 namespace EInsurance.Services.Premium;
 
-/// <summary>
-/// Service for calculating premium amounts based on scheme details and customer information.
-/// Implements UC-5: Premium Calculation (Schema-Integrated)
-/// </summary>
+
 public class PremiumCalculationService(ApplicationDbContext dbContext) : IPremiumCalculationService
 {
     private const decimal DefaultInterestRate = 0.05m; // 5% default
     private const decimal RiskFactorBase = 0.02m; // 2% base risk factor
 
-    /// <summary>
-    /// Calculates premium based on scheme, sum assured, age, and maturity period.
-    /// Formula: Total Premium = (Sum Assured × (Rate + Risk_Factor)) / Maturity Period
-    /// </summary>
+   
     public async Task<PremiumCalculationResultViewModel> CalculatePremiumAsync(
         int schemeId,
         decimal sumAssured,
@@ -36,16 +30,12 @@ public class PremiumCalculationService(ApplicationDbContext dbContext) : IPremiu
             throw new InvalidOperationException($"Scheme with ID {schemeId} not found.");
         }
 
-        // Parse interest rate from SchemeDetails (JSON)
         var interestRate = ExtractInterestRateFromScheme(scheme.SchemeDetails);
 
-        // Calculate age-based risk factor
         var riskFactor = CalculateRiskFactor(ageAtMaturity);
 
-        // Calculate total premium using the formula
         var totalPremium = CalculateTotalPremium(sumAssured, interestRate, riskFactor, maturityPeriodMonths);
 
-        // Apply any scheme-specific adjustments
         totalPremium = ApplySchemeAdjustments(totalPremium, scheme.SchemeDetails);
 
         return new PremiumCalculationResultViewModel
@@ -63,9 +53,6 @@ public class PremiumCalculationService(ApplicationDbContext dbContext) : IPremiu
         };
     }
 
-    /// <summary>
-    /// Gets available schemes filtered by plan and with calculation details.
-    /// </summary>
     public async Task<List<SchemeCalculationViewModel>> GetSchemesWithCalculationDetailsAsync(
         int? planId = null,
         CancellationToken cancellationToken = default)
@@ -92,9 +79,7 @@ public class PremiumCalculationService(ApplicationDbContext dbContext) : IPremiu
         }).ToList();
     }
 
-    /// <summary>
-    /// Extracts interest rate from SchemeDetails JSON.
-    /// </summary>
+    
     private decimal ExtractInterestRateFromScheme(string schemeDetailsJson)
     {
         try
@@ -121,15 +106,12 @@ public class PremiumCalculationService(ApplicationDbContext dbContext) : IPremiu
         }
     }
 
-    /// <summary>
-    /// Calculates age-based risk factor.
-    /// Higher age = higher risk.
-    /// </summary>
+ 
     private decimal CalculateRiskFactor(int age)
     {
         decimal riskFactor = RiskFactorBase;
 
-        // Age-based risk adjustment
+        
         if (age >= 60)
             riskFactor += 0.15m;
         else if (age >= 50)
@@ -137,15 +119,11 @@ public class PremiumCalculationService(ApplicationDbContext dbContext) : IPremiu
         else if (age >= 40)
             riskFactor += 0.05m;
         else if (age < 25)
-            riskFactor -= 0.02m; // Younger customers get slight discount
+            riskFactor -= 0.02m; 
 
-        return Math.Min(riskFactor, 0.35m); // Cap at 35%
+        return Math.Min(riskFactor, 0.35m);
     }
 
-    /// <summary>
-    /// Calculates total premium using the formula:
-    /// Total Premium = (Sum Assured × (Rate + Risk_Factor)) / Maturity Period
-    /// </summary>
     private decimal CalculateTotalPremium(decimal sumAssured, decimal interestRate, decimal riskFactor, int maturityPeriodMonths)
     {
         if (maturityPeriodMonths <= 0)
@@ -154,13 +132,11 @@ public class PremiumCalculationService(ApplicationDbContext dbContext) : IPremiu
         var totalFactor = interestRate + riskFactor;
         var premium = (sumAssured * totalFactor) / maturityPeriodMonths;
 
-        // Round to 2 decimal places
+      
         return Math.Round(premium, 2);
     }
 
-    /// <summary>
-    /// Applies scheme-specific adjustments (discounts, surcharges, etc.)
-    /// </summary>
+   
     private decimal ApplySchemeAdjustments(decimal basePremium, string schemeDetailsJson)
     {
         try
@@ -168,7 +144,7 @@ public class PremiumCalculationService(ApplicationDbContext dbContext) : IPremiu
             using var doc = JsonDocument.Parse(schemeDetailsJson);
             var root = doc.RootElement;
 
-            // Check for discount percentage
+           
             if (root.TryGetProperty("discount", out var discountElement) &&
                 discountElement.TryGetDecimal(out var discount))
             {
@@ -176,7 +152,7 @@ public class PremiumCalculationService(ApplicationDbContext dbContext) : IPremiu
                 basePremium = basePremium * (1 - discountPercentage);
             }
 
-            // Check for surcharge percentage
+        
             if (root.TryGetProperty("surcharge", out var surchargeElement) &&
                 surchargeElement.TryGetDecimal(out var surcharge))
             {

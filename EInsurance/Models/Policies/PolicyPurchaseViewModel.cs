@@ -13,7 +13,7 @@ public class SchemeListItemViewModel
     public string SchemeName { get; set; } = string.Empty;
     public string SchemeDetails { get; set; } = string.Empty;
     public string PlanName { get; set; } = string.Empty;
-    public decimal BasePremium { get; set; } = 50.00m; // Example base premium
+    public decimal BasePremium { get; set; } = 50.00m; 
 }
 
 public class PurchasePolicyViewModel

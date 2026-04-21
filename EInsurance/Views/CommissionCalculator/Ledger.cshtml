@@ -1,0 +1,174 @@
+@model List<EInsurance.Models.Commission.CommissionLedgerEntryViewModel>
+
+@{
+    ViewData["Title"] = "My Commission Ledger | Guardian Portal";
+}
+
+<style>
+    :root {
+        --primary: #006b54;
+        --primary-light: #22b590;
+        --surface: #f4fbf6;
+        --surface-container: #eff5f0;
+        --on-surface: #1a1b1a;
+    }
+
+    body {
+        background-color: var(--surface);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .card {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background: var(--surface-container);
+        padding: 1rem;
+        text-align: left;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #6b7280;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    tr:hover {
+        background: var(--surface-container);
+    }
+
+    .status-badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+    }
+
+    .status-pending {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .status-calculated {
+        background: #dbeafe;
+        color: #1e40af;
+    }
+
+    .status-paid {
+        background: #dcfce7;
+        color: #166534;
+    }
+</style>
+
+<div class="container mx-auto px-4 py-8">
+    <div class="mb-8">
+        <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.5rem;">My Earnings</p>
+        <h1 style="font-size: 2.5rem; font-weight: 900; color: var(--on-surface); margin-bottom: 0.5rem;">Commission Ledger</h1>
+        <p style="color: #6b7280;">View your complete commission history, payment status, and earnings breakdown.</p>
+    </div>
+
+    <!-- Summary Stats -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+        @{
+            var totalCommission = Model.Sum(m => m.CommissionAmount);
+            var paidCount = Model.Count(m => m.Status == "Paid");
+            var pendingCount = Model.Count(m => m.Status != "Paid");
+        }
+
+        <div class="card" style="padding: 1.5rem;">
+            <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #6b7280; margin-bottom: 0.5rem;">Total Commission</p>
+            <p style="font-size: 2rem; font-weight: 900; color: var(--primary-light); margin: 0;">@totalCommission.ToString("C")</p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+            <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #6b7280; margin-bottom: 0.5rem;">Paid Commissions</p>
+            <p style="font-size: 2rem; font-weight: 900; color: #166534; margin: 0;">@paidCount</p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+            <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #6b7280; margin-bottom: 0.5rem;">Pending</p>
+            <p style="font-size: 2rem; font-weight: 900; color: #92400e; margin: 0;">@pendingCount</p>
+        </div>
+    </div>
+
+    <!-- Ledger Table -->
+    <div class="card">
+        @if (Model.Any())
+        {
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Policy</th>
+                            <th>Customer</th>
+                            <th>Premium</th>
+                            <th>Commission</th>
+                            <th>Status</th>
+                            <th>Calculated Date</th>
+                            <th>Paid Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var entry in Model)
+                        {
+                            <tr>
+                                <td style="font-weight: 600; color: var(--on-surface);">@entry.PolicyNumber</td>
+                                <td>@entry.CustomerName</td>
+                                <td style="font-weight: 600;">@entry.Premium.ToString("C")</td>
+                                <td style="font-weight: 700; color: var(--primary-light);">@entry.CommissionAmount.ToString("C")</td>
+                                <td>
+                                    <span class="status-badge @($"status-{entry.Status.ToLower()}")">
+                                        @entry.Status
+                                    </span>
+                                </td>
+                                <td>@entry.CalculatedDate</td>
+                                <td>
+                                    @if (entry.PaidDate.HasValue)
+                                    {
+                                        <span>@entry.PaidDate.Value</span>
+                                    }
+                                    else
+                                    {
+                                        <span style="color: #9ca3af;">—</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div style="padding: 3rem; text-align: center;">
+                <p style="color: #9ca3af; font-size: 1rem;">No commission records found</p>
+            </div>
+        }
+    </div>
+
+    <!-- Back Button -->
+    <div style="margin-top: 2rem;">
+        <a href="@Url.Action("Index", "Dashboard")" style="background: var(--surface-container); color: var(--on-surface); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block;">
+            ← Back to Dashboard
+        </a>
+    </div>
+</div>

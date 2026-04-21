@@ -1,0 +1,74 @@
+@model EInsurance.Models.Admin.AssignAgentViewModel
+
+@{
+    ViewData["Title"] = "Assign Agent";
+    Layout = "_Layout";
+}
+
+<div class="row mb-4">
+    <div class="col-md-8">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-controller="Admin" asp-action="ManageUsers">Manage Users</a></li>
+                <li class="breadcrumb-item active">Assign Agent</li>
+            </ol>
+        </nav>
+        <h1 class="h3 fw-bold">Assign Agent to Customer</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <div class="mb-4 p-3 bg-light rounded">
+                    <p class="mb-1"><strong>Customer:</strong> @Model.CustomerName</p>
+                    <p class="mb-0"><strong>Email:</strong> @Model.CustomerEmail</p>
+                </div>
+
+                <form asp-controller="Admin" asp-action="AssignAgentPost" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="CustomerId" value="@Model.CustomerId" />
+                    
+                    @if (!string.IsNullOrEmpty(Model.CurrentAgentName))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">Current Agent</label>
+                            <div class="form-control-plaintext">
+                                <span class="badge bg-success">@Model.CurrentAgentName</span>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">Current Agent</label>
+                            <div class="form-control-plaintext">
+                                <span class="text-muted">No agent assigned</span>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="mb-4">
+                        <label asp-for="NewAgentId" class="form-label fw-semibold">Assign New Agent</label>
+                        <select asp-for="NewAgentId" class="form-select">
+                            <option value="0">-- No Agent --</option>
+                            @foreach (var agent in Model.Agents)
+                            {
+                                <option value="@agent.Value">@agent.Text</option>
+                            }
+                        </select>
+                        <span asp-validation-for="NewAgentId" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-person-check me-2"></i>Assign Agent
+                        </button>
+                        <a asp-controller="Admin" asp-action="ManageUsers" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

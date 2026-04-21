@@ -1,0 +1,176 @@
+@model EInsurance.Models.Commission.CommissionCalculationResultViewModel
+
+@{
+    ViewData["Title"] = $"Commission Calculation - {Model.AgentName} | Guardian Portal";
+}
+
+<style>
+    :root {
+        --primary: #006b54;
+        --primary-light: #22b590;
+        --surface: #f4fbf6;
+        --surface-container: #eff5f0;
+        --on-surface: #1a1b1a;
+    }
+
+    body {
+        background-color: var(--surface);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .summary-item {
+        background: var(--surface-container);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border-left: 4px solid var(--primary-light);
+    }
+
+    .summary-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #6b7280;
+        margin-bottom: 0.5rem;
+    }
+
+    .summary-value {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--on-surface);
+    }
+
+    .table-container {
+        overflow-x: auto;
+        margin: 2rem 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background: var(--surface-container);
+        padding: 1rem;
+        text-align: left;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #6b7280;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .btn-finalize {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 107, 84, 0.2);
+    }
+
+    .btn-finalize:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 107, 84, 0.3);
+    }
+</style>
+
+<div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Header -->
+    <div class="mb-8">
+        <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.5rem;">Calculation Results</p>
+        <h1 style="font-size: 2.5rem; font-weight: 900; color: var(--on-surface); margin-bottom: 0.5rem;">Commission Summary</h1>
+        <p style="color: #6b7280;">Agent: <strong>@Model.AgentName</strong> | Period: @Model.CalculationPeriod</p>
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="summary-grid">
+        <div class="summary-item">
+            <div class="summary-label">Total Policies</div>
+            <div class="summary-value">@Model.TotalPoliciesCount</div>
+        </div>
+        <div class="summary-item">
+            <div class="summary-label">Total Premium</div>
+            <div class="summary-value">@Model.TotalPremium.ToString("C")</div>
+        </div>
+        <div class="summary-item">
+            <div class="summary-label">Commission Rate</div>
+            <div class="summary-value">@Model.CommissionRate.ToString("P")</div>
+        </div>
+        <div class="summary-item" style="border-left-color: var(--primary-light); background: linear-gradient(135deg, rgba(0, 107, 84, 0.05) 0%, rgba(34, 181, 144, 0.05) 100%);">
+            <div class="summary-label" style="color: var(--primary);">Total Commission</div>
+            <div class="summary-value" style="color: var(--primary-light);">@Model.TotalCommissionAmount.ToString("C")</div>
+        </div>
+    </div>
+
+    <!-- Policy Details Table -->
+    <div class="card">
+        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--on-surface);">Policy Breakdown</h3>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Policy ID</th>
+                        <th>Customer</th>
+                        <th>Scheme</th>
+                        <th>Premium</th>
+                        <th>Commission</th>
+                        <th>Issued Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var policy in Model.PolicyDetails)
+                    {
+                        <tr>
+                            <td style="font-weight: 600; color: var(--primary);">@policy.PolicyNumber</td>
+                            <td>@policy.CustomerName</td>
+                            <td>@policy.SchemeName</td>
+                            <td style="font-weight: 600;">@policy.Premium.ToString("C")</td>
+                            <td style="font-weight: 700; color: var(--primary-light);">@policy.CommissionAmount.ToString("C")</td>
+                            <td>@policy.IssuedDate:MMM dd, yyyy</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+        <form asp-action="Finalize" method="post" style="display: inline;">
+            <input type="hidden" name="agentId" value="@Model.AgentId" />
+            <input type="hidden" name="fromDate" value="@Model.FromDate" />
+            <input type="hidden" name="toDate" value="@Model.ToDate" />
+            <button type="submit" class="btn-finalize" onclick="return confirm('Finalize this commission calculation? This will create records in the database.');">
+                ✓ Finalize Commission
+            </button>
+        </form>
+
+        <a href="@Url.Action("Calculator", "CommissionCalculator")" style="background: var(--surface-container); color: var(--on-surface); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
+            ← Recalculate
+        </a>
+    </div>
+</div>

@@ -1,148 +1,153 @@
+@{
+    ViewData["Title"] = "Home";
+    Layout = null;
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Guardian Insurance | Veridian Protocol</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-        theme: {
-        extend: {
-        fontFamily: {
-        'sans': ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
-        },
-        colors: {
-        primary: '#22B590',       // requested vibrant teal-green
-        'primary-dark': '#1a8c70',
-        'primary-light': '#3cc9a3',
-        'primary-soft': '#e0f7f0',
-        }
-        }
-        }
-        }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - EInsurance</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        * {
-        transition: all 0.2s ease;
-        }
-        
         body {
-        background-color: #22B590;
-        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            min-height: 100vh;
         }
-
-        .btn-transition:active {
-        transform: scale(0.98);
+        .hero-section {
+            background: linear-gradient(135deg, #006b54 0%, #22b590 100%);
         }
-
-        .focus-ring-teal:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(34, 181, 144, 0.4);
+        .feature-card {
+            transition: transform 0.2s ease;
         }
-
-        .status-badge-custom {
-        background-color: #e0f7f0;
-        color: #1a8c70;
-        }
-
-        .border-primary-custom {
-        border-left-color: #22B590;
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" asp-controller="Home" asp-action="Index">
+                <i class="bi bi-shield-check me-2"></i>EInsurance
+            </a>
+            <div class="d-flex gap-2">
+                <a asp-controller="Account" asp-action="Login" class="btn btn-outline-success">Login</a>
+                <a asp-controller="Account" asp-action="Register" class="btn btn-success">Register</a>
+            </div>
+        </div>
+    </nav>
 
-    <div class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12" style="background-color:#C1F6EA;">
-
-        <div class="max-w-2xl w-full bg-white rounded-2xl shadow-lg border border-gray-200/80 overflow-hidden">
-        
-            <div class="p-6 sm:p-8 md:p-10">
-            
-                <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
-                            <span class="text-primary text-xs font-bold">⛊</span>
-                        </div>
-                        <span class="text-xs font-medium text-gray-500 tracking-wide uppercase">Guardian Insurance</span>
-                    </div>
-                    <div></div>
-                </div>
-
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
-                    Secure access to your <span class="text-primary">insurance system</span>
-                </h1>
-            
-                <p class="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg">
-                    Manage policies, payments, and customer data with a secure and scalable platform.
-                </p>
-            
-                <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
-                    <a asp-controller="Account" asp-action="Login"
-                           class="inline-flex justify-center items-center px-6 py-3 bg-primary text-white font-semibold rounded-xl shadow-sm hover:bg-primary-dark focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 transition-all btn-transition">
-                        Login
-                    </a>
-                    <a asp-controller="Account" asp-action="Register"
-                           class="inline-flex justify-center items-center px-6 py-3 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary/5 transition-all btn-transition">
-                        Register
-                    </a>
-                </div>
-            
-                <hr class="my-8 border-gray-200">
-            
-                <div class="space-y-6">
-                    <div class="flex flex-wrap items-baseline justify-between gap-2">
-                        <h2 class="text-xl font-bold text-gray-800">System Status</h2>
-                        <div class="flex items-center gap-1.5">
-                            <span class="relative flex h-2.5 w-2.5">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
-                            </span>
-                            <span class="text-sm font-semibold text-primary-dark bg-primary-soft px-3 py-1 rounded-full">Secure & Operational</span>
+    <main class="flex-grow-1">
+        <section class="hero-section text-white py-5">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4">Insurance Made Simple</h1>
+                        <p class="lead mb-4 opacity-75">Protect your future with comprehensive insurance plans. Easy to purchase, simple to manage, and always there when you need it.</p>
+                        <div class="d-flex gap-3">
+                            <a asp-controller="Account" asp-action="Register" class="btn btn-light btn-lg fw-semibold">Get Started</a>
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-light btn-lg">Sign In</a>
                         </div>
                     </div>
-                
-                    <div class="grid grid-cols-2 gap-5 border border-gray-100 rounded-xl bg-gray-50/40 p-4">
-                        <div class="text-center">
-                            <p class="text-3xl md:text-4xl font-black text-primary tracking-tight">12k+</p>
-                            <p class="text-xs text-gray-500 uppercase tracking-wide mt-1 font-medium">Users</p>
-                        </div>
-                        <div class="text-center border-l border-gray-200">
-                            <p class="text-3xl md:text-4xl font-black text-primary tracking-tight">99.9%</p>
-                            <p class="text-xs text-gray-500 uppercase tracking-wide mt-1 font-medium">Uptime</p>
-                        </div>
-                    </div>
-                
-                    <div class="flex flex-wrap items-center justify-between gap-3 bg-primary-soft/40 rounded-xl p-4 border-l-4 border-primary">
-                        <div>
-                            <p class="font-bold text-gray-800 text-base flex items-center gap-1.5">
-                                <span class="text-primary text-xl">◆</span> System Active
-                            </p>
-                        </div>
-                        <p class="text-sm text-gray-600 font-medium">All services running smoothly</p>
+                    <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                        <i class="bi bi-shield-check display-1 opacity-75"></i>
                     </div>
                 </div>
-            
-                <div class="mt-10 pt-4 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-400">
-                    <span>© 2026 —</span>
-                    <div class="flex gap-4">
-                        <a href="https://www.einsurance.com" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-primary transition-colors font-medium text-xs underline-offset-2 hover:underline">
-                            Eininsurance
-                        </a>
-                        <span class="text-gray-300">|</span>
-                        <a href="#" class="text-gray-500 hover:text-primary transition-colors text-xs hover:underline">Privacy</a>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-dark">Why Choose EInsurance?</h2>
+                    <p class="text-muted">We make insurance simple, transparent, and accessible</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100 border-0 shadow-sm p-4">
+                            <div class="bg-success bg-opacity-10 rounded-3 p-3 d-inline-flex mb-3">
+                                <i class="bi bi-shield-check fs-3 text-success"></i>
+                            </div>
+                            <h4 class="fw-bold">Secure Coverage</h4>
+                            <p class="text-muted">Comprehensive protection for you and your family with reliable coverage options.</p>
+                        </div>
                     </div>
-                    <span class="sm:ml-auto">All rights reserved.</span>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100 border-0 shadow-sm p-4">
+                            <div class="bg-success bg-opacity-10 rounded-3 p-3 d-inline-flex mb-3">
+                                <i class="bi bi-currency-dollar fs-3 text-success"></i>
+                            </div>
+                            <h4 class="fw-bold">Affordable Plans</h4>
+                            <p class="text-muted">Flexible payment options and competitive premiums that fit your budget.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100 border-0 shadow-sm p-4">
+                            <div class="bg-success bg-opacity-10 rounded-3 p-3 d-inline-flex mb-3">
+                                <i class="bi bi-headset fs-3 text-success"></i>
+                            </div>
+                            <h4 class="fw-bold">24/7 Support</h4>
+                            <p class="text-muted">Dedicated support team available around the clock to assist you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-dark">Insurance Plans</h2>
+                    <p class="text-muted">Choose from our range of coverage options</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body text-center py-4">
+                                <i class="bi bi-house fs-1 text-success mb-3"></i>
+                                <h4 class="fw-bold">Home Insurance</h4>
+                                <p class="text-muted">Protect your home and belongings with comprehensive coverage.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body text-center py-4">
+                                <i class="bi bi-car-front fs-1 text-success mb-3"></i>
+                                <h4 class="fw-bold">Auto Insurance</h4>
+                                <p class="text-muted">Coverage that keeps you and your vehicle protected on the road.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body text-center py-4">
+                                <i class="bi bi-heart-pulse fs-1 text-success mb-3"></i>
+                                <h4 class="fw-bold">Life Insurance</h4>
+                                <p class="text-muted">Secure your family's future with our life insurance plans.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 small">&copy; 2026 EInsurance. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a asp-controller="Home" asp-action="Privacy" class="text-white-50 text-decoration-none small me-3">Privacy</a>
+                    <a href="#" class="text-white-50 text-decoration-none small">Terms</a>
                 </div>
             </div>
         </div>
-    </div>
-
-    <script>
-        (function() {
-        console.log("Guardian Insurance | Veridian Protocol — protected with #22B590 identity");
-        })();
-    </script>
+    </footer>
 </body>
 </html>

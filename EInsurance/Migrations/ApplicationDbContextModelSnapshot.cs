@@ -89,9 +89,17 @@ namespace EInsurance.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETUTCDATE()");
 
+                    b.Property<DateTime?>("PaidAtUtc")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("PolicyId")
                         .HasColumnType("int")
                         .HasColumnName("PolicyID");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("CommissionId");
 
@@ -238,6 +246,10 @@ namespace EInsurance.Migrations
                         .HasColumnName("AgentID");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AgentId"));
+
+                    b.Property<decimal>("CommissionRate")
+                        .HasPrecision(5, 4)
+                        .HasColumnType("decimal(5,4)");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()

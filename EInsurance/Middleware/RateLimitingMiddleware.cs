@@ -3,10 +3,7 @@ using System.Net;
 
 namespace EInsurance.Middleware;
 
-/// <summary>
-/// Rate limiting middleware to prevent brute-force attacks on authentication endpoints.
-/// Tracks failed login attempts per IP address and enforces rate limits.
-/// </summary>
+
 public class RateLimitingMiddleware
 {
     private readonly RequestDelegate _next;
@@ -14,7 +11,6 @@ public class RateLimitingMiddleware
     private readonly int _maxAttempts;
     private readonly int _windowMinutes;
 
-    // Store: Key = "IP:endpoint", Value = list of attempt timestamps
     private static readonly ConcurrentDictionary<string, List<DateTime>> AttemptTracker = new();
 
     public RateLimitingMiddleware(RequestDelegate next, ILogger<RateLimitingMiddleware> logger, int maxAttempts = 5, int windowMinutes = 15)
@@ -27,7 +23,6 @@ public class RateLimitingMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
-        // Apply rate limiting only to authentication endpoints
         if (IsAuthenticationEndpoint(context.Request.Path))
         {
             var clientIp = GetClientIpAddress(context);
@@ -42,7 +37,6 @@ public class RateLimitingMiddleware
                 return;
             }
 
-            // Track the attempt after the request completes
             await RecordAttemptIfAuthenticationFailed(context, key);
         }
 
@@ -59,10 +53,9 @@ public class RateLimitingMiddleware
     {
         if (!AttemptTracker.TryGetValue(key, out var attempts))
         {
-            return true; // First attempt is always allowed
+            return true; 
         }
 
-        // Remove attempts outside the time window
         var now = DateTime.UtcNow;
         var recentAttempts = attempts
             .Where(t => (now - t).TotalMinutes < _windowMinutes)
@@ -74,7 +67,6 @@ public class RateLimitingMiddleware
             return true;
         }
 
-        // Update the list with recent attempts only
         AttemptTracker[key] = recentAttempts;
 
         return recentAttempts.Count < _maxAttempts;
@@ -82,7 +74,6 @@ public class RateLimitingMiddleware
 
     private async Task RecordAttemptIfAuthenticationFailed(HttpContext context, string key)
     {
-        // Record attempt only if it's a POST request (login/register attempt)
         if (context.Request.Method == "POST")
         {
             var now = DateTime.UtcNow;
@@ -101,7 +92,6 @@ public class RateLimitingMiddleware
 
     private string GetClientIpAddress(HttpContext context)
     {
-        // Check for IP behind proxy
         if (context.Request.Headers.TryGetValue("X-Forwarded-For", out var forwardedFor))
         {
             var ips = forwardedFor.ToString().Split(',');

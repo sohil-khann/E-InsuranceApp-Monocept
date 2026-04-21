@@ -1,6 +1,7 @@
 using EInsurance.Extensions;
 using EInsurance.Middleware;
 using Serilog;
+using System.Globalization;
 
 namespace EInsurance;
 
@@ -8,6 +9,10 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        var indianCulture = new CultureInfo("en-IN");
+        CultureInfo.DefaultThreadCurrentCulture = indianCulture;
+        CultureInfo.DefaultThreadCurrentUICulture = indianCulture;
+
         var builder = WebApplication.CreateBuilder(args);
 
         Log.Logger = new LoggerConfiguration()

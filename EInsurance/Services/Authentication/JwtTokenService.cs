@@ -14,7 +14,6 @@ public class JwtTokenService(IOptions<JwtSettings> jwtOptions) : IJwtTokenServic
 
     public AuthenticationResult GenerateToken(AuthenticatedUser user)
     {
-        // Validate user object and required properties
         if (user == null)
         {
             throw new ArgumentNullException(nameof(user), "User cannot be null");

@@ -2,282 +2,115 @@
 
 @{
     Layout = null;
-    ViewData["Title"] = "Guardian Insurance | Customer Registration";
+    ViewData["Title"] = "Register";
 }
 
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>@ViewData["Title"]</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-primary-fixed-variant": "#00513e",
-                        "surface-bright": "#f4fbf6",
-                        "primary": "#006b54", 
-                        "primary-container": "#22b590",
-                        "tertiary": "#9e4035",
-                        "outline": "#6c7a74",
-                        "inverse-on-surface": "#ecf2ed",
-                        "on-error": "#ffffff",
-                        "surface-container-high": "#e3eae5",
-                        "on-surface": "#171d1a",
-                        "error": "#ba1a1a",
-                        "surface-container-lowest": "#ffffff",
-                        "secondary-container": "#bcedd9",
-                        "surface-container-highest": "#dde4df",
-                        "on-secondary-fixed": "#002117",
-                        "on-background": "#171d1a",
-                        "on-error-container": "#93000a",
-                        "background": "#f4fbf6",
-                        "surface-dim": "#d5dcd7",
-                        "on-surface-variant": "#3d4a44",
-                        "on-secondary": "#ffffff",
-                        "surface-container-low": "#eff5f0",
-                        "tertiary-container": "#f28071",
-                        "error-container": "#ffdad6",
-                        "surface-variant": "#dde4df",
-                        "inverse-surface": "#2b322f",
-                        "secondary": "#3a6757",
-                        "on-primary": "#ffffff",
-                        "on-primary-container": "#004030",
-                        "outline-variant": "#bbcac2",
-                        "on-primary-fixed": "#002117",
-                        "on-tertiary-fixed-variant": "#7f2920",
-                        "surface-container": "#e9efea",
-                        "primary-fixed": "#77f9d0",
-                        "secondary-fixed": "#bcedd9",
-                        "primary-fixed-dim": "#58dcb5",
-                        "secondary-fixed-dim": "#a1d1be",
-                        "on-secondary-fixed-variant": "#214f40",
-                        "on-secondary-container": "#406d5d",
-                        "on-tertiary": "#ffffff",
-                        "surface": "#f4fbf6",
-                        "inverse-primary": "#58dcb5",
-                        "on-tertiary-container": "#6b1a13",
-                        "surface-tint": "#006b54",
-                        "tertiary-fixed-dim": "#ffb4a9"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "fontFamily": {
-                        "headline": ["Inter"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
-                    }
-                }
-            }
-        }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EInsurance</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
         body {
-            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            min-height: 100vh;
         }
-
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
+        .register-card {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .brand-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #006b54 0%, #22b590 100%);
         }
     </style>
 </head>
-<body class="bg-surface text-on-surface min-h-screen flex flex-col">
-    <main class="flex-grow flex items-center justify-center relative overflow-hidden px-6 py-12 md:py-24">
-        <!-- Abstract Background Decorative Elements -->
-        <div class="absolute top-[-10%] right-[-5%] w-[40rem] h-[40rem] rounded-full bg-primary-container/10 blur-3xl"></div>
-        <div class="absolute bottom-[-15%] left-[-5%] w-[35rem] h-[35rem] rounded-full bg-primary/5 blur-3xl"></div>
-        <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-12 items-center relative z-10">
-            <!-- Hero Content / Editorial Branding -->
-            <div class="lg:col-span-5 mb-12 lg:mb-0">
-                <div class="inline-flex items-center space-x-2 mb-8">
-                    <div class="w-10 h-10 rounded bg-gradient-to-br from-primary to-primary-container flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white" data-icon="shield">shield</span>
-                    </div>
-                    <span class="text-2xl font-black tracking-tighter text-primary">Guardian Insurance</span>
-                </div>
-                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-on-surface mb-6 leading-[1.1]">
-                    Join the <span class="text-primary-container">Veridian</span> Network.
-                </h1>
-                <p class="text-lg text-on-surface-variant max-w-lg font-medium leading-relaxed mb-8">
-                    Create your account today and gain access to premium insurance protocols, real-time claim tracking, and dedicated support.
-                </p>
-                <div class="flex flex-col gap-4">
-                    <div class="flex items-center space-x-3 bg-surface-container-low px-4 py-2 rounded-lg w-fit">
-                        <span class="material-symbols-outlined text-primary-container" data-icon="how_to_reg" style="font-variation-settings: 'FILL' 1;">how_to_reg</span>
-                        <div class="flex flex-col">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Registration</span>
-                            <span class="text-sm font-bold text-primary">Open Protocol</span>
+<body class="d-flex align-items-center justify-content-center py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="register-card card shadow-lg border-0 rounded-4 p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <div class="brand-icon rounded-3 d-inline-flex align-items-center justify-content-center mb-3">
+                            <i class="bi bi-shield-check text-white fs-4"></i>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Register Card -->
-            <div class="lg:col-span-7 flex justify-center lg:justify-end">
-                <div class="w-full max-w-2xl bg-surface-container-lowest rounded-xl p-8 lg:p-10 shadow-[0_32px_64px_-16px_rgba(23,29,26,0.06)] relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary to-primary-container"></div>
-                    <div class="mb-8">
-                        <h2 class="text-2xl font-bold text-on-surface mb-2">Create Your Account</h2>
-                        <p class="text-on-surface-variant text-sm font-medium">Please provide your information to register as a customer.</p>
+                        <h1 class="h3 fw-bold text-dark">EInsurance</h1>
+                        <p class="text-muted">Create your account</p>
                     </div>
 
-                    <form asp-action="Register" method="post" class="space-y-6">
+                    <form asp-action="Register" method="post">
                         @Html.AntiForgeryToken()
-                        <div asp-validation-summary="ModelOnly" class="text-red-500 text-sm font-medium mb-3"></div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger small mb-3"></div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Full Name -->
-                            <div class="relative group">
-                                <label asp-for="FullName" class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1"></label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 w-1 bg-transparent group-focus-within:bg-primary transition-colors duration-200"></div>
-                                    <input asp-for="FullName" class="w-full bg-surface-container-high border-0 rounded-lg py-3 pl-6 pr-4 focus:ring-0 text-on-surface placeholder:text-outline-variant font-medium transition-all" placeholder="John Doe" />
-                                </div>
-                                <span asp-validation-for="FullName" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label asp-for="FullName" class="form-label fw-semibold">Full Name</label>
+                                <input asp-for="FullName" class="form-control" placeholder="Enter your full name" />
+                                <span asp-validation-for="FullName" class="text-danger small"></span>
                             </div>
 
-                            <!-- Email -->
-                            <div class="relative group">
-                                <label asp-for="Email" class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1"></label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 w-1 bg-transparent group-focus-within:bg-primary transition-colors duration-200"></div>
-                                    <input asp-for="Email" class="w-full bg-surface-container-high border-0 rounded-lg py-3 pl-6 pr-4 focus:ring-0 text-on-surface placeholder:text-outline-variant font-medium transition-all" placeholder="john@example.com" />
-                                </div>
-                                <span asp-validation-for="Email" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                            <div class="col-md-6">
+                                <label asp-for="Email" class="form-label fw-semibold">Email</label>
+                                <input asp-for="Email" type="email" class="form-control" placeholder="Enter your email" />
+                                <span asp-validation-for="Email" class="text-danger small"></span>
                             </div>
 
-                            <!-- Phone -->
-                            <div class="relative group">
-                                <label asp-for="Phone" class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1"></label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 w-1 bg-transparent group-focus-within:bg-primary transition-colors duration-200"></div>
-                                    <input asp-for="Phone" class="w-full bg-surface-container-high border-0 rounded-lg py-3 pl-6 pr-4 focus:ring-0 text-on-surface placeholder:text-outline-variant font-medium transition-all" placeholder="+1 (555) 000-0000" />
-                                </div>
-                                <span asp-validation-for="Phone" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                            <div class="col-md-6">
+                                <label asp-for="Phone" class="form-label fw-semibold">Phone</label>
+                                <input asp-for="Phone" class="form-control" placeholder="Enter your phone number" />
+                                <span asp-validation-for="Phone" class="text-danger small"></span>
                             </div>
 
-                            <!-- Date of Birth -->
-                            <div class="relative group">
-                                <label asp-for="DateOfBirth" class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1"></label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 w-1 bg-transparent group-focus-within:bg-primary transition-colors duration-200"></div>
-                                    <input asp-for="DateOfBirth" type="date" class="w-full bg-surface-container-high border-0 rounded-lg py-3 pl-6 pr-4 focus:ring-0 text-on-surface placeholder:text-outline-variant font-medium transition-all" />
-                                </div>
-                                <span asp-validation-for="DateOfBirth" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                            <div class="col-md-6">
+                                <label asp-for="DateOfBirth" class="form-label fw-semibold">Date of Birth</label>
+                                <input asp-for="DateOfBirth" type="date" class="form-control" />
+                                <span asp-validation-for="DateOfBirth" class="text-danger small"></span>
                             </div>
 
-                            <!-- Password -->
-                            <div class="relative group">
-                                <label asp-for="Password" class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1"></label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 w-1 bg-transparent group-focus-within:bg-primary transition-colors duration-200"></div>
-                                    <input asp-for="Password" class="w-full bg-surface-container-high border-0 rounded-lg py-3 pl-6 pr-12 focus:ring-0 text-on-surface placeholder:text-outline-variant font-medium transition-all" placeholder="••••••••" />
-                                    <button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant hover:text-primary transition-colors" type="button" onclick="togglePasswordVisibility('Password', 'pass-toggle-icon')">
-                                        <span class="material-symbols-outlined text-xl" data-icon="visibility" id="pass-toggle-icon">visibility</span>
-                                    </button>
-                                </div>
-                                <span asp-validation-for="Password" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                            <div class="col-md-6">
+                                <label asp-for="Password" class="form-label fw-semibold">Password</label>
+                                <input asp-for="Password" type="password" class="form-control" placeholder="Create a password" />
+                                <span asp-validation-for="Password" class="text-danger small"></span>
                             </div>
 
-                            <!-- Confirm Password -->
-                            <div class="relative group">
-                                <label asp-for="ConfirmPassword" class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1"></label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 w-1 bg-transparent group-focus-within:bg-primary transition-colors duration-200"></div>
-                                    <input asp-for="ConfirmPassword" class="w-full bg-surface-container-high border-0 rounded-lg py-3 pl-6 pr-12 focus:ring-0 text-on-surface placeholder:text-outline-variant font-medium transition-all" placeholder="••••••••" />
-                                    <button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant hover:text-primary transition-colors" type="button" onclick="togglePasswordVisibility('ConfirmPassword', 'conf-pass-toggle-icon')">
-                                        <span class="material-symbols-outlined text-xl" data-icon="visibility" id="conf-pass-toggle-icon">visibility</span>
-                                    </button>
-                                </div>
-                                <span asp-validation-for="ConfirmPassword" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                            <div class="col-md-6">
+                                <label asp-for="ConfirmPassword" class="form-label fw-semibold">Confirm Password</label>
+                                <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm your password" />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
                             </div>
 
-                            <!-- Agent ID -->
-                            <div class="relative group md:col-span-2">
-                                <label asp-for="AgentId" class="block text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-2 ml-1"></label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 w-1 bg-transparent group-focus-within:bg-primary transition-colors duration-200"></div>
-                                    <select asp-for="AgentId" asp-items="ViewBag.AgentList" class="w-full bg-surface-container-high border-0 rounded-lg py-3 pl-6 pr-10 focus:ring-0 text-on-surface font-medium transition-all appearance-none">
-                                        <option value="">None (Optional)</option>
-                                    </select>
-                                    <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline-variant">
-                                        <span class="material-symbols-outlined text-xl">expand_more</span>
-                                    </div>
-                                </div>
-                                <span asp-validation-for="AgentId" class="text-red-500 text-[10px] font-bold mt-1 block"></span>
+                            <div class="col-12">
+                                <label asp-for="AgentId" class="form-label fw-semibold">Select Agent (Optional)</label>
+                                <select asp-for="AgentId" asp-items="ViewBag.AgentList" class="form-select">
+                                    <option value="">None (Optional)</option>
+                                </select>
+                                <span asp-validation-for="AgentId" class="text-danger small"></span>
                             </div>
                         </div>
 
-                        <!-- Register Button -->
-                        <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                            <button type="submit" class="flex-1 py-4 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-lg shadow-lg hover:shadow-primary/20 active:scale-[0.98] transition-all duration-200 uppercase tracking-widest text-sm">
-                                Create Account
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                            <a asp-action="Login" class="btn btn-outline-secondary">Back to Login</a>
+                            <button type="submit" class="btn btn-success btn-lg fw-semibold">
+                                <i class="bi bi-person-plus me-2"></i>Create Account
                             </button>
-                            <a asp-action="Login" class="flex-1 py-4 bg-surface-container-high text-on-surface font-bold rounded-lg hover:bg-surface-container-highest transition-all duration-200 uppercase tracking-widest text-sm text-center">
-                                Back to Login
-                            </a>
                         </div>
                     </form>
 
-                    <div class="mt-8 pt-6 border-t border-surface-container flex flex-col items-center">
-                        <div class="flex space-x-6">
-                            <div class="flex items-center text-[10px] font-bold text-primary uppercase tracking-widest">
-                                <span class="w-1.5 h-1.5 rounded-full bg-primary-container mr-2"></span>
-                                Secure Enrollment
-                            </div>
-                            <div class="flex items-center text-[10px] font-bold text-primary uppercase tracking-widest">
-                                <span class="w-1.5 h-1.5 rounded-full bg-primary-container mr-2"></span>
-                                Data Encrypted
-                            </div>
-                        </div>
+                    <div class="text-center mt-4">
+                        <p class="text-muted small">Already have an account? <a asp-action="Login" class="text-success fw-semibold">Sign in</a></p>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
-    <!-- Footer Component -->
-    <footer class="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 py-12 w-full bg-surface-variant dark:bg-emerald-950 mt-auto">
-        <div class="flex flex-col space-y-2 mb-6 md:mb-0">
-            <span class="text-sm font-black text-primary dark:text-emerald-400">Guardian Insurance</span>
-            <span class="font-sans text-[10px] tracking-widest uppercase font-bold text-on-secondary-container dark:text-emerald-400/50">© 2026 Guardian Insurance. All rights reserved.</span>
-        </div>
-        <nav class="flex flex-wrap justify-center gap-6 md:space-x-8">
-            <a class="font-sans text-[10px] tracking-widest uppercase font-bold text-on-secondary-container dark:text-emerald-400/50 hover:text-primary-container transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
-            <a class="font-sans text-[10px] tracking-widest uppercase font-bold text-on-secondary-container dark:text-emerald-400/50 hover:text-primary-container transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
-            <a class="font-sans text-[10px] tracking-widest uppercase font-bold text-on-secondary-container dark:text-emerald-400/50 hover:text-primary-container transition-all opacity-80 hover:opacity-100" href="#">Accessibility</a>
-            <a class="font-sans text-[10px] tracking-widest uppercase font-bold text-on-secondary-container dark:text-emerald-400/50 hover:text-primary-container transition-all opacity-80 hover:opacity-100" href="#">Contact Support</a>
-        </nav>
-    </footer>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    <script>
-        function togglePasswordVisibility(id, iconId) {
-            const passwordInput = document.getElementById(id);
-            const icon = document.getElementById(iconId);
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                icon.textContent = 'visibility_off';
-            } else {
-                passwordInput.type = 'password';
-                icon.textContent = 'visibility';
-            }
-        }
-    </script>
 </body>
 </html>

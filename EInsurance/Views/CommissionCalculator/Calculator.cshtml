@@ -1,0 +1,95 @@
+@model EInsurance.Models.Commission.CommissionCalculationInputViewModel
+
+@{
+    ViewData["Title"] = "Commission Calculator";
+    Layout = "_Layout";
+}
+
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="h3 fw-bold">Commission Calculator</h1>
+        <p class="text-muted">Calculate agent commissions based on policy premiums and date ranges</p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a asp-action="Dashboard" asp-controller="CommissionCalculator" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-2"></i>Back to Dashboard
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <form asp-action="Calculate" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="text-danger small mb-4"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="AgentId" class="form-label fw-semibold">Select Agent</label>
+                        <select asp-for="AgentId" class="form-select">
+                            <option value="">-- Choose an Agent --</option>
+                            @if (ViewBag.Agents != null)
+                            {
+                                @foreach (var agent in ViewBag.Agents)
+                                {
+                                    <option value="@agent.AgentId">@agent.FullName (@agent.Email)</option>
+                                }
+                            }
+                        </select>
+                        <span asp-validation-for="AgentId" class="text-danger small"></span>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label asp-for="FromDate" class="form-label fw-semibold">From Date</label>
+                            <input asp-for="FromDate" type="date" class="form-control" />
+                            <span asp-validation-for="FromDate" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="ToDate" class="form-label fw-semibold">To Date</label>
+                            <input asp-for="ToDate" type="date" class="form-control" />
+                            <span asp-validation-for="ToDate" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 mt-3">
+                        <div class="form-check">
+                            <input asp-for="OnlyPaidPolicies" class="form-check-input" type="checkbox" />
+                            <label asp-for="OnlyPaidPolicies" class="form-check-label fw-semibold">
+                                Only Include Paid Policies
+                            </label>
+                        </div>
+                        <p class="text-muted small mt-1">Calculate commission only for policies with confirmed payments</p>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        <strong>Calculation Method:</strong> Commission = Σ(Policy Premium × Agent Commission Rate)
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-calculator me-2"></i>Calculate Commission
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <form asp-action="BatchCalculate" method="post" class="d-inline">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="fromDate" value="@DateTime.UtcNow.AddMonths(-1)" />
+                <input type="hidden" name="toDate" value="@DateTime.UtcNow" />
+                <button type="submit" class="btn btn-outline-success">
+                    <i class="bi bi-people me-2"></i>Batch Calculate All Agents
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

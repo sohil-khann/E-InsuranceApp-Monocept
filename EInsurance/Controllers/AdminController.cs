@@ -11,12 +11,86 @@ namespace EInsurance.Controllers;
 [Authorize(Roles = RoleNames.Admin)]
 public class AdminController(ApplicationDbContext context) : Controller
 {
-    public async Task<IActionResult> ManageUsers()
+    [HttpGet]
+    public async Task<IActionResult> AssignAgent(string customerId)
     {
+        if (string.IsNullOrEmpty(customerId)) return NotFound();
+
+        var parts = customerId.Split('_');
+        if (parts.Length != 2 || parts[0] != "customer") return BadRequest();
+
+        var customerIdNum = int.Parse(parts[1]);
+        
+        var customer = await context.Customers
+            .Include(c => c.Agent)
+            .FirstOrDefaultAsync(c => c.CustomerId == customerIdNum);
+
+        if (customer == null) return NotFound();
+
+        var agents = await context.InsuranceAgents
+            .OrderBy(a => a.FullName)
+            .ToListAsync();
+
+        var model = new AssignAgentViewModel
+        {
+            CustomerId = customer.CustomerId,
+            CustomerName = customer.FullName,
+            CustomerEmail = customer.Email,
+            CurrentAgentId = customer.AgentId,
+            CurrentAgentName = customer.Agent?.FullName,
+            Agents = agents.Select(a => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
+            {
+                Value = a.AgentId.ToString(),
+                Text = $"{a.FullName} ({a.Email})"
+            }).ToList()
+        };
+
+        return View(model);
+    }
+
+    [HttpPost]
+    [Route("Admin/AssignAgent")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> AssignAgentPost(AssignAgentViewModel model)
+    {
+        try
+        {
+            System.Diagnostics.Debug.WriteLine($"CustomerId: {model.CustomerId}, NewAgentId: {model.NewAgentId}");
+            
+            if (model.CustomerId == 0)
+            {
+                TempData["ErrorMessage"] = $"Invalid customer ID: {model.CustomerId}";
+                return RedirectToAction(nameof(ManageUsers));
+            }
+
+            var customer = await context.Customers.FindAsync(model.CustomerId);
+            if (customer == null)
+            {
+                TempData["ErrorMessage"] = "Customer not found";
+                return RedirectToAction(nameof(ManageUsers));
+            }
+
+            customer.AgentId = model.NewAgentId == 0 ? null : model.NewAgentId;
+            await context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = $"Agent assigned successfully to {customer.FullName}";
+        }
+        catch (Exception ex)
+        {
+            TempData["ErrorMessage"] = $"Error: {ex.Message}";
+        }
+        
+        return RedirectToAction(nameof(ManageUsers));
+    }
+
+    public async Task<IActionResult> ManageUsers(string searchTerm = "")
+    {
+        var query = searchTerm?.ToLower() ?? "";
+
         var admins = await context.Admins.AsNoTracking().ToListAsync();
         var employees = await context.Employees.AsNoTracking().ToListAsync();
         var agents = await context.InsuranceAgents.AsNoTracking().ToListAsync();
-        var customers = await context.Customers.AsNoTracking().ToListAsync();
+        var customers = await context.Customers.Include(c => c.Agent).AsNoTracking().ToListAsync();
 
         var users = new List<UserListItemViewModel>();
 
@@ -58,14 +132,25 @@ public class AdminController(ApplicationDbContext context) : Controller
             Id = $"customer_{c.CustomerId}",
             FullName = c.FullName,
             Email = c.Email,
-            Username = c.Email, // Customer doesn't have Username, using Email
+            Username = c.Email,
             Role = "CUSTOMER",
             Status = "Active",
-            CreatedAt = c.CreatedAt
+            CreatedAt = c.CreatedAt,
+            AgentName = c.Agent?.FullName
         }));
+
+        if (!string.IsNullOrWhiteSpace(query))
+        {
+            users = users.Where(u =>
+                u.FullName.ToLower().Contains(query) ||
+                u.Email.ToLower().Contains(query) ||
+                u.Role.ToLower().Contains(query)
+            ).ToList();
+        }
 
         var viewModel = new ManageUsersViewModel
         {
+            SearchTerm = searchTerm ?? "",
             Users = users.OrderByDescending(u => u.CreatedAt).ToList()
         };
 

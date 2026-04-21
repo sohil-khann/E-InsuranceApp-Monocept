@@ -4,9 +4,8 @@ namespace EInsurance.Models.Admin;
 
 public class ManageUsersViewModel
 {
+    public string SearchTerm { get; set; } = string.Empty;
     public List<UserListItemViewModel> Users { get; set; } = [];
-    public int TotalLicenses { get; set; } = 842; // Mocked from image
-    public int MaxLicenses { get; set; } = 1000; // Mocked from image
 }
 
 public class UserListItemViewModel
@@ -16,8 +15,9 @@ public class UserListItemViewModel
     public string Email { get; set; } = string.Empty;
     public string Username { get; set; } = string.Empty;
     public string Role { get; set; } = string.Empty;
-    public string Status { get; set; } = "Active"; // Active, On Leave, Revoked
+    public string Status { get; set; } = "Active"; 
     public DateTime CreatedAt { get; set; }
+    public string? AgentName { get; set; }
 }
 
 public class CreateUserViewModel
@@ -61,4 +61,20 @@ public class EditUserViewModel
 
     [Required]
     public string Status { get; set; } = string.Empty;
+}
+
+public class AssignAgentViewModel
+{
+    public int CustomerId { get; set; }
+    public string CustomerName { get; set; } = string.Empty;
+    public string CustomerEmail { get; set; } = string.Empty;
+    
+    [Display(Name = "Current Agent")]
+    public int? CurrentAgentId { get; set; }
+    public string? CurrentAgentName { get; set; }
+    
+    [Display(Name = "Assign New Agent")]
+    public int NewAgentId { get; set; }
+    
+    public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> Agents { get; set; } = [];
 }

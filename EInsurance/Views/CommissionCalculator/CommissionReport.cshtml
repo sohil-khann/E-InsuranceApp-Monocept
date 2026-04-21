@@ -1,0 +1,163 @@
+@model EInsurance.Models.Commission.CommissionReportViewModel
+
+@{
+    ViewData["Title"] = $"Commission Report - {Model.AgentName} | Guardian Portal";
+}
+
+<style>
+    :root {
+        --primary: #006b54;
+        --primary-light: #22b590;
+        --surface: #f4fbf6;
+        --surface-container: #eff5f0;
+        --on-surface: #1a1b1a;
+    }
+
+    body {
+        background-color: var(--surface);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .success-box {
+        background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%);
+        border: 1px solid #86efac;
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .success-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .summary-item {
+        background: var(--surface-container);
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+    }
+
+    .summary-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #6b7280;
+        margin-bottom: 0.5rem;
+    }
+
+    .summary-value {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--on-surface);
+    }
+</style>
+
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- Success Message -->
+    <div class="success-box">
+        <div class="success-icon">✅</div>
+        <h1 style="font-size: 2rem; font-weight: 900; color: #166534; margin: 0;">Commission Finalized Successfully</h1>
+        <p style="color: #15803d; margin-top: 0.5rem;">The commission records have been created and stored in the database</p>
+    </div>
+
+    <!-- Report Card -->
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <div>
+                <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.5rem;">Official Report</p>
+                <h2 style="font-size: 2rem; font-weight: 900; color: var(--on-surface); margin: 0;">@Model.AgentName</h2>
+                <p style="color: #6b7280; margin: 0.5rem 0 0 0;">@Model.ReportPeriod</p>
+            </div>
+            <div style="text-align: right;">
+                <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #6b7280; margin-bottom: 0.5rem;">Report Status</p>
+                <span style="background: #dcfce7; color: #166534; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 700; font-size: 0.875rem;">@Model.Status</span>
+            </div>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="summary-grid">
+            <div class="summary-item">
+                <div class="summary-label">Total Policies</div>
+                <div class="summary-value">@Model.TotalPoliciesCount</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">Paid Policies</div>
+                <div class="summary-value">@Model.PaidPoliciesCount</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">Total Premium</div>
+                <div class="summary-value">@Model.TotalPremium.ToString("C")</div>
+            </div>
+            <div class="summary-item" style="background: linear-gradient(135deg, rgba(34, 181, 144, 0.1) 0%, rgba(0, 107, 84, 0.1) 100%); border-left: 4px solid var(--primary-light);">
+                <div class="summary-label" style="color: var(--primary);">Commission Rate</div>
+                <div class="summary-value" style="color: var(--primary-light);">@Model.CommissionRate.ToString("P")</div>
+            </div>
+            <div class="summary-item" style="grid-column: span 2; background: linear-gradient(135deg, rgba(0, 107, 84, 0.05) 0%, rgba(34, 181, 144, 0.05) 100%); border-left: 4px solid var(--primary-light);">
+                <div class="summary-label" style="color: var(--primary);">Total Commission Calculated</div>
+                <div class="summary-value" style="color: var(--primary-light);">@Model.TotalCommissionAmount.ToString("C")</div>
+            </div>
+        </div>
+
+        <!-- Finalization Details -->
+        <div style="background: var(--surface-container); padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
+            <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #6b7280; margin-bottom: 1rem;">Finalization Details</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div>
+                    <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 0.25rem;">Finalized At</p>
+                    <p style="font-weight: 600; color: var(--on-surface); margin: 0;">@Model.FinalizedAtUtc:MMMM dd, yyyy HH:mm:ss</p>
+                </div>
+                <div>
+                    <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 0.25rem;">Records Created</p>
+                    <p style="font-weight: 600; color: var(--on-surface); margin: 0;">@Model.PolicyDetails.Count commission record(s)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div style="background: #dbeafe; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 0.5rem; margin-top: 2rem;">
+            <p style="font-weight: 700; color: #1e40af; margin-bottom: 0.5rem;">ℹ️ Next Steps</p>
+            <ul style="margin: 0; padding-left: 1.5rem; color: #1e40af; font-size: 0.875rem;">
+                <li>Review the commission records in the ledger</li>
+                <li>Process payments through the payment system</li>
+                <li>Update payment status when funds are disbursed</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="@Url.Action("Ledger", "CommissionCalculator", new { agentId = Model.AgentId })" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 107, 84, 0.2);">
+            📋 View Ledger
+        </a>
+
+        <a href="@Url.Action("Dashboard", "CommissionCalculator")" style="background: var(--surface-container); color: var(--on-surface); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
+            ← Back to Dashboard
+        </a>
+
+        <a href="@Url.Action("Calculator", "CommissionCalculator")" style="background: var(--surface-container); color: var(--on-surface); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
+            🧮 New Calculation
+        </a>
+    </div>
+
+    <!-- Print Option -->
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; text-align: center;">
+        <button onclick="window.print()" style="background: white; border: 1px solid #e5e7eb; color: var(--on-surface); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">
+            🖨️ Print Report
+        </button>
+    </div>
+</div>

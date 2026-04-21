@@ -1,0 +1,133 @@
+@model EInsurance.Models.Commission.AgentCommissionDashboardViewModel
+
+@{
+    ViewData["Title"] = "Commission Dashboard";
+    Layout = "_Layout";
+}
+
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="h3 fw-bold">Commission Dashboard</h1>
+        <p class="text-muted">Agent performance and commission tracking</p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a asp-action="Calculator" class="btn btn-success">
+            <i class="bi bi-calculator me-2"></i>New Calculation
+        </a>
+    </div>
+</div>
+
+@if (Model != null)
+{
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-success bg-opacity-10 rounded-circle p-3">
+                            <i class="bi bi-person fs-4 text-success"></i>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h4 class="fw-bold mb-1">@Model.AgentName</h4>
+                            <p class="text-muted small mb-0">@Model.Role - @Model.Region</p>
+                        </div>
+                        <span class="badge bg-success">@Model.PerformanceBadge</span>
+                        <span class="badge bg-info">@Model.CommissionStatus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Active Policies (This Month)</p>
+                    <h2 class="fw-bold text-success">@Model.ActivePoliciesCurrentMonth</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <p class="text-muted small mb-1">Total Premium (This Month)</p>
+                    <h2 class="fw-bold">@Model.TotalPremiumCurrentMonth.ToString("C")</h2>
+                    <p class="text-muted small mb-0">YTD: @Model.TotalPremiumYTD.ToString("C")</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-success h-100">
+                <div class="card-body text-white">
+                    <p class="text-white-50 small mb-1">Commission Earned (This Month)</p>
+                    <h2 class="fw-bold text-white">@Model.CommissionEarnedCurrentMonth.ToString("C")</h2>
+                    <p class="text-white-50 small mb-0">YTD: @Model.TotalCommissionYTD.ToString("C")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-0">
+                    <h5 class="fw-bold mb-0">Monthly Commission Performance</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex align-items-end justify-content-between gap-2" style="height: 200px;">
+                        @foreach (var month in Model.MonthlyPerformance)
+                        {
+                            var maxCommission = Model.MonthlyPerformance.Max(m => m.Commission);
+                            var percentage = maxCommission > 0 ? (month.Commission / maxCommission) * 100 : 0;
+
+                            <div class="text-center flex-fill">
+                                <div class="bg-success rounded" style="height: @(percentage)%; min-height: 10px;"></div>
+                                <p class="small text-muted mt-2 mb-0">@month.Month</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-header bg-white border-0">
+                    <h5 class="fw-bold mb-0">Recent Disbursements</h5>
+                </div>
+                <div class="card-body p-0">
+                    @if (Model.RecentDisbursements.Any())
+                    {
+                        @foreach (var disbursement in Model.RecentDisbursements)
+                        {
+                            <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                                <div>
+                                    <p class="fw-semibold mb-0 small">@disbursement.PolicyName</p>
+                                    <p class="text-muted small mb-0">@disbursement.ProcessedDate.ToString("MMM dd")</p>
+                                </div>
+                                <span class="fw-bold text-success">@disbursement.Amount.ToString("C")</span>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="p-4 text-center text-muted">
+                            <i class="bi bi-inbox d-block mb-2"></i>
+                            No recent disbursements
+                        </div>
+                    }
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <a asp-action="Ledger" asp-route-agentId="@Model.AgentId" class="text-success small fw-semibold">View Full Ledger →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        <i class="bi bi-info-circle me-2"></i>
+        Please select an agent to view their commission dashboard, or use the Calculator to calculate commissions.
+    </div>
+}

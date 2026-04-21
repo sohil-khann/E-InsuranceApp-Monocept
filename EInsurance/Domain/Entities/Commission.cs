@@ -21,6 +21,14 @@ public class Commission : AuditableEntity
     [Precision(18, 2)]
     public decimal CommissionAmount { get; set; }
 
+    [MaxLength(50)]
+    [Required]
+    public string Status { get; set; } = "Pending";
+
+ 
+    [Column(TypeName = "datetime2")]
+    public DateTime? PaidAtUtc { get; set; }
+
     [ForeignKey(nameof(AgentId))]
     public InsuranceAgent Agent { get; set; } = null!;
 

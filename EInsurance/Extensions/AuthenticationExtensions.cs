@@ -3,6 +3,7 @@ using EInsurance.Interfaces;
 using EInsurance.Repository;
 using EInsurance.Security;
 using EInsurance.Services.Authentication;
+using EInsurance.Services.Commission;
 using EInsurance.Services.Policies;
 using EInsurance.Services.Premium;
 using EInsurance.Services.Registration;
@@ -69,6 +70,7 @@ public static class AuthenticationExtensions
         services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
         services.AddScoped<IRegistrationService, RegistrationService>();
         services.AddScoped<IPremiumCalculationService, PremiumCalculationService>();
+        services.AddScoped<ICommissionCalculationService, CommissionCalculationService>();
 
         return services;
     }
