@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using EInsurance.Security;
+using EInsurance.Security.Validation;
 
 namespace EInsurance.Models.Admin;
 
@@ -24,22 +26,26 @@ public class CreateUserViewModel
 {
     [Required]
     [Display(Name = "Full Name")]
+    [MinLength(ValidationConstants.FullName.MinLength, ErrorMessage = "Full name must be at least 2 characters.")]
+    [MaxLength(ValidationConstants.FullName.MaxLength, ErrorMessage = "Full name must not exceed 100 characters.")]
     public string FullName { get; set; } = string.Empty;
 
     [Required]
     [EmailAddress]
+    [MaxLength(ValidationConstants.Email.MaxLength, ErrorMessage = "Email must not exceed 100 characters.")]
     public string Email { get; set; } = string.Empty;
 
     [Required]
-    [StringLength(50, MinimumLength = 3)]
+    [StringLength(ValidationConstants.Username.MaxLength, MinimumLength = ValidationConstants.Username.MinLength)]
     public string Username { get; set; } = string.Empty;
 
     [Required]
     [DataType(DataType.Password)]
-    [StringLength(100, MinimumLength = 6)]
+    [StrongPassword]
     public string Password { get; set; } = string.Empty;
 
     [Required]
+    [ValidRole]
     public string Role { get; set; } = string.Empty;
 }
 
@@ -50,13 +56,17 @@ public class EditUserViewModel
 
     [Required]
     [Display(Name = "Full Name")]
+    [MinLength(ValidationConstants.FullName.MinLength, ErrorMessage = "Full name must be at least 2 characters.")]
+    [MaxLength(ValidationConstants.FullName.MaxLength, ErrorMessage = "Full name must not exceed 100 characters.")]
     public string FullName { get; set; } = string.Empty;
 
     [Required]
     [EmailAddress]
+    [MaxLength(ValidationConstants.Email.MaxLength, ErrorMessage = "Email must not exceed 100 characters.")]
     public string Email { get; set; } = string.Empty;
 
     [Required]
+    [ValidRole]
     public string Role { get; set; } = string.Empty;
 
     [Required]

@@ -29,6 +29,7 @@ public class Program
         builder.Services.AddApplicationDataAccess(builder.Configuration);
         builder.Services.AddJwtAuthentication(builder.Configuration);
         builder.Services.AddApplicationServices();
+        builder.Services.AddDataValidationServices();
 
         var app = builder.Build();
 

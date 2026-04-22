@@ -1,10 +1,14 @@
 using EInsurance.Domain.Entities;
 using EInsurance.Interfaces;
 using EInsurance.Models.Policies;
+using EInsurance.Security;
+using Microsoft.EntityFrameworkCore;
 
 namespace EInsurance.Services.Policies;
 
-public class PolicyService(IPolicyRepository policyRepository) : IPolicyService
+public class PolicyService(
+    IPolicyRepository policyRepository,
+    IDataValidationService validationService) : IPolicyService
 {
     public async Task<CustomerPoliciesViewModel?> GetCustomerPoliciesAsync(int customerId, CancellationToken cancellationToken = default)
     {
@@ -76,6 +80,22 @@ public class PolicyService(IPolicyRepository policyRepository) : IPolicyService
         var scheme = await policyRepository.GetSchemeByIdAsync(model.SchemeId, cancellationToken);
         if (scheme is null) return null;
 
+        var customerPolicies = await policyRepository.GetCustomerPoliciesAsync(customerId, cancellationToken);
+        if (customerPolicies != null)
+        {
+            var ageValidation = await validationService.ValidateCustomerAgeAsync(customerPolicies.DateOfBirth, cancellationToken);
+            if (!ageValidation.Success)
+            {
+                throw new InvalidOperationException(ageValidation.Errors.First().Message);
+            }
+        }
+
+        var currencyValidation = validationService.ValidateCurrencyFormat(model.CoverageAmount);
+        if (!currencyValidation.Success)
+        {
+            throw new InvalidOperationException(currencyValidation.Errors.First().Message);
+        }
+
         var policy = new Policy
         {
             CustomerId = customerId,
@@ -89,11 +109,18 @@ public class PolicyService(IPolicyRepository policyRepository) : IPolicyService
 
         var createdPolicy = await policyRepository.CreatePolicyAsync(policy, cancellationToken);
 
+        var premiumAmount = createdPolicy.Premium;
+        var paymentCurrencyValidation = validationService.ValidateCurrencyFormat(premiumAmount);
+        if (!paymentCurrencyValidation.Success)
+        {
+            throw new InvalidOperationException(paymentCurrencyValidation.Errors.First().Message);
+        }
+
         var payment = new Payment
         {
             CustomerId = customerId,
             PolicyId = createdPolicy.PolicyId,
-            Amount = createdPolicy.Premium,
+            Amount = premiumAmount,
             PaymentDate = DateOnly.FromDateTime(DateTime.UtcNow)
         };
 

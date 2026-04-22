@@ -138,11 +138,5 @@ public class AccountController(
         return RedirectToAction(nameof(Login));
     }
 
-    //[HttpPost]
-    //[ValidateAntiForgeryToken]
-    //public async Task<IActionResult> RefreshToken(CancellationToken cancellationToken)
-    //{
-    //    return Unauthorized(new { message = "Refresh token feature has been disabled" });
-    //}
 
 }

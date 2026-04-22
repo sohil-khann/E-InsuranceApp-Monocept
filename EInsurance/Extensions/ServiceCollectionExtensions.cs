@@ -2,6 +2,7 @@ using EInsurance.Data;
 using EInsurance.Data.Seed;
 using EInsurance.Interfaces;
 using EInsurance.Repository;
+using EInsurance.Services.Validation;
 using Microsoft.EntityFrameworkCore;
 
 namespace EInsurance.Extensions;
@@ -17,6 +18,13 @@ public static class ServiceCollectionExtensions
             options.UseSqlServer(connectionString));
         services.AddScoped<IDevelopmentSeedRepository, DevelopmentSeedRepository>();
         services.AddScoped<DevelopmentDataSeeder>();
+
+        return services;
+    }
+
+    public static IServiceCollection AddDataValidationServices(this IServiceCollection services)
+    {
+        services.AddScoped<IDataValidationService, DataValidationService>();
 
         return services;
     }

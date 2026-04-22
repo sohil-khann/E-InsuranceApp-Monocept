@@ -1,7 +1,10 @@
 using EInsurance.Data;
 using EInsurance.Domain.Entities;
+using EInsurance.Interfaces;
 using EInsurance.Models.Admin;
+using EInsurance.Models.Validation;
 using EInsurance.Security;
+using EInsurance.Security.Validation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 namespace EInsurance.Controllers;
 
 [Authorize(Roles = RoleNames.Admin)]
-public class AdminController(ApplicationDbContext context) : Controller
+public class AdminController(ApplicationDbContext context, IDataValidationService validationService) : Controller
 {
     [HttpGet]
     public async Task<IActionResult> AssignAgent(string customerId)
@@ -239,13 +242,47 @@ public class AdminController(ApplicationDbContext context) : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> EditUser(EditUserViewModel model)
+    public async Task<IActionResult> EditUser(EditUserViewModel model, CancellationToken cancellationToken)
     {
         if (!ModelState.IsValid) return View(model);
 
         var parts = model.Id.Split('_');
         var type = parts[0];
         var userId = int.Parse(parts[1]);
+
+        var emailValidation = validationService.ValidateEmailFormat(model.Email);
+        if (!emailValidation.Success)
+        {
+            ModelState.AddModelError("Email", emailValidation.Errors.First().Message);
+            return View(model);
+        }
+
+        var fullNameValidation = model.FullName.Length >= ValidationConstants.FullName.MinLength && model.FullName.Length <= ValidationConstants.FullName.MaxLength
+            ? ValidationErrorResponse.FromModelState(new List<ValidationError>())
+            : ValidationErrorResponse.SingleError("FullName", $"Full name must be between {ValidationConstants.FullName.MinLength} and {ValidationConstants.FullName.MaxLength} characters.", "INVALID_LENGTH");
+        
+        if (!fullNameValidation.Success)
+        {
+            ModelState.AddModelError("FullName", fullNameValidation.Errors.First().Message);
+            return View(model);
+        }
+
+        if (type == "employee")
+        {
+            var roleValidation = validationService.ValidateRoleFormat(model.Role);
+            if (!roleValidation.Success)
+            {
+                ModelState.AddModelError("Role", roleValidation.Errors.First().Message);
+                return View(model);
+            }
+        }
+
+        var emailUniqueValidation = await validationService.ValidateEmailUniquenessAsync(model.Email, userId, cancellationToken);
+        if (!emailUniqueValidation.Success)
+        {
+            ModelState.AddModelError("Email", emailUniqueValidation.Errors.First().Message);
+            return View(model);
+        }
 
         switch (type)
         {
