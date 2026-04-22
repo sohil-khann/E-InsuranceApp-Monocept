@@ -1,0 +1,92 @@
+@model EInsurance.Models.Common.PagedResult<EInsurance.Domain.Entities.Payment>
+
+@{
+    ViewData["Title"] = "All Payments";
+}
+
+<div class="hero-card">
+    <span class="eyebrow">Admin Access</span>
+    <h1 class="display-6 fw-semibold mt-3">All Payments</h1>
+    <p class="lead mt-3 mb-0">View all payments in the system.</p>
+</div>
+
+<div class="info-card mt-4">
+    <form method="get" class="row g-3 align-items-end">
+        <div class="col-md-8">
+            <label for="searchTerm" class="form-label">Search</label>
+            <input id="searchTerm" name="searchTerm" value="@Model.Items.FirstOrDefault()" class="form-control" placeholder="Payment ID, Customer Name" />
+        </div>
+        <div class="col-md-2">
+            <label for="pageSize" class="form-label">Page Size</label>
+            <select name="pageSize" id="pageSize" class="form-select">
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-dark w-100">Apply</button>
+        </div>
+    </form>
+</div>
+
+<div class="info-card mt-4">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Payment ID</th>
+                    <th>Customer ID</th>
+                    <th>Policy ID</th>
+                    <th>Amount</th>
+                    <th>Payment Date</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var payment in Model.Items)
+                {
+                    <tr>
+                        <td>@payment.PaymentId</td>
+                        <td>@payment.CustomerId</td>
+                        <td>@payment.PolicyId</td>
+                        <td>₹@payment.Amount</td>
+                        <td>@payment.PaymentDate.ToString("dd-MMM-yyyy")</td>
+                        <td>@payment.CreatedAt.ToString("dd-MMM-yyyy HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@if (Model.TotalPages > 1)
+{
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllPayments" asp-route-pageNumber="1" asp-route-pageSize="@Model.PageSize">First</a>
+            </li>
+            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllPayments" asp-route-pageNumber="@(Model.CurrentPage - 1)" asp-route-pageSize="@Model.PageSize">Previous</a>
+            </li>
+            
+            @for (int i = Math.Max(1, Model.CurrentPage - 2); i <= Math.Min(Model.TotalPages, Model.CurrentPage + 2); i++)
+            {
+                <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-action="AllPayments" asp-route-pageNumber="@i" asp-route-pageSize="@Model.PageSize">@i</a>
+                </li>
+            }
+            
+            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllPayments" asp-route-pageNumber="@(Model.CurrentPage + 1)" asp-route-pageSize="@Model.PageSize">Next</a>
+            </li>
+            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllPayments" asp-route-pageNumber="@Model.TotalPages" asp-route-pageSize="@Model.PageSize">Last</a>
+            </li>
+        </ul>
+    </nav>
+}
+
+<div class="text-center text-muted mt-2">
+    Showing @Model.FirstRecordIndex - @Model.LastRecordIndex of @Model.TotalRecords records
+</div>

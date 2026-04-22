@@ -42,6 +42,18 @@
                                     <a class="nav-link text-dark" asp-controller="Payment" asp-action="PaymentHistory">Payment History</a>
                                 </li>
                             }
+                            @if (User.FindFirstValue(ClaimTypes.Role) == EInsurance.Security.RoleNames.Admin || User.FindFirstValue(ClaimTypes.Role) == EInsurance.Security.RoleNames.Employee)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Policies" asp-action="AllPolicies">All Policies</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Admin" asp-action="AllCustomers">All Customers</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Admin" asp-action="AllPayments">All Payments</a>
+                                </li>
+                            }
                             @if (User.FindFirstValue(ClaimTypes.Role) == EInsurance.Security.RoleNames.Admin)
                             {
                                 <li class="nav-item">

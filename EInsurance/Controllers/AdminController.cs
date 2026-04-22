@@ -2,6 +2,7 @@ using EInsurance.Data;
 using EInsurance.Domain.Entities;
 using EInsurance.Interfaces;
 using EInsurance.Models.Admin;
+using EInsurance.Models.Common;
 using EInsurance.Models.Validation;
 using EInsurance.Security;
 using EInsurance.Security.Validation;
@@ -12,7 +13,10 @@ using Microsoft.EntityFrameworkCore;
 namespace EInsurance.Controllers;
 
 [Authorize(Roles = RoleNames.Admin)]
-public class AdminController(ApplicationDbContext context, IDataValidationService validationService) : Controller
+public class AdminController(
+    ApplicationDbContext context, 
+    IDataValidationService validationService,
+    IAdminRepository adminRepository) : Controller
 {
     [HttpGet]
     public async Task<IActionResult> AssignAgent(string customerId)
@@ -306,5 +310,62 @@ public class AdminController(ApplicationDbContext context, IDataValidationServic
 
         await context.SaveChangesAsync();
         return RedirectToAction(nameof(ManageUsers));
+    }
+
+    [Authorize(Roles = RoleNames.AdminOrEmployee)]
+    [HttpGet]
+    public async Task<IActionResult> AllCustomers(
+        int pageNumber = 1,
+        int pageSize = 15,
+        string searchTerm = "",
+        CancellationToken cancellationToken = default)
+    {
+        var query = new PaginationQuery
+        {
+            PageNumber = pageNumber,
+            PageSize = pageSize,
+            SearchTerm = searchTerm
+        };
+
+        var pagedCustomers = await adminRepository.GetCustomersAsync(query, cancellationToken);
+
+        var model = new AdminUsersViewModel
+        {
+            SearchTerm = searchTerm,
+            Users = new PagedResult<UserListItemViewModel>(
+                pagedCustomers.Items.Select(c => new UserListItemViewModel
+                {
+                    Id = $"customer_{c.CustomerId}",
+                    FullName = c.FullName,
+                    Email = c.Email,
+                    Role = "CUSTOMER",
+                    CreatedAt = c.CreatedAt
+                }).ToList(),
+                pagedCustomers.TotalRecords,
+                pagedCustomers.CurrentPage,
+                pagedCustomers.PageSize)
+        };
+
+        return View(model);
+    }
+
+    [Authorize(Roles = RoleNames.AdminOrEmployee)]
+    [HttpGet]
+    public async Task<IActionResult> AllPayments(
+        int pageNumber = 1,
+        int pageSize = 50,
+        string searchTerm = "",
+        CancellationToken cancellationToken = default)
+    {
+        var query = new PaginationQuery
+        {
+            PageNumber = pageNumber,
+            PageSize = pageSize,
+            SearchTerm = searchTerm
+        };
+
+        var pagedPayments = await adminRepository.GetPaymentsAsync(query, cancellationToken);
+
+        return View(pagedPayments);
     }
 }

@@ -1,0 +1,92 @@
+@model EInsurance.Models.Admin.AdminUsersViewModel
+
+@{
+    ViewData["Title"] = "All Customers";
+}
+
+<div class="hero-card">
+    <span class="eyebrow">Admin Access</span>
+    <h1 class="display-6 fw-semibold mt-3">All Customers</h1>
+    <p class="lead mt-3 mb-0">View all customers in the system.</p>
+</div>
+
+<div class="info-card mt-4">
+    <form method="get" class="row g-3 align-items-end">
+        <div class="col-md-8">
+            <label for="searchTerm" class="form-label">Search</label>
+            <input id="searchTerm" name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Name, Email, Phone" />
+        </div>
+        <div class="col-md-2">
+            <label for="pageSize" class="form-label">Page Size</label>
+            <select name="pageSize" id="pageSize" class="form-select">
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-dark w-100">Apply</button>
+        </div>
+    </form>
+</div>
+
+<div class="info-card mt-4">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Registered</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model.Users.Items)
+                {
+                    <tr>
+                        <td>@user.Id.Replace("customer_", "")</td>
+                        <td>@user.FullName</td>
+                        <td>@user.Email</td>
+                        <td>@user.CreatedAt.ToString("dd-MMM-yyyy")</td>
+                        <td>@user.CreatedAt.ToString("dd-MMM-yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@if (Model.Users.TotalPages > 1)
+{
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(Model.Users.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllCustomers" asp-route-pageNumber="1" asp-route-pageSize="@Model.Users.PageSize" asp-route-searchTerm="@Model.SearchTerm">First</a>
+            </li>
+            <li class="page-item @(Model.Users.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllCustomers" asp-route-pageNumber="@(Model.Users.CurrentPage - 1)" asp-route-pageSize="@Model.Users.PageSize" asp-route-searchTerm="@Model.SearchTerm">Previous</a>
+            </li>
+            
+            @for (int i = Math.Max(1, Model.Users.CurrentPage - 2); i <= Math.Min(Model.Users.TotalPages, Model.Users.CurrentPage + 2); i++)
+            {
+                <li class="page-item @(i == Model.Users.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-action="AllCustomers" asp-route-pageNumber="@i" asp-route-pageSize="@Model.Users.PageSize" asp-route-searchTerm="@Model.SearchTerm">@i</a>
+                </li>
+            }
+            
+            <li class="page-item @(Model.Users.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllCustomers" asp-route-pageNumber="@(Model.Users.CurrentPage + 1)" asp-route-pageSize="@Model.Users.PageSize" asp-route-searchTerm="@Model.SearchTerm">Next</a>
+            </li>
+            <li class="page-item @(Model.Users.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllCustomers" asp-route-pageNumber="@Model.Users.TotalPages" asp-route-pageSize="@Model.Users.PageSize" asp-route-searchTerm="@Model.SearchTerm">Last</a>
+            </li>
+        </ul>
+    </nav>
+}
+
+<div class="text-center text-muted mt-2">
+    Showing @Model.Users.FirstRecordIndex - @Model.Users.LastRecordIndex of @Model.Users.TotalRecords records
+</div>

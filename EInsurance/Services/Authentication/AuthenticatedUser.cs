@@ -4,4 +4,5 @@ public record AuthenticatedUser(
     int UserId,
     string DisplayName,
     string Email,
-    string Role);
+    string Role,
+    Guid? SessionId = null);

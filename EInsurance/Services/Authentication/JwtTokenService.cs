@@ -12,7 +12,7 @@ public class JwtTokenService(IOptions<JwtSettings> jwtOptions) : IJwtTokenServic
 {
     private readonly JwtSettings _jwtSettings = jwtOptions.Value;
 
-    public AuthenticationResult GenerateToken(AuthenticatedUser user)
+    public AuthenticationResult GenerateToken(AuthenticatedUser user, Guid? sessionId = null)
     {
         if (user == null)
         {
@@ -35,7 +35,7 @@ public class JwtTokenService(IOptions<JwtSettings> jwtOptions) : IJwtTokenServic
         }
 
         var expiresAtUtc = DateTime.UtcNow.AddMinutes(_jwtSettings.ExpiryMinutes);
-        var claims = new[]
+        var claims = new List<Claim>
         {
             new Claim(JwtRegisteredClaimNames.Sub, user.UserId.ToString()),
             new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
@@ -43,6 +43,11 @@ public class JwtTokenService(IOptions<JwtSettings> jwtOptions) : IJwtTokenServic
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.Role, user.Role)
         };
+
+        if (sessionId.HasValue)
+        {
+            claims.Add(new Claim("SessionId", sessionId.Value.ToString()));
+        }
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Key));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

@@ -42,28 +42,23 @@ public class UserAuthenticationService(
 
     public async Task<AuthenticatedUser?> GetUserByIdAsync(int userId, CancellationToken cancellationToken = default)
     {
-        // Check in Admin
         var admin = await authenticationRepository.GetAdminByIdAsync(userId, cancellationToken);
         if (admin is not null)
         {
             return new AuthenticatedUser(admin.AdminId, admin.FullName, admin.Email, RoleNames.Admin);
         }
-
-        // Check in Employee
         var employee = await authenticationRepository.GetEmployeeByIdAsync(userId, cancellationToken);
         if (employee is not null)
         {
             return new AuthenticatedUser(employee.EmployeeId, employee.FullName, employee.Email, RoleNames.Employee);
         }
 
-        // Check in InsuranceAgent
         var insuranceAgent = await authenticationRepository.GetInsuranceAgentByIdAsync(userId, cancellationToken);
         if (insuranceAgent is not null)
         {
             return new AuthenticatedUser(insuranceAgent.AgentId, insuranceAgent.FullName, insuranceAgent.Email, RoleNames.InsuranceAgent);
         }
 
-        // Check in Customer
         var customer = await authenticationRepository.GetCustomerByIdAsync(userId, cancellationToken);
         if (customer is not null)
         {

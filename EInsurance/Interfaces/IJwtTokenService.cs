@@ -4,5 +4,5 @@ namespace EInsurance.Interfaces;
 
 public interface IJwtTokenService
 {
-    AuthenticationResult GenerateToken(AuthenticatedUser user);
+    AuthenticationResult GenerateToken(AuthenticatedUser user, Guid? sessionId = null);
 }

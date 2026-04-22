@@ -1,0 +1,82 @@
+@model EInsurance.Models.Common.PagedResult<object>
+
+@{
+    var currentPage = Model.CurrentPage;
+    var totalPages = Model.TotalPages;
+    var hasNext = Model.HasNextPage;
+    var hasPrevious = Model.HasPreviousPage;
+    var routeValues = new Dictionary<string, string>();
+}
+
+@if (totalPages > 1)
+{
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            @* First *@
+            <li class="page-item @(hasPrevious ? "" : "disabled")">
+                <a class="page-link" href="?pageNumber=1&pageSize=@Model.PageSize" tabindex="-1">First</a>
+            </li>
+
+            @* Previous *@
+            <li class="page-item @(hasPrevious ? "" : "disabled")">
+                <a class="page-link" href="?pageNumber=@(currentPage - 1)&pageSize=@Model.PageSize" tabindex="-1">Previous</a>
+            </li>
+
+            @* Page Numbers *@
+            @{
+                int startPage = Math.Max(1, currentPage - 2);
+                int endPage = Math.Min(totalPages, currentPage + 2);
+
+                if (startPage > 1)
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">...</span>
+                    </li>
+                }
+
+                for (int i = startPage; i <= endPage; i++)
+                {
+                    <li class="page-item @(i == currentPage ? "active" : "")">
+                        <a class="page-link" href="?pageNumber=@i&pageSize=@Model.PageSize">@i</a>
+                    </li>
+                }
+
+                if (endPage < totalPages)
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">...</span>
+                    </li>
+                }
+            }
+
+            @* Next *@
+            <li class="page-item @(hasNext ? "" : "disabled")">
+                <a class="page-link" href="?pageNumber=@(currentPage + 1)&pageSize=@Model.PageSize">Next</a>
+            </li>
+
+            @* Last *@
+            <li class="page-item @(hasNext ? "" : "disabled")">
+                <a class="page-link" href="?pageNumber=@totalPages&pageSize=@Model.PageSize">Last</a>
+            </li>
+        </ul>
+    </nav>
+}
+
+@* Results info *@
+<div class="text-center text-muted small mt-2">
+    Showing @Model.FirstRecordIndex - @Model.LastRecordIndex of @Model.TotalRecords records
+</div>
+
+@* Page Size Selector *@
+<div class="text-center mt-2">
+    <form method="get" class="d-inline-block">
+        <label for="pageSize">Page size:</label>
+        <select name="pageSize" id="pageSize" class="form-select form-select-sm d-inline-block" style="width: auto;" onchange="this.form.submit()">
+            @foreach (var size in EInsurance.Models.Common.PaginationDefaults.PageSizeOptions)
+            {
+                <option value="@size" selected="@(Model.PageSize == size)">@size</option>
+            }
+        </select>
+        <input type="hidden" name="pageNumber" value="1" />
+    </form>
+</div>

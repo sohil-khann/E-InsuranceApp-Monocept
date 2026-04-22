@@ -16,6 +16,7 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
     public DbSet<Payment> Payments => Set<Payment>();
     public DbSet<Commission> Commissions => Set<Commission>();
     public DbSet<EmployeeScheme> EmployeeSchemes => Set<EmployeeScheme>();
+    public DbSet<UserSession> UserSessions => Set<UserSession>();
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

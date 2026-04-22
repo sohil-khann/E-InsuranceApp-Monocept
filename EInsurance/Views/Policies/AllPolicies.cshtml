@@ -1,0 +1,93 @@
+@model EInsurance.Models.Policies.AdminPoliciesViewModel
+
+@{
+    ViewData["Title"] = "All Policies";
+}
+
+<div class="hero-card">
+    <span class="eyebrow">Admin Access</span>
+    <h1 class="display-6 fw-semibold mt-3">All Policies</h1>
+    <p class="lead mt-3 mb-0">View and manage all policies in the system.</p>
+</div>
+
+<div class="info-card mt-4">
+    <form method="get" class="row g-3 align-items-end">
+        <div class="col-md-6">
+            <label for="searchTerm" class="form-label">Search</label>
+            <input id="searchTerm" name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Policy ID, Customer Name, Scheme Name" />
+        </div>
+        <div class="col-md-3">
+            <label for="pageSize" class="form-label">Page Size</label>
+            <select name="pageSize" id="pageSize" class="form-select">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-dark w-100">Apply</button>
+        </div>
+    </form>
+</div>
+
+<div class="info-card mt-4">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Policy ID</th>
+                    <th>Date Issued</th>
+                    <th>Premium</th>
+                    <th>Maturity</th>
+                    <th>Lapse Date</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var policy in Model.Policies.Items)
+                {
+                    <tr>
+                        <td>@policy.PolicyId</td>
+                        <td>@policy.DateIssued.ToString("dd-MMM-yyyy")</td>
+                        <td>₹@policy.Premium</td>
+                        <td>@policy.MaturityPeriod months</td>
+                        <td>@policy.PolicyLapseDate.ToString("dd-MMM-yyyy")</td>
+                        <td>@policy.CreatedAt.ToString("dd-MMM-yyyy HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@if (Model.Policies.TotalPages > 1)
+{
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item @(Model.Policies.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllPolicies" asp-route-pageNumber="1" asp-route-pageSize="@Model.PageSize" asp-route-searchTerm="@Model.SearchTerm" asp-route-sortBy="@Model.SortBy" asp-route-sortDescending="@Model.SortDescending">First</a>
+            </li>
+            <li class="page-item @(Model.Policies.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllPolicies" asp-route-pageNumber="@(Model.Policies.CurrentPage - 1)" asp-route-pageSize="@Model.PageSize" asp-route-searchTerm="@Model.SearchTerm" asp-route-sortBy="@Model.SortBy" asp-route-sortDescending="@Model.SortDescending">Previous</a>
+            </li>
+            
+            @for (int i = Math.Max(1, Model.Policies.CurrentPage - 2); i <= Math.Min(Model.Policies.TotalPages, Model.Policies.CurrentPage + 2); i++)
+            {
+                <li class="page-item @(i == Model.Policies.CurrentPage ? "active" : "")">
+                    <a class="page-link" asp-action="AllPolicies" asp-route-pageNumber="@i" asp-route-pageSize="@Model.PageSize" asp-route-searchTerm="@Model.SearchTerm" asp-route-sortBy="@Model.SortBy" asp-route-sortDescending="@Model.SortDescending">@i</a>
+                </li>
+            }
+            
+            <li class="page-item @(Model.Policies.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllPolicies" asp-route-pageNumber="@(Model.Policies.CurrentPage + 1)" asp-route-pageSize="@Model.PageSize" asp-route-searchTerm="@Model.SearchTerm" asp-route-sortBy="@Model.SortBy" asp-route-sortDescending="@Model.SortDescending">Next</a>
+            </li>
+            <li class="page-item @(Model.Policies.HasNextPage ? "" : "disabled")">
+                <a class="page-link" asp-action="AllPolicies" asp-route-pageNumber="@Model.Policies.TotalPages" asp-route-pageSize="@Model.PageSize" asp-route-searchTerm="@Model.SearchTerm" asp-route-sortBy="@Model.SortBy" asp-route-sortDescending="@Model.SortDescending">Last</a>
+            </li>
+        </ul>
+    </nav>
+}
+
+<div class="text-center text-muted mt-2">
+    Showing @Model.Policies.FirstRecordIndex - @Model.Policies.LastRecordIndex of @Model.Policies.TotalRecords records (Page @Model.Policies.CurrentPage of @Model.Policies.TotalPages)
+</div>

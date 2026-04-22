@@ -3,6 +3,7 @@ using EInsurance.Interfaces;
 using EInsurance.Models.Auth;
 using EInsurance.Security;
 using EInsurance.Services.Authentication;
+using EInsurance.Services.Session;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -15,9 +16,10 @@ public class AccountController(
     IUserAuthenticationService authenticationService,
     IJwtTokenService jwtTokenService,
     IRegistrationService registrationService,
+    ISessionService sessionService,
     ApplicationDbContext dbContext) : Controller
 {
-
+    private const string DeviceInfoKey = "DeviceInfo";
 
     [HttpGet]
     public IActionResult Login()
@@ -47,7 +49,20 @@ public class AccountController(
             return View(model);
         }
 
-        var authenticationResult = jwtTokenService.GenerateToken(user);
+        var existingSessionId = await sessionService.GetActiveSessionIdAsync(user.UserId, cancellationToken);
+        
+        var deviceInfo = GetDeviceInfo();
+        var ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString();
+        
+        var sessionId = await sessionService.CreateSessionAsync(
+            user.UserId, 
+            user.Role, 
+            deviceInfo, 
+            ipAddress, 
+            cancellationToken);
+
+        var userWithSession = user with { SessionId = sessionId };
+        var authenticationResult = jwtTokenService.GenerateToken(userWithSession, sessionId);
 
         Response.Cookies.Append(AuthConstants.TokenCookieName, authenticationResult.Token, new CookieOptions
         {
@@ -132,11 +147,32 @@ public class AccountController(
     [Authorize]
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Logout()
+    public async Task<IActionResult> Logout(CancellationToken cancellationToken)
     {
+        var sessionIdClaim = User.FindFirst("SessionId")?.Value;
+        
+        if (Guid.TryParse(sessionIdClaim, out var sessionId))
+        {
+            await sessionService.InvalidateSessionAsync(sessionId, cancellationToken);
+        }
+        
         Response.Cookies.Delete(AuthConstants.TokenCookieName);
         return RedirectToAction(nameof(Login));
     }
 
-
+    private string GetDeviceInfo()
+    {
+        var userAgent = Request.Headers.UserAgent.ToString();
+        if (string.IsNullOrEmpty(userAgent))
+        {
+            return "Unknown Device";
+        }
+        
+        if (userAgent.Length > 255)
+        {
+            userAgent = userAgent.Substring(0, 255);
+        }
+        
+        return userAgent;
+    }
 }

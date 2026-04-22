@@ -49,10 +49,11 @@ public class Program
 
         app.UseRouting();
 
-        // Add rate limiting middleware for authentication endpoints
+        app.UseAuthentication();
+        
+        app.UseMiddleware<SessionValidationMiddleware>();
         app.UseMiddleware<RateLimitingMiddleware>();
 
-        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllerRoute(

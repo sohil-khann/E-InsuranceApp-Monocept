@@ -7,6 +7,7 @@ using EInsurance.Services.Commission;
 using EInsurance.Services.Policies;
 using EInsurance.Services.Premium;
 using EInsurance.Services.Registration;
+using EInsurance.Services.Session;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -65,12 +66,14 @@ public static class AuthenticationExtensions
         services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
         services.AddScoped<IPolicyRepository, PolicyRepository>();
         services.AddScoped<IRegistrationRepository, RegistrationRepository>();
+        services.AddScoped<IAdminRepository, AdminRepository>();
         services.AddScoped<IJwtTokenService, JwtTokenService>();
         services.AddScoped<IPolicyService, PolicyService>();
         services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
         services.AddScoped<IRegistrationService, RegistrationService>();
         services.AddScoped<IPremiumCalculationService, PremiumCalculationService>();
         services.AddScoped<ICommissionCalculationService, CommissionCalculationService>();
+        services.AddScoped<ISessionService, SessionService>();
 
         return services;
     }
