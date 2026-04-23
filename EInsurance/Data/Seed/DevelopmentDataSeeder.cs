@@ -30,7 +30,7 @@ public class DevelopmentDataSeeder(
                 FullName = "Operations Employee",
                 Email = "employee@einsurance.local",
                 Username = "employee",
-                Role = "Operations",
+                Role = "Employee",
                 PasswordHash = HashPassword("Employee@123")
             }, cancellationToken);
         }

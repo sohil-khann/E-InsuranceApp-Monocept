@@ -1,4 +1,4 @@
-@model List<EInsurance.Models.Commission.CommissionLedgerEntryViewModel>
+@model EInsurance.Models.Commission.CommissionLedgerViewModel
 
 @{
     ViewData["Title"] = "My Commission Ledger | Guardian Portal";
@@ -44,11 +44,13 @@
         letter-spacing: 0.05em;
         color: #6b7280;
         border-bottom: 1px solid #e5e7eb;
+        white-space: nowrap;
     }
 
     td {
         padding: 1rem;
         border-bottom: 1px solid #e5e7eb;
+        vertical-align: middle;
     }
 
     tr:hover {
@@ -61,6 +63,7 @@
         border-radius: 9999px;
         font-size: 0.75rem;
         font-weight: 700;
+        white-space: nowrap;
     }
 
     .status-pending {
@@ -77,6 +80,45 @@
         background: #dcfce7;
         color: #166534;
     }
+
+    .pager {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1rem;
+        border-top: 1px solid #e5e7eb;
+        background: white;
+    }
+
+    .pager a,
+    .pager span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.25rem;
+        height: 2.25rem;
+        padding: 0 0.75rem;
+        border-radius: 9999px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.875rem;
+        border: 1px solid #e5e7eb;
+        background: white;
+        color: var(--on-surface);
+    }
+
+    .pager .active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+
+    .pager .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
 </style>
 
 <div class="container mx-auto px-4 py-8">
@@ -86,33 +128,25 @@
         <p style="color: #6b7280;">View your complete commission history, payment status, and earnings breakdown.</p>
     </div>
 
-    <!-- Summary Stats -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-        @{
-            var totalCommission = Model.Sum(m => m.CommissionAmount);
-            var paidCount = Model.Count(m => m.Status == "Paid");
-            var pendingCount = Model.Count(m => m.Status != "Paid");
-        }
-
         <div class="card" style="padding: 1.5rem;">
             <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #6b7280; margin-bottom: 0.5rem;">Total Commission</p>
-            <p style="font-size: 2rem; font-weight: 900; color: var(--primary-light); margin: 0;">@totalCommission.ToString("C")</p>
+            <p style="font-size: 2rem; font-weight: 900; color: var(--primary-light); margin: 0;">@Model.TotalCommissionAmount.ToString("C")</p>
         </div>
 
         <div class="card" style="padding: 1.5rem;">
             <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #6b7280; margin-bottom: 0.5rem;">Paid Commissions</p>
-            <p style="font-size: 2rem; font-weight: 900; color: #166534; margin: 0;">@paidCount</p>
+            <p style="font-size: 2rem; font-weight: 900; color: #166534; margin: 0;">@Model.PaidCount</p>
         </div>
 
         <div class="card" style="padding: 1.5rem;">
             <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #6b7280; margin-bottom: 0.5rem;">Pending</p>
-            <p style="font-size: 2rem; font-weight: 900; color: #92400e; margin: 0;">@pendingCount</p>
+            <p style="font-size: 2rem; font-weight: 900; color: #92400e; margin: 0;">@Model.PendingCount</p>
         </div>
     </div>
 
-    <!-- Ledger Table -->
     <div class="card">
-        @if (Model.Any())
+        @if (Model.Ledger.Items.Any())
         {
             <div class="table-container">
                 <table>
@@ -128,7 +162,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var entry in Model)
+                        @foreach (var entry in Model.Ledger.Items)
                         {
                             <tr>
                                 <td style="font-weight: 600; color: var(--on-surface);">@entry.PolicyNumber</td>
@@ -136,19 +170,17 @@
                                 <td style="font-weight: 600;">@entry.Premium.ToString("C")</td>
                                 <td style="font-weight: 700; color: var(--primary-light);">@entry.CommissionAmount.ToString("C")</td>
                                 <td>
-                                    <span class="status-badge @($"status-{entry.Status.ToLower()}")">
-                                        @entry.Status
-                                    </span>
+                                    <span class="status-badge @($"status-{entry.Status.ToLowerInvariant()}")">@entry.Status</span>
                                 </td>
-                                <td>@entry.CalculatedDate</td>
+                                <td>@entry.CalculatedDate.ToString("dd MMM yyyy")</td>
                                 <td>
                                     @if (entry.PaidDate.HasValue)
                                     {
-                                        <span>@entry.PaidDate.Value</span>
+                                        <span>@entry.PaidDate.Value.ToString("dd MMM yyyy")</span>
                                     }
                                     else
                                     {
-                                        <span style="color: #9ca3af;">—</span>
+                                        <span style="color: #9ca3af;">&mdash;</span>
                                     }
                                 </td>
                             </tr>
@@ -156,6 +188,37 @@
                     </tbody>
                 </table>
             </div>
+
+            @if (Model.Ledger.TotalPages > 1)
+            {
+                <nav class="pager" aria-label="Ledger pagination">
+                    <a class="@(Model.Ledger.HasPreviousPage ? "" : "disabled")"
+                       asp-action="Ledger"
+                       asp-route-agentId="@Model.AgentId"
+                       asp-route-pageNumber="@(Model.Ledger.CurrentPage - 1)">
+                        Prev
+                    </a>
+
+                    @for (var i = Math.Max(1, Model.Ledger.CurrentPage - 2); i <= Math.Min(Model.Ledger.TotalPages, Model.Ledger.CurrentPage + 2); i++)
+                    {
+                        if (i == Model.Ledger.CurrentPage)
+                        {
+                            <span class="active">@i</span>
+                        }
+                        else
+                        {
+                            <a asp-action="Ledger" asp-route-agentId="@Model.AgentId" asp-route-pageNumber="@i">@i</a>
+                        }
+                    }
+
+                    <a class="@(Model.Ledger.HasNextPage ? "" : "disabled")"
+                       asp-action="Ledger"
+                       asp-route-agentId="@Model.AgentId"
+                       asp-route-pageNumber="@(Model.Ledger.CurrentPage + 1)">
+                        Next
+                    </a>
+                </nav>
+            }
         }
         else
         {
@@ -165,10 +228,9 @@
         }
     </div>
 
-    <!-- Back Button -->
     <div style="margin-top: 2rem;">
         <a href="@Url.Action("Index", "Dashboard")" style="background: var(--surface-container); color: var(--on-surface); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block;">
-            ← Back to Dashboard
+            &larr; Back to Dashboard
         </a>
     </div>
 </div>

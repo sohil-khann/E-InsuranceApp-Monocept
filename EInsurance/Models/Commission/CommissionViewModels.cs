@@ -1,3 +1,4 @@
+using EInsurance.Models.Common;
 using System.ComponentModel.DataAnnotations;
 
 namespace EInsurance.Models.Commission;
@@ -262,4 +263,20 @@ public class CommissionLedgerEntryViewModel
     [Display(Name = "Paid Date")]
     [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
     public DateTime? PaidDate { get; set; }
+}
+
+public class CommissionLedgerViewModel
+{
+    public int AgentId { get; set; }
+    public PagedResult<CommissionLedgerEntryViewModel> Ledger { get; set; } = new();
+
+    [Display(Name = "Total Commission")]
+    [DisplayFormat(DataFormatString = "{0:C}")]
+    public decimal TotalCommissionAmount { get; set; }
+
+    [Display(Name = "Paid Commissions")]
+    public int PaidCount { get; set; }
+
+    [Display(Name = "Pending")]
+    public int PendingCount { get; set; }
 }

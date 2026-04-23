@@ -34,7 +34,7 @@ public interface ICommissionCalculationService
         int commissionId,
         CancellationToken cancellationToken = default);
 
-    Task<List<CommissionLedgerEntryViewModel>> GetCommissionLedgerAsync(
+    Task<CommissionLedgerViewModel> GetCommissionLedgerAsync(
         int agentId,
         int pageNumber = 1,
         int pageSize = 50,

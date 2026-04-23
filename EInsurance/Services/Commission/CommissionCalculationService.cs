@@ -332,23 +332,31 @@ public class CommissionCalculationService(ApplicationDbContext dbContext) : ICom
         return true;
     }
 
-    public async Task<List<CommissionLedgerEntryViewModel>> GetCommissionLedgerAsync(
+    public async Task<CommissionLedgerViewModel> GetCommissionLedgerAsync(
         int agentId,
         int pageNumber = 1,
         int pageSize = 50,
         CancellationToken cancellationToken = default)
     {
-        var commissions = await dbContext.Commissions
-            .Include(c => c.Policy)
-            .ThenInclude(p => p.Customer)
+        var baseQuery = dbContext.Commissions
             .Where(c => c.AgentId == agentId)
+            .AsNoTracking();
+
+        var totalRecords = await baseQuery.CountAsync(cancellationToken);
+        var paidCount = await baseQuery.CountAsync(c => c.Status == "Paid", cancellationToken);
+        var totalCommission = await baseQuery
+            .Select(c => (decimal?)c.CommissionAmount)
+            .SumAsync(cancellationToken) ?? 0m;
+
+        var commissions = await baseQuery
+            .Include(c => c.Policy)
+                .ThenInclude(p => p.Customer)
             .OrderByDescending(c => c.CreatedAt)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
-            .AsNoTracking()
             .ToListAsync(cancellationToken);
 
-        return commissions.Select(c => new CommissionLedgerEntryViewModel
+        var items = commissions.Select(c => new CommissionLedgerEntryViewModel
         {
             CommissionId = c.CommissionId,
             PolicyNumber = $"POL-{c.PolicyId:D6}",
@@ -359,6 +367,15 @@ public class CommissionCalculationService(ApplicationDbContext dbContext) : ICom
             CalculatedDate = c.CreatedAt,
             PaidDate = c.PaidAtUtc
         }).ToList();
+
+        return new CommissionLedgerViewModel
+        {
+            AgentId = agentId,
+            Ledger = new EInsurance.Models.Common.PagedResult<CommissionLedgerEntryViewModel>(items, totalRecords, pageNumber, pageSize),
+            TotalCommissionAmount = totalCommission,
+            PaidCount = paidCount,
+            PendingCount = totalRecords - paidCount
+        };
     }
 
     private decimal GetCommissionRateForAgent(InsuranceAgent agent)

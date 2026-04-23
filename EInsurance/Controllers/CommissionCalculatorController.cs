@@ -164,11 +164,6 @@ public class CommissionCalculatorController(ICommissionCalculationService commis
         const int pageSize = 20;
 
         var ledger = await commissionService.GetCommissionLedgerAsync(agentId, pageNumber, pageSize);
-
-        ViewBag.AgentId = agentId;
-        ViewBag.CurrentPage = pageNumber;
-        ViewBag.PageSize = pageSize;
-
         return View(ledger);
     }
 }

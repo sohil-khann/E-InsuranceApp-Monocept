@@ -55,9 +55,7 @@
 <body class="bg-surface text-on-surface min-h-screen flex flex-col">
 
     <nav class="w-full top-0 sticky z-50 bg-surface-container-low flex justify-between items-center px-8 py-4">
-        <div class="flex items-center gap-4">
-            <a asp-controller="Home" asp-action="Index" class="text-xl font-black tracking-tight text-primary no-underline">EInsurance</a>
-        </div>
+        
         <div class="hidden lg:flex items-center space-x-6 font-medium text-sm">
             <a asp-controller="Policies" asp-action="MyPolicies" class="text-secondary hover:text-primary transition-colors">My Policies</a>
             @if (isCustomer)

@@ -192,7 +192,9 @@
 </div>
 
 <div class="info-card mt-4">
-    <form method="get" class="row g-4 align-items-end">
+    <form method="get" asp-action="AllPolicies" class="row g-4 align-items-end">
+        <input type="hidden" name="sortBy" value="@Model.SortBy" />
+        <input type="hidden" name="sortDescending" value="@Model.SortDescending" />
         <div class="col-md-6">
             <label for="searchTerm" class="form-label label-md">Search</label>
             <input id="searchTerm" name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Policy ID, Customer Name, Scheme Name" />
@@ -200,9 +202,9 @@
         <div class="col-md-3">
             <label for="pageSize" class="form-label label-md">Page Size</label>
             <select name="pageSize" id="pageSize" class="form-select">
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="50">50</option>
+                <option value="10" selected="@(Model.PageSize == 10)">10</option>
+                <option value="20" selected="@(Model.PageSize == 20)">20</option>
+                <option value="50" selected="@(Model.PageSize == 50)">50</option>
             </select>
         </div>
         <div class="col-md-3">

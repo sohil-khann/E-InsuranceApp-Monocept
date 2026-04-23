@@ -12,13 +12,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EInsurance.Controllers;
 
-[Authorize(Roles = RoleNames.Admin)]
+[Authorize]
 public class AdminController(
     ApplicationDbContext context, 
     IDataValidationService validationService,
     IAdminRepository adminRepository) : Controller
 {
     [HttpGet]
+    [Authorize(Roles = RoleNames.Admin)]    
     public async Task<IActionResult> AssignAgent(string customerId)
     {
         if (string.IsNullOrEmpty(customerId)) return NotFound();
@@ -57,6 +58,7 @@ public class AdminController(
 
     [HttpPost]
     [Route("Admin/AssignAgent")]
+    [Authorize(Roles = RoleNames.Admin)]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> AssignAgentPost(AssignAgentViewModel model)
     {
@@ -89,7 +91,7 @@ public class AdminController(
         
         return RedirectToAction(nameof(ManageUsers));
     }
-
+    [Authorize(Roles = RoleNames.Admin)]
     public async Task<IActionResult> ManageUsers(string searchTerm = "")
     {
         var query = searchTerm?.ToLower() ?? "";
@@ -166,6 +168,7 @@ public class AdminController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = RoleNames.Admin)]
     public async Task<IActionResult> DeleteUser(string id)
     {
         if (string.IsNullOrEmpty(id)) return NotFound();
@@ -203,6 +206,7 @@ public class AdminController(
     }
 
     [HttpGet]
+    [Authorize(Roles = RoleNames.Admin)]
     public async Task<IActionResult> EditUser(string id)
     {
         if (string.IsNullOrEmpty(id)) return NotFound();
@@ -246,6 +250,7 @@ public class AdminController(
 
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = RoleNames.Admin)]
     public async Task<IActionResult> EditUser(EditUserViewModel model, CancellationToken cancellationToken)
     {
         if (!ModelState.IsValid) return View(model);
