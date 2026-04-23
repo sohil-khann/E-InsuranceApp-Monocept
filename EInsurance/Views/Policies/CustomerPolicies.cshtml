@@ -4,20 +4,24 @@
     ViewData["Title"] = "Customer Policies";
 }
 
+<style>
+
+</style>
+
 <div class="hero-card">
     <span class="eyebrow">Admin Access</span>
-    <h1 class="display-6 fw-semibold mt-3">Customer policies</h1>
-    <p class="lead mt-3 mb-0">Search for a customer and view policy and payment details.</p>
+    <h1 class="display-lg mt-3">Customer policies</h1>
+    <p class="lead mt-3 mb-0" style="font-size:1.25rem;">Search for a customer and view policy and payment details.</p>
 </div>
 
 <div class="info-card mt-4">
-    <form method="get" asp-action="CustomerPolicies" class="row g-3 align-items-end">
+    <form method="get" asp-action="CustomerPolicies" class="row g-4 align-items-end">
         <div class="col-md-9">
-            <label for="searchTerm" class="form-label">Customer name or email</label>
-            <input id="searchTerm" name="searchTerm" value="@Model.SearchTerm" class="form-control" />
+            <label for="searchTerm" class="form-label label-md">Customer name or email</label>
+            <input id="searchTerm" name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="e.g., John Doe or john@example.com" />
         </div>
         <div class="col-md-3">
-            <button type="submit" class="btn btn-dark w-100">Search</button>
+            <button type="submit" class="btn-veridical-primary w-100">Search</button>
         </div>
     </form>
 </div>
@@ -25,7 +29,7 @@
 @if (Model.SearchResults.Count > 0)
 {
     <div class="info-card mt-4">
-        <h2 class="h4 mb-3">Search results</h2>
+        <h2 class="headline-lg mb-3">Search results</h2>
         <div class="table-responsive">
             <table class="table align-middle">
                 <thead>
@@ -42,7 +46,7 @@
                             <td>@customer.FullName</td>
                             <td>@customer.Email</td>
                             <td class="text-end">
-                                <a class="btn btn-outline-dark btn-sm"
+                                <a class="btn-veridical-secondary btn-sm"
                                    asp-action="CustomerPolicies"
                                    asp-route-searchTerm="@Model.SearchTerm"
                                    asp-route-customerId="@customer.CustomerId">View Policies</a>

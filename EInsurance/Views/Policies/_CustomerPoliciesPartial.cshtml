@@ -1,71 +1,436 @@
+@using System.Linq
 @model EInsurance.Models.Policies.CustomerPoliciesViewModel
 
-<div class="hero-card">
-    <span class="eyebrow">Policy Details</span>
-    <h3 class="mt-3 mb-1">@Model.CustomerName</h3>
-    <p class="text-muted mb-0">@Model.CustomerEmail</p>
+@{
+    string GetPolicyStatus(DateOnly lapseDate)
+    {
+        var today = DateOnly.FromDateTime(DateTime.Today);
+
+        if (lapseDate > today)
+            return "Active";
+        else if (lapseDate > today.AddDays(-30))
+            return "Renewing Soon";
+        else
+            return "Lapsed";
+    }
+
+    string GetStatusStyle(string status)
+    {
+        return status switch
+        {
+            "Active" => "background: #dff8ef; color: #006b54;",
+            "Renewing Soon" => "background: #fef3c7; color: #92400e;",
+            _ => "background: #fee2e2; color: #b91c1c;"
+        };
+    }
+}
+
+<style>
+    .customer-policy-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1.5rem;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+        .customer-policy-hero::after {
+            content: "";
+            position: absolute;
+            right: -5rem;
+            top: -5rem;
+            width: 16rem;
+            height: 16rem;
+            border-radius: 50%;
+            background: rgba(0, 107, 84, 0.08);
+        }
+
+    .customer-policy-heading,
+    .customer-policy-summary,
+    .policy-header,
+    .policy-copy,
+    .policy-details-row,
+    .payments-section {
+        position: relative;
+        z-index: 1;
+    }
+
+    .customer-policy-summary {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .summary-tile {
+        min-width: 8.5rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid rgba(0, 107, 84, 0.12);
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.72);
+    }
+
+    .summary-value {
+        font-size: 1.75rem;
+        font-weight: 800;
+        line-height: 1;
+        color: #006b54;
+    }
+
+    .summary-label {
+        margin-top: 0.35rem;
+        color: #64756f;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .policy-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+
+    .policy-card-v2 {
+        grid-column: span 4;
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 1.5rem;
+        padding: 1.65rem;
+        box-shadow: 0 1rem 2rem rgba(15, 23, 42, 0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        overflow: hidden;
+        position: relative;
+    }
+
+        .policy-card-v2:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 1.25rem 2.5rem rgba(0, 107, 84, 0.1);
+        }
+
+        .policy-card-v2.featured-policy {
+            grid-column: span 8;
+            min-height: 24rem;
+        }
+
+            .policy-card-v2.featured-policy::after {
+                content: "";
+                position: absolute;
+                right: -3rem;
+                top: -5rem;
+                width: 16rem;
+                height: 16rem;
+                border-radius: 50%;
+                background: rgba(0, 107, 84, 0.06);
+            }
+
+    .policy-header {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+    }
+
+    .policy-title-section h4 {
+        max-width: 40rem;
+        color: #0f1714;
+        font-size: clamp(1.35rem, 2vw, 2rem);
+        font-weight: 800;
+        line-height: 1.12;
+        margin-bottom: 0.55rem;
+    }
+
+    .policy-id {
+        color: #34423d;
+        font-family: 'SF Mono', 'Menlo', monospace;
+        font-size: 0.9rem;
+    }
+
+    .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        border-radius: 3rem;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        padding: 0.45rem 0.8rem;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+        .status-badge i {
+            font-size: 0.82rem;
+        }
+
+    .scheme-name {
+        color: #006b54;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .policy-description {
+        max-width: 54rem;
+        color: #61706b;
+        line-height: 1.65;
+    }
+
+    .policy-details-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin: auto 0 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(15, 23, 42, 0.07);
+    }
+
+    .policy-card-v2:not(.featured-policy) .policy-details-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .featured-policy .policy-details-row {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .detail-label {
+        color: #72807b;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.07em;
+        margin-bottom: 0.35rem;
+        padding-bottom: 0.25rem;
+        text-transform: uppercase;
+    }
+
+    .detail-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-bottom: 0.75rem;
+        min-width: 0;
+    }
+
+    .detail-value {
+        color: #101715;
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .premium-large {
+        color: #0f1714;
+        font-size: clamp(1.6rem, 2.4vw, 2.35rem);
+        font-weight: 900;
+        letter-spacing: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .policy-card-v2:not(.featured-policy) .premium-large {
+        font-size: 1.6rem;
+    }
+
+    .payments-section {
+        margin-top: 0.25rem;
+    }
+
+        .payments-section h5 {
+            color: #0f1714;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+    .table-compact {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 0.35rem;
+    }
+
+        .table-compact th {
+            color: #72807b;
+            border: none;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            padding: 0 0.65rem;
+            text-transform: uppercase;
+        }
+
+        .table-compact td {
+            background: #eef8f5;
+            border: none;
+            color: #24302c;
+            padding: 0.65rem;
+        }
+
+            .table-compact td:first-child {
+                border-radius: 0.8rem 0 0 0.8rem;
+            }
+
+            .table-compact td:last-child {
+                border-radius: 0 0.8rem 0.8rem 0;
+            }
+
+    .empty-payments {
+        color: #61706b;
+        background: #eef8f5;
+        border-radius: 0.9rem;
+        margin-bottom: 0;
+        padding: 0.85rem 1rem;
+    }
+
+    @@media (max-width: 991.98px) {
+        .policy-card-v2,
+        .policy-card-v2.featured-policy {
+            grid-column: span 12;
+            min-height: auto;
+        }
+
+        .featured-policy .policy-details-row,
+        .policy-details-row {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @@media (max-width: 767.98px) {
+        .customer-policy-hero {
+            grid-template-columns: 1fr;
+        }
+
+        .customer-policy-summary {
+            flex-wrap: wrap;
+        }
+    }
+
+    @@media (max-width: 575.98px) {
+        .customer-policy-summary,
+        .policy-header {
+            flex-direction: column;
+        }
+
+        .summary-tile {
+            width: 100%;
+        }
+
+        .featured-policy .policy-details-row,
+        .policy-details-row {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="hero-card customer-policy-hero">
+    <div class="customer-policy-heading">
+        <span class="eyebrow">Policy Details</span>
+        <h3 class="headline-lg mt-3 mb-1">@Model.CustomerName</h3>
+        <p class="text-muted mb-0">@Model.CustomerEmail</p>
+    </div>
+    <div class="customer-policy-summary" aria-label="Policy summary">
+        <div class="summary-tile">
+            <div class="summary-value">@Model.Policies.Count.ToString("00")</div>
+            <div class="summary-label">Policies</div>
+        </div>
+        <div class="summary-tile">
+            <div class="summary-value">@Model.Policies.Sum(policy => policy.Payments.Count).ToString("00")</div>
+            <div class="summary-label">Payments</div>
+        </div>
+    </div>
 </div>
 
 @if (Model.Policies.Count == 0)
 {
     <div class="info-card mt-4">
-        <h3 class="h5">No policies found</h3>
+        <h3 class="title-lg">No policies found</h3>
         <p class="mb-0">There are no policies available for this customer yet.</p>
     </div>
 }
 else
 {
-    <div class="row g-4 mt-2">
-        @foreach (var policy in Model.Policies)
+    <div class="policy-grid mt-4">
+        @for (var index = 0; index < Model.Policies.Count; index++)
         {
-            <div class="col-12">
-                <div class="info-card">
-                    <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
-                        <div>
-                            <h4 class="h4 mb-1">Policy #@policy.PolicyId</h4>
-                            <p class="mb-1"><strong>Plan:</strong> @policy.PlanName</p>
-                            <p class="mb-1"><strong>Scheme:</strong> @policy.SchemeName</p>
-                            <p class="mb-0">@policy.PolicyDetails</p>
-                        </div>
-                        <div class="policy-meta">
-                            <p class="mb-1"><strong>Premium:</strong> @policy.Premium.ToString("C")</p>
-                            <p class="mb-1"><strong>Issued:</strong> @policy.DateIssued.ToString("dd MMM yyyy")</p>
-                            <p class="mb-1"><strong>Maturity:</strong> @policy.MaturityPeriod years</p>
-                            <p class="mb-0"><strong>Lapse Date:</strong> @policy.PolicyLapseDate.ToString("dd MMM yyyy")</p>
-                        </div>
-                    </div>
+            var policy = Model.Policies[index];
+            var status = GetPolicyStatus(policy.PolicyLapseDate);
+            var statusStyle = GetStatusStyle(status);
+            var cardClass = index == 0 ? "policy-card-v2 featured-policy" : "policy-card-v2";
 
-                    <div class="mt-4">
-                        <h5 class="h5">Payments</h5>
-                        @if (policy.Payments.Count == 0)
-                        {
-                            <p class="mb-0 text-muted">No payment records available.</p>
-                        }
-                        else
-                        {
-                            <div class="table-responsive">
-                                <table class="table align-middle">
-                                    <thead>
-                                        <tr>
-                                            <th>Payment ID</th>
-                                            <th>Amount</th>
-                                            <th>Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach (var payment in policy.Payments)
-                                        {
-                                            <tr>
-                                                <td>@payment.PaymentId</td>
-                                                <td>@payment.Amount.ToString("C")</td>
-                                                <td>@payment.PaymentDate.ToString("dd MMM yyyy")</td>
-                                            </tr>
-                                        }
-                                    </tbody>
-                                </table>
-                            </div>
-                        }
+            <div class="@cardClass">
+                <div class="policy-header">
+                    <div class="policy-title-section">
+                        <h4>@policy.PlanName</h4>
+                        <span class="policy-id">#@policy.PolicyId</span>
                     </div>
+                    <span class="status-badge" style="@statusStyle">
+                        <i class="bi bi-shield-fill" aria-hidden="true"></i>
+                        @status
+                    </span>
+                </div>
+
+                <div class="policy-copy">
+                    <div class="scheme-name mb-2">@policy.SchemeName</div>
+                    <p class="policy-description mb-4">@policy.PolicyDetails</p>
+                </div>
+
+                <div class="policy-details-row">
+                    <div class="detail-item">
+                        <div class="detail-label">Monthly Premium</div>
+                        <div class="premium-large">@policy.Premium.ToString("C")</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Issued</div>
+                        <div class="detail-value">@policy.DateIssued.ToString("dd MMM yyyy")</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Maturity</div>
+                        <div class="detail-value">@policy.MaturityPeriod months</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Lapse Date</div>
+                        <div class="detail-value">@policy.PolicyLapseDate.ToString("dd MMM yyyy")</div>
+                    </div>
+                </div>
+
+                <div class="payments-section">
+                    <h5>Payment History</h5>
+                    @if (policy.Payments.Count == 0)
+                    {
+                        <p class="empty-payments">No payment records available.</p>
+                    }
+                    else
+                    {
+                        <div class="table-responsive">
+                            <table class="table-compact">
+                                <thead>
+                                    <tr>
+                                        <th>Payment ID</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var payment in policy.Payments)
+                                    {
+                                        <tr>
+                                            <td>@payment.PaymentId</td>
+                                            <td>@payment.Amount.ToString("C")</td>
+                                            <td>@payment.PaymentDate.ToString("dd MMM yyyy")</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
                 </div>
             </div>
         }

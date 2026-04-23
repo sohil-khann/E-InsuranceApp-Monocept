@@ -10,8 +10,10 @@ namespace EInsurance.Controllers;
 [Authorize(Roles = RoleNames.Customer)]
 public class PolicyPurchaseController(
     IPolicyService policyService,
-    IPremiumCalculationService premiumCalculationService) : Controller
+    IPremiumCalculationService premiumCalculationService,
+    IConfiguration configuration) : Controller
 {
+    private string StripePublishableKey => configuration["Stripe:PublishableKey"] ?? string.Empty;
     [HttpGet]
     public async Task<IActionResult> AvailableSchemes()
     {
@@ -45,7 +47,7 @@ public class PolicyPurchaseController(
         return View(model);
     }
 
- 
+  
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> CalculatePremium(PremiumCalculationInputViewModel model)
@@ -101,7 +103,7 @@ public class PolicyPurchaseController(
         return View(confirmModel);
     }
 
- 
+  
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> ConfirmPremium(PremiumConfirmationViewModel model)
@@ -113,26 +115,68 @@ public class PolicyPurchaseController(
         if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var customerId))
             return Challenge();
 
-        var purchaseModel = new PurchasePolicyViewModel
-        {
-            SchemeId = model.SchemeId,
-            SchemeName = model.SchemeName,
-            MaturityPeriod = model.MaturityPeriodMonths,
-            CoverageAmount = model.SumAssured,
-            BeneficiaryName = model.BeneficiaryName,
-            PaymentMethod = model.PaymentMethod
-        };
+        TempData["PendingPolicySchemeId"] = model.SchemeId;
+        TempData["PendingPolicySchemeName"] = model.SchemeName;
+        TempData["PendingPolicyMaturity"] = model.MaturityPeriodMonths;
+        TempData["PendingPolicyCoverage"] = model.SumAssured.ToString();
+        TempData["PendingPolicyPremium"] = model.CalculatedPremium.ToString();
+        TempData["PendingPolicyBeneficiary"] = model.BeneficiaryName;
+        TempData["PendingPolicyQuoteId"] = model.QuoteId;
 
-        var confirmation = await policyService.PurchasePolicyAsync(customerId, purchaseModel);
+        return RedirectToAction(nameof(Payment), new { 
+            quoteId = model.QuoteId,
+            schemeId = model.SchemeId,
+            schemeName = model.SchemeName,
+            maturity = model.MaturityPeriodMonths,
+            coverage = model.SumAssured.ToString(),
+            premium = model.CalculatedPremium.ToString(),
+            beneficiary = model.BeneficiaryName
+        });
+    }
 
-        if (confirmation == null)
+    [HttpGet]
+    public IActionResult Payment(string quoteId, string schemeId, string schemeName, string maturity, string coverage, string premium, string beneficiary)
+    {
+        if (!string.IsNullOrEmpty(premium))
         {
-            ModelState.AddModelError(string.Empty, "An error occurred while processing your purchase.");
-            return View(model);
+            TempData["PendingPolicySchemeId"] = schemeId;
+            TempData["PendingPolicySchemeName"] = schemeName;
+            TempData["PendingPolicyMaturity"] = maturity;
+            TempData["PendingPolicyCoverage"] = coverage;
+            TempData["PendingPolicyPremium"] = premium;
+            TempData["PendingPolicyBeneficiary"] = beneficiary;
+            TempData["PendingPolicyQuoteId"] = quoteId;
+        }
+        else
+        {
+            schemeId = TempData["PendingPolicySchemeId"] as string;
+            schemeName = TempData["PendingPolicySchemeName"] as string;
+            maturity = TempData["PendingPolicyMaturity"] as string;
+            coverage = TempData["PendingPolicyCoverage"] as string;
+            premium = TempData["PendingPolicyPremium"] as string;
+            beneficiary = TempData["PendingPolicyBeneficiary"] as string;
         }
 
-        TempData["SuccessMessage"] = $"Policy purchased successfully! Premium Amount: {model.CalculatedPremium:C}";
-        return RedirectToAction(nameof(Confirmation), new { policyId = confirmation.PolicyId });
+        if (string.IsNullOrEmpty(schemeId) || string.IsNullOrEmpty(premium))
+        {
+            return RedirectToAction(nameof(AvailableSchemes));
+        }
+
+        if (!decimal.TryParse(premium, out var premiumAmount))
+        {
+            return RedirectToAction(nameof(AvailableSchemes));
+        }
+
+        ViewData["StripePublishableKey"] = StripePublishableKey;
+        ViewData["Amount"] = premiumAmount;
+        ViewData["QuoteId"] = quoteId ?? TempData["PendingPolicyQuoteId"] as string;
+        ViewData["SchemeId"] = schemeId;
+        ViewData["SchemeName"] = schemeName;
+        ViewData["MaturityPeriod"] = maturity;
+        ViewData["CoverageAmount"] = coverage;
+        ViewData["BeneficiaryName"] = beneficiary;
+
+        return View();
     }
     [HttpGet]
     public async Task<IActionResult> Purchase(int schemeId)
@@ -174,8 +218,66 @@ public class PolicyPurchaseController(
     }
 
     [HttpGet]
-    public async Task<IActionResult> Confirmation(int policyId)
+    public async Task<IActionResult> Confirmation(int policyId, bool paymentSuccess = false)
     {
+        if (paymentSuccess)
+        {
+            TempData["SuccessMessage"] = "Payment successful! Your policy has been issued.";
+        }
         return View(policyId);
     }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ProcessPaymentComplete([FromBody] PaymentCompleteRequest request)
+    {
+        try
+        {
+            var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out var customerId))
+            {
+                return Unauthorized(new { error = "User not authenticated" });
+            }
+
+            if (!int.TryParse(TempData["PendingPolicySchemeId"] as string, out var schemeId) ||
+                !int.TryParse(TempData["PendingPolicyMaturity"] as string, out var maturity) ||
+                !decimal.TryParse(TempData["PendingPolicyCoverage"] as string, out var coverage) ||
+                !decimal.TryParse(TempData["PendingPolicyPremium"] as string, out var premium))
+            {
+                return BadRequest(new { error = "Invalid payment data" });
+            }
+
+            var purchaseModel = new PurchasePolicyViewModel
+            {
+                SchemeId = schemeId,
+                SchemeName = TempData["PendingPolicySchemeName"] as string ?? "",
+                MaturityPeriod = maturity,
+                CoverageAmount = coverage,
+                BeneficiaryName = TempData["PendingPolicyBeneficiary"] as string ?? "",
+                PaymentMethod = "Stripe",
+                ExactPremiumAmount = premium
+            };
+
+            var confirmation = await policyService.PurchasePolicyAsync(customerId, purchaseModel);
+
+            if (confirmation == null)
+            {
+                return BadRequest(new { error = "Failed to create policy" });
+            }
+
+            return Ok(new { policyId = confirmation.PolicyId, policyNumber = confirmation.PolicyNumber });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { error = ex.Message });
+        }
+    }
+}
+
+public class PaymentCompleteRequest
+{
+    public string PaymentIntentId { get; set; } = string.Empty;
+    public string Status { get; set; } = string.Empty;
+    public decimal Amount { get; set; }
+    public int PolicyId { get; set; }
 }

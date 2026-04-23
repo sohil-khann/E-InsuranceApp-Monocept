@@ -14,7 +14,9 @@ public interface IDevelopmentSeedRepository
     Task<bool> HasPoliciesAsync(CancellationToken cancellationToken = default);
     Task<Customer?> GetCustomerByEmailAsync(string email, CancellationToken cancellationToken = default);
     Task<InsurancePlan?> GetFirstInsurancePlanAsync(CancellationToken cancellationToken = default);
+    Task<InsurancePlan?> GetInsurancePlanByNameAsync(string planName, CancellationToken cancellationToken = default);
     Task<Scheme?> GetFirstSchemeAsync(CancellationToken cancellationToken = default);
+    Task<Scheme?> GetSchemeByNameAsync(string schemeName, CancellationToken cancellationToken = default);
     Task AddAdminAsync(Admin admin, CancellationToken cancellationToken = default);
     Task AddEmployeeAsync(Employee employee, CancellationToken cancellationToken = default);
     Task AddInsuranceAgentAsync(InsuranceAgent insuranceAgent, CancellationToken cancellationToken = default);

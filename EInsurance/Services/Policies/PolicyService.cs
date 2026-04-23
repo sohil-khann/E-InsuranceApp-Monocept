@@ -3,6 +3,7 @@ using EInsurance.Interfaces;
 using EInsurance.Models.Policies;
 using EInsurance.Security;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace EInsurance.Services.Policies;
 
@@ -70,8 +71,9 @@ public class PolicyService(
         {
             SchemeId = s.SchemeId,
             SchemeName = s.SchemeName,
-            SchemeDetails = s.SchemeDetails,
-            PlanName = s.Plan.PlanName
+            SchemeDetails = GetSchemeDescription(s.SchemeDetails),
+            PlanName = s.Plan.PlanName,
+            BasePremium = GetSchemeBasePremium(s.SchemeDetails)
         }).ToList();
     }
 
@@ -96,12 +98,14 @@ public class PolicyService(
             throw new InvalidOperationException(currencyValidation.Errors.First().Message);
         }
 
+        var actualPremium = model.ExactPremiumAmount ?? (model.CoverageAmount * 0.05m);
+
         var policy = new Policy
         {
             CustomerId = customerId,
             SchemeId = model.SchemeId,
             PolicyDetails = $"Beneficiary: {model.BeneficiaryName}, Coverage: {model.CoverageAmount:C}, Maturity: {model.MaturityPeriod} months",
-            Premium = model.CoverageAmount * 0.05m, 
+            Premium = actualPremium,
             DateIssued = DateOnly.FromDateTime(DateTime.UtcNow),
             MaturityPeriod = model.MaturityPeriod,
             PolicyLapseDate = DateOnly.FromDateTime(DateTime.UtcNow.AddMonths(model.MaturityPeriod))
@@ -134,5 +138,59 @@ public class PolicyService(
             PremiumPaid = createdPolicy.Premium,
             ExpiryDate = createdPolicy.PolicyLapseDate
         };
+    }
+
+    private static string GetSchemeDescription(string schemeDetails)
+    {
+        if (string.IsNullOrWhiteSpace(schemeDetails))
+        {
+            return string.Empty;
+        }
+
+        try
+        {
+            using var doc = JsonDocument.Parse(schemeDetails);
+            var root = doc.RootElement;
+
+            if (root.ValueKind == JsonValueKind.Object &&
+                root.TryGetProperty("description", out var descriptionElement) &&
+                descriptionElement.ValueKind == JsonValueKind.String)
+            {
+                return descriptionElement.GetString() ?? string.Empty;
+            }
+        }
+        catch
+        {
+            // Not JSON; treat as plain text.
+        }
+
+        return schemeDetails;
+    }
+
+    private static decimal GetSchemeBasePremium(string schemeDetails, decimal defaultBasePremium = 50.00m)
+    {
+        if (string.IsNullOrWhiteSpace(schemeDetails))
+        {
+            return defaultBasePremium;
+        }
+
+        try
+        {
+            using var doc = JsonDocument.Parse(schemeDetails);
+            var root = doc.RootElement;
+
+            if (root.ValueKind == JsonValueKind.Object &&
+                root.TryGetProperty("basePremium", out var premiumElement) &&
+                premiumElement.TryGetDecimal(out var basePremium))
+            {
+                return basePremium;
+            }
+        }
+        catch
+        {
+            // Not JSON; fall back.
+        }
+
+        return defaultBasePremium;
     }
 }

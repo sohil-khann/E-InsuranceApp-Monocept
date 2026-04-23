@@ -24,6 +24,18 @@ public class Payment : AuditableEntity
     [Column(TypeName = "date")]
     public DateOnly PaymentDate { get; set; }
 
+    [MaxLength(100)]
+    public string? StripePaymentIntentId { get; set; }
+
+    [MaxLength(100)]
+    public string? StripeCustomerId { get; set; }
+
+    [MaxLength(50)]
+    public string PaymentStatus { get; set; } = "pending";
+
+    [MaxLength(500)]
+    public string? FailureReason { get; set; }
+
     [ForeignKey(nameof(CustomerId))]
     public Customer Customer { get; set; } = null!;
 

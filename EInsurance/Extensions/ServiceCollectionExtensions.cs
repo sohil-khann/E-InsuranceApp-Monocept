@@ -2,6 +2,7 @@ using EInsurance.Data;
 using EInsurance.Data.Seed;
 using EInsurance.Interfaces;
 using EInsurance.Repository;
+using EInsurance.Services;
 using EInsurance.Services.Validation;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,13 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddDataValidationServices(this IServiceCollection services)
     {
         services.AddScoped<IDataValidationService, DataValidationService>();
+
+        return services;
+    }
+
+    public static IServiceCollection AddStripeServices(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddScoped<IStripePaymentService, StripePaymentService>();
 
         return services;
     }

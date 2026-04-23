@@ -11,4 +11,5 @@ public interface IPolicyRepository
     Task<Scheme?> GetSchemeByIdAsync(int schemeId, CancellationToken cancellationToken = default);
     Task<Policy> CreatePolicyAsync(Policy policy, CancellationToken cancellationToken = default);
     Task<Payment> CreatePaymentAsync(Payment payment, CancellationToken cancellationToken = default);
+    Task UpdatePaymentStatusAsync(string paymentIntentId, string status, string? failureReason, CancellationToken cancellationToken = default);
 }

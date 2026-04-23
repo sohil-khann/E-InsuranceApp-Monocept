@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>QuestPDF</id>
+    <version>2024.10.2</version>
+    <authors>MarcinZiabek</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="file">PackageLicense.md</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>Logo.png</icon>
+    <readme>PackageReadme.md</readme>
+    <projectUrl>https://www.questpdf.com/</projectUrl>
+    <iconUrl>https://www.questpdf.com/images/package-logo.png</iconUrl>
+    <description>QuestPDF is an open-source, modern and battle-tested library that can help you with generating PDF documents by offering friendly, discoverable and predictable C# fluent API. Easily generate PDF reports, invoices, exports, etc.</description>
+    <releaseNotes>Version 2024.10.0
+- This version includes integration with the new QuestPDF Companion application.
+- Updated the Skia dependency to version m130.
+- Improved NuGet package determinism.
+- Enhanced rendering of underline text decoration for certain fonts.
+
+
+Version 2024.10.1
+- Engine: Improved overflow annotation and layout algorithm for better handling of content overflow.
+- Companion App: Enhanced message clarity regarding compatibility with merged documents.
+- Companion App: Improved support for documents with multiple page configurations.
+- Font discovery: Fixed file-access related exceptions.
+- Font discovery: Improved default file path for font discovery.
+
+
+Version 2024.10.2
+- Fixed parsing of color values from both strings and uint.
+- Fixed a rare memory leak issue occurring on certain CPU architectures.</releaseNotes>
+    <copyright>Marcin Ziąbek, QuestPDF contributors</copyright>
+    <tags>PDF C# dotnet csharp .NET PDF library PDF document PDF generation PDF creation PDF report PDF invoice PDF export windows linux mac azure aws open-source open source free adobe file SVG HTML XPS</tags>
+    <repository type="git" url="https://github.com/QuestPDF/library.git" commit="9b6f99f40dc7c49b829d1384fb2c2406fb445e6f" />
+    <dependencies>
+      <group targetFramework="net6.0" />
+      <group targetFramework="net8.0" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

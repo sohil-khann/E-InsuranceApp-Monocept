@@ -1,0 +1,419 @@
+@{
+    ViewData["Title"] = "Payment | Guardian Insurance";
+    var amount = ViewData["Amount"] as decimal? ?? 0;
+    var quoteId = ViewData["QuoteId"] as string ?? "";
+    var schemeName = ViewData["SchemeName"] as string ?? "";
+    var stripeKey = ViewData["StripePublishableKey"] as string ?? "";
+}
+@if (string.IsNullOrEmpty(stripeKey)) {
+    <div style="padding: 20px; background: #fee; color: #c00;">
+        <h3>Configuration Error</h3>
+        <p>Stripe publishable key is not configured. Please check appsettings.json.</p>
+    </div>
+}
+else if (amount <= 0) {
+    <div style="padding: 20px; background: #fee; color: #c00;">
+        <h3>Missing Payment Data</h3>
+        <p>Amount is missing. Please start from the beginning.</p>
+        <a href="/PolicyPurchase/AvailableSchemes">Go to Schemes</a>
+    </div>
+}
+else {
+
+<style>
+    :root {
+        --primary-color: #006b54;
+        --primary-light: #22b590;
+        --surface: #f4fbf6;
+        --surface-container: #eff5f0;
+        --on-surface: #1a1b1a;
+    }
+
+    body {
+        background-color: var(--surface);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .payment-container {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .payment-summary {
+        background: white;
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .payment-header {
+        margin-bottom: 2rem;
+    }
+
+    .payment-header h2 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        color: var(--on-surface);
+    }
+
+    .payment-details {
+        background: var(--surface-container);
+        border-radius: 1rem;
+        padding: 2rem;
+        margin: 2rem 0;
+    }
+
+    .detail-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    .detail-label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #6b7280;
+    }
+
+    .detail-value {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--on-surface);
+    }
+
+    .amount-highlight {
+        border-top: 2px solid var(--primary-light);
+        padding-top: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .amount-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--primary-color);
+    }
+
+    .amount-value {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: var(--primary-light);
+    }
+
+    .payment-form-section {
+        background: white;
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #payment-form {
+        width: 100%;
+    }
+
+    #card-element {
+        padding: 1rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        background: var(--surface);
+        margin-bottom: 1rem;
+    }
+
+    #card-element.focused {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(0, 107, 84, 0.1);
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--on-surface);
+        display: block;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    #card-errors {
+        color: #dc2626;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+    }
+
+    .btn-pay {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .btn-pay:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 107, 84, 0.3);
+    }
+
+    .btn-pay:disabled {
+        background: #9ca3af;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .security-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        font-size: 0.75rem;
+        color: #6b7280;
+    }
+
+    .loading-spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 1s linear infinite;
+        margin-right: 0.5rem;
+    }
+
+    @@keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .success-message {
+        display: none;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .success-icon {
+        width: 64px;
+        height: 64px;
+        background: var(--primary-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        color: white;
+        font-size: 2rem;
+    }
+
+    @@media (max-width: 1024px) {
+        .payment-container {
+            grid-template-columns: 1fr;
+        }
+
+        .payment-summary,
+        .payment-form-section {
+            padding: 2rem;
+        }
+    }
+</style>
+
+<div class="payment-container">
+    <div class="payment-summary">
+        <div class="payment-header">
+            <h2>Secure<br /><span style="color: var(--primary-light);">Payment</span></h2>
+            <p style="color: #6b7280;">Complete your insurance purchase securely with Stripe.</p>
+        </div>
+
+        <div class="payment-details">
+            <div class="detail-item">
+                <span class="detail-label">Quote ID</span>
+                <span class="detail-value">@quoteId</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Policy Scheme</span>
+                <span class="detail-value">@schemeName</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Beneficiary</span>
+                <span class="detail-value">@ViewData["BeneficiaryName"]</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Coverage</span>
+                <span class="detail-value">@ViewData["CoverageAmount"]</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Duration</span>
+                <span class="detail-value">@ViewData["MaturityPeriod"] months</span>
+            </div>
+
+            <div class="amount-highlight">
+                <div class="amount-label">Total Amount Due</div>
+                <div class="amount-value">@amount.ToString("C")</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-form-section">
+        <form id="payment-form">
+            <input type="hidden" id="amount" value="@amount" />
+            <input type="hidden" id="quoteId" value="@quoteId" />
+            <input type="hidden" id="policyId" value="@ViewData["SchemeId"]" />
+
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--on-surface);">
+                Card Details
+            </h3>
+
+            <div id="card-element"></div>
+            <div id="card-errors" role="alert"></div>
+
+            <button type="submit" class="btn-pay" id="submit-button">
+                Pay @amount.ToString("C")
+            </button>
+
+            <div class="security-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                Secured by Stripe
+            </div>
+        </form>
+
+        <div class="success-message" id="success-message">
+            <div class="success-icon">✓</div>
+            <h3>Payment Successful!</h3>
+            <p style="color: #6b7280; margin-top: 0.5rem;">Processing your policy...</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var stripeKey = '@Html.Raw(ViewData["StripePublishableKey"] ?? "")';
+        if (!stripeKey) {
+            document.getElementById('card-errors').textContent = 'Stripe key not configured. Please contact support.';
+            return;
+        }
+        var stripe = Stripe(stripeKey);
+        var elements = stripe.elements();
+
+        var card = elements.create('card', {
+            style: {
+                base: {
+                    fontSize: '16px',
+                    color: '#1a1b1a',
+                    '::placeholder': {
+                        color: '#9ca3af'
+                    }
+                },
+                invalid: {
+                    color: '#dc2626'
+                }
+            }
+        });
+
+        card.mount('#card-element');
+
+        card.on('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        var form = document.getElementById('payment-form');
+        var submitButton = document.getElementById('submit-button');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="loading-spinner"></span>Processing...';
+
+            try {
+                var response = await fetch('/stripe/create-payment-intent', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        policyId: parseInt(document.getElementById('policyId').value),
+                        amount: parseFloat(document.getElementById('amount').value),
+                        currency: 'inr',
+                        quoteId: document.getElementById('quoteId').value,
+                        description: 'Insurance Premium Payment'
+                    })
+                });
+
+                var data = await response.json();
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                var result = await stripe.confirmCardPayment(data.clientSecret, {
+                    payment_method: {
+                        card: card
+                    }
+                });
+
+                if (result.error) {
+                    throw new Error(result.error.message);
+                }
+
+                if (result.paymentIntent.status === 'succeeded') {
+                    document.getElementById('payment-form').style.display = 'none';
+                    document.getElementById('success-message').style.display = 'block';
+
+                    var completeResponse = await fetch('/PolicyPurchase/ProcessPaymentComplete', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value
+                        },
+                        body: JSON.stringify({
+                            paymentIntentId: result.paymentIntent.id,
+                            status: result.paymentIntent.status,
+                            amount: data.amount,
+                            policyId: data.policyId
+                        })
+                    });
+
+                    var completeData = await completeResponse.json();
+
+                    if (completeData.policyId) {
+                        window.location.href = '/PolicyPurchase/Confirmation?policyId=' + completeData.policyId + '&paymentSuccess=true';
+                    } else if (completeData.error) {
+                        throw new Error(completeData.error);
+                    }
+                }
+            } catch (error) {
+                var displayError = document.getElementById('card-errors');
+                displayError.textContent = error.message;
+                submitButton.disabled = false;
+                submitButton.textContent = 'Pay ' + document.getElementById('amount').value;
+            }
+        });
+    });
+</script>
+}

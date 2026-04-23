@@ -20,12 +20,12 @@ public class PurchasePolicyViewModel
 {
     [Required]
     public int SchemeId { get; set; }
-    
+
     public string SchemeName { get; set; } = string.Empty;
-    
+
     [Required]
     [Range(1, 60, ErrorMessage = "Maturity period must be between 1 and 60 months")]
-    [Display(Name = "Maturity Period (Months)")]
+    [Display(Name = "maturity Period (Months)")]
     public int MaturityPeriod { get; set; }
 
     [Required]
@@ -40,6 +40,8 @@ public class PurchasePolicyViewModel
     [Required]
     [Display(Name = "Payment Method")]
     public string PaymentMethod { get; set; } = string.Empty;
+
+    public decimal? ExactPremiumAmount { get; set; }
 }
 
 public class PurchaseConfirmationViewModel

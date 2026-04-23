@@ -109,6 +109,71 @@ body {
     background: #f5f7fa;
 }
 
+.display-lg {
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.headline-lg {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.title-lg {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.label-md {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.btn-veridical-primary {
+    background: linear-gradient(135deg, #006b54 0%, #22b590 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+    .btn-veridical-primary:hover {
+        opacity: 0.92;
+        color: #ffffff;
+    }
+
+    .btn-veridical-primary:active {
+        transform: translateY(1px);
+    }
+
+.btn-veridical-secondary {
+    background-color: #e6f4f1;
+    color: #006b54;
+    border: 1px solid rgba(0, 107, 84, 0.14);
+    border-radius: 8px;
+    padding: 0.65rem 1.25rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+    .btn-veridical-secondary:hover {
+        background-color: #d8efe9;
+        color: #006b54;
+    }
+
+    .btn-veridical-secondary:active {
+        transform: translateY(1px);
+    }
+
 .navbar {
     position: sticky;
     top: 0;

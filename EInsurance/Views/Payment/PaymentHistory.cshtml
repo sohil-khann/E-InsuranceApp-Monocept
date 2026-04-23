@@ -5,25 +5,150 @@
     Layout = "_Layout";
 }
 
+<style> 
+    :root {
+        --surface: #f4fbf6;
+        --surface-container-lowest: #ffffff;
+        --surface-container-low: #eff5f0;
+        --surface-container: #eaf1eb;
+        --surface-container-high: #e2ebe4;
+        --primary: #006b54;
+        --primary-container: #22b590;
+        --on-primary: #ffffff;
+        --on-surface: #171d1a;
+        --on-surface-variant: #3f4944;
+        --border-radius-card: 1rem;
+        --border-radius-btn: 0.5rem;
+        --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+        background-color: var(--surface);
+        font-family: var(--font-family);
+        color: var(--on-surface);
+    }
+
+    .display-lg {
+        font-size: 3rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        color: var(--on-surface-variant);
+    }
+ 
+    .payment-card {
+        background: var(--surface-container-lowest);
+        border-radius: var(--border-radius-card);
+        box-shadow: 0 12px 24px -8px rgba(23,29,26,0.06);
+        overflow: hidden;
+    }
+     
+    .table-tonal {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+        .table-tonal th {
+            font-weight: 600;
+            color: var(--on-surface-variant);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-size: 0.75rem;
+            padding: 1rem 1rem 0.75rem 1rem;
+            border: none;
+            background-color: transparent;
+        }
+
+        .table-tonal td {
+            padding: 1rem;
+            vertical-align: middle;
+            border: none;
+            color: var(--on-surface);
+        }
+
+        .table-tonal tbody tr {
+            border-bottom: none;
+            transition: background 0.15s ease;
+        }
+
+            .table-tonal tbody tr:nth-child(odd) {
+                background-color: var(--surface-container-lowest);
+            }
+
+            .table-tonal tbody tr:nth-child(even) {
+                background-color: var(--surface-container-low);
+            }
+
+            .table-tonal tbody tr:hover {
+                background-color: var(--surface-container);
+            }
+             
+    .badge-tonal {
+        background: var(--surface-container-high);
+        color: var(--on-surface-variant);
+        font-weight: 500;
+        padding: 0.35rem 0.75rem;
+        border-radius: 2rem;
+        font-size: 0.8rem;
+    }
+     
+    .btn-gradient {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+        color: var(--on-primary);
+        border: none;
+        border-radius: var(--border-radius-btn);
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+        transition: opacity 0.2s;
+    }
+
+        .btn-gradient:hover {
+            opacity: 0.9;
+            color: var(--on-primary);
+        }
+         
+    .alert-tonal {
+        background: var(--surface-container-low);
+        color: var(--on-surface);
+        border: none;
+        border-radius: var(--border-radius-card);
+        padding: 1rem 1.5rem;
+    }
+
+    .receipt-id {
+        font-weight: 600;
+        color: var(--on-surface);
+    }
+
+    .amount {
+        font-weight: 700;
+        color: var(--primary);
+    }
+</style>
+
 <div class="row mb-4">
     <div class="col-12">
-        <h1 class="h3 fw-bold">Payment History</h1>
-        <p class="text-muted">View and download your payment receipts</p>
+        <h1 class="display-lg">Payment History</h1>
+        <p class="lead">View and download your payment receipts</p>
     </div>
 </div>
 
 @if (!Model.Any())
 {
-    <div class="alert alert-info">
+    <div class="alert-tonal">
         <i class="bi bi-info-circle me-2"></i>No payments found.
     </div>
 }
 else
 {
-    <div class="card border-0 shadow-sm">
+    <div class="payment-card">
         <div class="table-responsive">
-            <table class="table table-hover mb-0">
-                <thead class="table-light">
+            <table class="table-tonal">
+                <thead>
                     <tr>
                         <th>Receipt No</th>
                         <th>Policy</th>
@@ -38,16 +163,16 @@ else
                     {
                         <tr>
                             <td>
-                                <span class="fw-semibold">#@payment.PaymentId</span>
+                                <span class="receipt-id">#@payment.PaymentId</span>
                             </td>
                             <td>
-                                <span class="badge bg-primary">POL-@payment.PolicyId.ToString("D6")</span>
+                                <span class="badge-tonal">POL-@payment.PolicyId.ToString("D6")</span>
                             </td>
                             <td>@payment.Policy.Scheme?.SchemeName</td>
                             <td>@payment.PaymentDate.ToString("dd MMM yyyy")</td>
-                            <td class="fw-bold">₹@payment.Amount.ToString("N2")</td>
+                            <td class="amount">₹@payment.Amount.ToString("N2")</td>
                             <td class="text-end">
-                                <a asp-controller="Payment" asp-action="DownloadReceipt" asp-route-paymentId="@payment.PaymentId" class="btn btn-sm btn-success" title="Download Receipt">
+                                <a asp-controller="Payment" asp-action="DownloadReceipt" asp-route-paymentId="@payment.PaymentId" class="btn-gradient" title="Download Receipt">
                                     <i class="bi bi-download"></i> Download
                                 </a>
                             </td>

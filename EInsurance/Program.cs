@@ -30,6 +30,7 @@ public class Program
         builder.Services.AddJwtAuthentication(builder.Configuration);
         builder.Services.AddApplicationServices();
         builder.Services.AddDataValidationServices();
+        builder.Services.AddStripeServices(builder.Configuration);
 
         var app = builder.Build();
 

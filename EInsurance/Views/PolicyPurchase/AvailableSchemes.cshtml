@@ -5,10 +5,156 @@
     Layout = "_Layout";
 }
 
+<style>
+    :root {
+        --surface: #f4fbf6;
+        --surface-container-lowest: #ffffff;
+        --surface-container-low: #eff5f0;
+        --surface-container: #eaf1eb;
+        --surface-container-high: #e2ebe4;
+        --primary: #006b54;
+        --primary-container: #22b590;
+        --on-primary: #ffffff;
+        --on-surface: #171d1a;
+        --on-surface-variant: #3f4944;
+        --border-radius-card: 1rem;
+        --border-radius-btn: 0.5rem;
+        --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+        background-color: var(--surface);
+        font-family: var(--font-family);
+        color: var(--on-surface);
+    }
+     
+    .display-lg {
+        font-size: 3rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+    .title-lg {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .label-md {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--on-surface-variant);
+    }
+     
+    .scheme-card {
+        background: var(--surface-container-lowest);
+        border-radius: var(--border-radius-card);
+        padding: 1.75rem;
+        height: 100%;
+        box-shadow: 0 12px 24px -8px rgba(23,29,26,0.06);
+        transition: box-shadow 0.2s ease;
+        border: none;
+    }
+    .scheme-card:hover {
+        box-shadow: 0 20px 32px -12px rgba(0,107,84,0.08);
+    }
+     
+    .icon-container {
+        background: var(--surface-container-low);
+        border-radius: 0.75rem;
+        padding: 0.75rem;
+        display: inline-flex;
+        margin-bottom: 1.25rem;
+    }
+    .icon-container i {
+        font-size: 1.75rem;
+        color: var(--primary);
+    }
+     
+    .plan-badge {
+        background: var(--surface-container);
+        color: var(--primary);
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0.25rem 0.75rem;
+        border-radius: 2rem;
+        display: inline-block;
+        margin-bottom: 0.75rem;
+    }
+
+    .scheme-name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.5rem;
+        color: var(--on-surface);
+    }
+
+    .scheme-details {
+        color: var(--on-surface-variant);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .premium-block {
+        margin-bottom: 1.5rem;
+    }
+    .premium-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--on-surface-variant);
+    }
+    .premium-value {
+        font-size: 2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.2;
+    }
+    .premium-value small {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--on-surface-variant);
+        background: none;
+        -webkit-background-clip: unset;
+        background-clip: unset;
+        color: var(--on-surface-variant);
+    }
+     
+    .btn-veridical-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+        color: var(--on-primary);
+        border: none;
+        border-radius: var(--border-radius-btn);
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+        width: 100%;
+        transition: opacity 0.2s;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+    .btn-veridical-primary:hover {
+        opacity: 0.9;
+        color: var(--on-primary);
+    } 
+    .alert-tonal {
+        background: var(--surface-container-low);
+        color: var(--on-surface);
+        border: none;
+        border-radius: var(--border-radius-card);
+        padding: 1rem 1.5rem;
+    }
+</style>
+
 <div class="row mb-4">
     <div class="col-12">
-        <h1 class="h3 fw-bold">Available Schemes</h1>
-        <p class="text-muted">Browse and purchase insurance schemes</p>
+        <h1 class="display-lg">Available Schemes</h1>
+        <p class="lead" style="color: var(--on-surface-variant); font-size: 1.25rem;">Browse and purchase insurance schemes</p>
     </div>
 </div>
 
@@ -16,22 +162,22 @@
     @foreach (var scheme in Model.Schemes)
     {
         <div class="col-md-6 col-lg-4">
-            <div class="card h-100 border-0 shadow-sm">
-                <div class="card-body">
-                    <div class="bg-success bg-opacity-10 rounded-3 p-3 d-inline-flex mb-3">
-                        <i class="bi bi-shield-check fs-4 text-success"></i>
-                    </div>
-                    <span class="badge bg-success bg-opacity-10 text-success mb-2 d-block">@scheme.PlanName</span>
-                    <h4 class="fw-bold mb-2">@scheme.SchemeName</h4>
-                    <p class="text-muted small mb-3">@scheme.SchemeDetails</p>
-                    <div class="mb-3">
-                        <span class="text-muted small">Starts from</span>
-                        <span class="h4 fw-bold text-success">$@scheme.BasePremium<small>/mo</small></span>
-                    </div>
-                    <a asp-action="CalculatePremium" asp-route-schemeId="@scheme.SchemeId" class="btn btn-success w-100">
-                        <i class="bi bi-calculator me-2"></i>Calculate Premium
-                    </a>
+            <div class="scheme-card">
+                <div class="icon-container">
+                    <i class="bi bi-shield-check"></i>
                 </div>
+                <span class="plan-badge">@scheme.PlanName</span>
+                <h4 class="scheme-name">@scheme.SchemeName</h4>
+                <p class="scheme-details">@scheme.SchemeDetails</p>
+                <div class="premium-block">
+                    <div class="premium-label">Starts from</div>
+                    <div class="premium-value">
+                        @scheme.BasePremium<small>/mo</small>
+                    </div>
+                </div>
+                <a asp-action="CalculatePremium" asp-route-schemeId="@scheme.SchemeId" class="btn-veridical-primary">
+                    <i class="bi bi-calculator me-2"></i>Calculate Premium
+                </a>
             </div>
         </div>
     }
@@ -39,7 +185,7 @@
 
 @if (!Model.Schemes.Any())
 {
-    <div class="alert alert-info">
+    <div class="alert-tonal mt-4">
         <i class="bi bi-info-circle me-2"></i>No insurance schemes available at the moment.
     </div>
 }

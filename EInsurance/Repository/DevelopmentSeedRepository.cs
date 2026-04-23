@@ -57,9 +57,19 @@ public class DevelopmentSeedRepository(ApplicationDbContext dbContext) : IDevelo
         return dbContext.InsurancePlans.OrderBy(plan => plan.PlanId).FirstOrDefaultAsync(cancellationToken);
     }
 
+    public Task<InsurancePlan?> GetInsurancePlanByNameAsync(string planName, CancellationToken cancellationToken = default)
+    {
+        return dbContext.InsurancePlans.FirstOrDefaultAsync(plan => plan.PlanName == planName, cancellationToken);
+    }
+
     public Task<Scheme?> GetFirstSchemeAsync(CancellationToken cancellationToken = default)
     {
         return dbContext.Schemes.OrderBy(scheme => scheme.SchemeId).FirstOrDefaultAsync(cancellationToken);
+    }
+
+    public Task<Scheme?> GetSchemeByNameAsync(string schemeName, CancellationToken cancellationToken = default)
+    {
+        return dbContext.Schemes.FirstOrDefaultAsync(scheme => scheme.SchemeName == schemeName, cancellationToken);
     }
 
     public Task AddAdminAsync(Admin admin, CancellationToken cancellationToken = default)

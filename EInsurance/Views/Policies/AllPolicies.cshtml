@@ -4,20 +4,201 @@
     ViewData["Title"] = "All Policies";
 }
 
+<style>
+    :root {
+        --surface: #f4fbf6;
+        --surface-container-lowest: #ffffff;
+        --surface-container-low: #eff5f0;
+        --surface-container: #eaf1eb;
+        --surface-container-high: #e2ebe4;
+        --surface-container-highest: #dde4df;
+        --primary: #006b54;
+        --primary-container: #22b590;
+        --on-primary: #ffffff;
+        --on-surface: #171d1a;
+        --on-surface-variant: #3f4944;
+        --outline-variant: #bbcac2;
+        --error: #ba1a1a;
+        --error-container: #ffdad6;
+        
+        --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        --border-radius-card: 0.75rem;
+        --border-radius-input: 0.5rem;
+        --border-radius-btn: 0.5rem;
+    }
+
+    body {
+        background-color: var(--surface);
+        font-family: var(--font-family);
+        color: var(--on-surface);
+    }
+
+    .display-lg {
+        font-size: 3.5rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+    }
+    .headline-lg { font-size: 2rem; font-weight: 600; }
+    .title-lg { font-size: 1.5rem; font-weight: 600; }
+    .label-md {
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--on-surface-variant);
+    }
+
+    .hero-card {
+        background-color: var(--surface-container-lowest);
+        padding: 2.5rem 2rem;
+        border-radius: var(--border-radius-card);
+        margin-bottom: 2rem;
+        box-shadow: 0 16px 32px -8px rgba(23,29,26,0.06);
+    }
+    .info-card {
+        background-color: var(--surface-container-lowest);
+        padding: 1.5rem;
+        border-radius: var(--border-radius-card);
+        margin-bottom: 1.5rem;
+        box-shadow: 0 8px 16px -4px rgba(23,29,26,0.04);
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: var(--on-surface-variant);
+        margin-bottom: 0.25rem;
+    }
+    .form-control, .form-select {
+        background-color: var(--surface-container-high);
+        border: none;
+        border-radius: var(--border-radius-input);
+        padding: 0.75rem 1rem;
+        color: var(--on-surface);
+        transition: all 0.15s ease;
+    }
+    .form-control:focus, .form-select:focus {
+        background-color: var(--surface-container-high);
+        box-shadow: inset 4px 0 0 var(--primary), 0 0 0 2px rgba(0,107,84,0.1);
+        outline: none;
+    }
+
+    .btn-veridical-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+        color: var(--on-primary);
+        border: none;
+        border-radius: var(--border-radius-btn);
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+        transition: opacity 0.2s;
+    }
+    .btn-veridical-primary:hover {
+        opacity: 0.9;
+        color: var(--on-primary);
+    }
+    .btn-veridical-secondary {
+        background-color: var(--surface-container-highest);
+        color: var(--on-surface);
+        border: none;
+        border-radius: var(--border-radius-btn);
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+    }
+    .btn-veridical-secondary:hover {
+        background-color: var(--surface-container);
+    }
+    .btn-outline-dark {
+        border: none;
+        background-color: transparent;
+        color: var(--primary);
+        font-weight: 500;
+    }
+    .btn-outline-dark:hover {
+        background-color: var(--surface-container-low);
+        color: var(--primary);
+    }
+
+    .table {
+        --bs-table-bg: transparent;
+        --bs-table-color: var(--on-surface);
+        margin-bottom: 0;
+    }
+    .table th {
+        font-weight: 600;
+        color: var(--on-surface-variant);
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        font-size: 0.8rem;
+        padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+        border-bottom: none;
+    }
+    .table td {
+        padding: 1rem 0.75rem;
+        vertical-align: middle;
+        border-bottom: none;
+    }
+    .table tbody tr {
+        border-bottom: none;
+        background-color: transparent;
+    }
+    .table tbody tr:hover {
+        background-color: var(--surface-container-low);
+    }
+    .table-striped > tbody > tr:nth-of-type(odd) > * {
+        background-color: var(--surface-container-lowest);
+    }
+    .table-striped > tbody > tr:nth-of-type(even) > * {
+        background-color: var(--surface-container-low);
+    }
+    .pagination {
+        gap: 0.25rem;
+    }
+    .page-item .page-link {
+        background-color: var(--surface-container-lowest);
+        border: none;
+        border-radius: 2rem;
+        color: var(--on-surface);
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        transition: background 0.15s;
+    }
+    .page-item.active .page-link {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+        color: white;
+    }
+    .page-item.disabled .page-link {
+        background-color: var(--surface-container-low);
+        color: var(--on-surface-variant);
+        opacity: 0.5;
+    }
+    .page-link:hover {
+        background-color: var(--surface-container-highest);
+        color: var(--on-surface);
+    }
+
+    .eyebrow {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--primary);
+        font-weight: 600;
+    }
+</style>
+
 <div class="hero-card">
     <span class="eyebrow">Admin Access</span>
-    <h1 class="display-6 fw-semibold mt-3">All Policies</h1>
-    <p class="lead mt-3 mb-0">View and manage all policies in the system.</p>
+    <h1 class="display-lg mt-3">All Policies</h1>
+    <p class="lead mt-3 mb-0" style="font-size:1.25rem; font-weight:400;">View and manage all policies in the system.</p>
 </div>
 
 <div class="info-card mt-4">
-    <form method="get" class="row g-3 align-items-end">
+    <form method="get" class="row g-4 align-items-end">
         <div class="col-md-6">
-            <label for="searchTerm" class="form-label">Search</label>
+            <label for="searchTerm" class="form-label label-md">Search</label>
             <input id="searchTerm" name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Policy ID, Customer Name, Scheme Name" />
         </div>
         <div class="col-md-3">
-            <label for="pageSize" class="form-label">Page Size</label>
+            <label for="pageSize" class="form-label label-md">Page Size</label>
             <select name="pageSize" id="pageSize" class="form-select">
                 <option value="10">10</option>
                 <option value="20">20</option>
@@ -25,14 +206,14 @@
             </select>
         </div>
         <div class="col-md-3">
-            <button type="submit" class="btn btn-dark w-100">Apply</button>
+            <button type="submit" class="btn-veridical-primary w-100">Apply</button>
         </div>
     </form>
 </div>
 
 <div class="info-card mt-4">
     <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Policy ID</th>
@@ -49,7 +230,7 @@
                     <tr>
                         <td>@policy.PolicyId</td>
                         <td>@policy.DateIssued.ToString("dd-MMM-yyyy")</td>
-                        <td>₹@policy.Premium</td>
+                        <td>&#8377;@policy.Premium</td>
                         <td>@policy.MaturityPeriod months</td>
                         <td>@policy.PolicyLapseDate.ToString("dd-MMM-yyyy")</td>
                         <td>@policy.CreatedAt.ToString("dd-MMM-yyyy HH:mm")</td>
@@ -88,6 +269,6 @@
     </nav>
 }
 
-<div class="text-center text-muted mt-2">
+<div class="text-center text-muted mt-2" style="color: var(--on-surface-variant) !important;">
     Showing @Model.Policies.FirstRecordIndex - @Model.Policies.LastRecordIndex of @Model.Policies.TotalRecords records (Page @Model.Policies.CurrentPage of @Model.Policies.TotalPages)
 </div>

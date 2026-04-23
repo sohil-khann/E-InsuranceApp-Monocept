@@ -58,7 +58,8 @@ public class PolicyRepository(ApplicationDbContext dbContext) : IPolicyRepositor
         return await dbContext.Schemes
             .Include(s => s.Plan)
             .AsNoTracking()
-            .OrderBy(s => s.SchemeName)
+            .OrderBy(s => s.Plan.PlanName)
+            .ThenBy(s => s.SchemeName)
             .ToListAsync(cancellationToken);
     }
 
@@ -81,5 +82,18 @@ public class PolicyRepository(ApplicationDbContext dbContext) : IPolicyRepositor
         dbContext.Payments.Add(payment);
         await dbContext.SaveChangesAsync(cancellationToken);
         return payment;
+    }
+
+    public async Task UpdatePaymentStatusAsync(string paymentIntentId, string status, string? failureReason, CancellationToken cancellationToken = default)
+    {
+        var payment = await dbContext.Payments
+            .FirstOrDefaultAsync(p => p.StripePaymentIntentId == paymentIntentId, cancellationToken);
+
+        if (payment != null)
+        {
+            payment.PaymentStatus = status;
+            payment.FailureReason = failureReason;
+            await dbContext.SaveChangesAsync(cancellationToken);
+        }
     }
 }
