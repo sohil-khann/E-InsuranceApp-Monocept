@@ -7259,3 +7259,1224 @@ ORDER BY [i].[FullName]
 2026-04-23 14:17:06.064 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
 2026-04-23 14:17:06.065 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Account/Login - 200 null text/html; charset=utf-8 11.7138ms
 2026-04-23 14:17:14.723 +05:30 [INF] Application is shutting down...
+2026-04-23 14:40:29.963 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-23 14:40:30.054 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-23 14:40:30.064 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-23 14:40:30.073 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-23 14:40:30.105 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-23 14:40:30.162 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-04-23 14:40:30.506 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-23 14:40:30.526 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-23 14:40:30.557 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-23 14:40:30.575 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-23 14:40:30.892 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@__planName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [InsurancePlan] AS [i]
+WHERE [i].[PlanName] = @__planName_0
+2026-04-23 14:40:30.950 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:30.988 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:30.997 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:31.007 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__planName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [InsurancePlan] AS [i]
+WHERE [i].[PlanName] = @__planName_0
+2026-04-23 14:40:31.018 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:31.027 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:31.036 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__planName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [InsurancePlan] AS [i]
+WHERE [i].[PlanName] = @__planName_0
+2026-04-23 14:40:31.044 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:31.053 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:31.062 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:31.071 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__planName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [InsurancePlan] AS [i]
+WHERE [i].[PlanName] = @__planName_0
+2026-04-23 14:40:31.079 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:31.088 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__schemeName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName]
+FROM [Scheme] AS [s]
+WHERE [s].[SchemeName] = @__schemeName_0
+2026-04-23 14:40:31.275 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policy] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-23 14:40:31.412 +05:30 [INF] User profile is available. Using 'C:\Users\Asus\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-23 14:40:31.500 +05:30 [INF] Now listening on: http://localhost:5105
+2026-04-23 14:40:31.505 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-23 14:40:31.506 +05:30 [INF] Hosting environment: Development
+2026-04-23 14:40:31.509 +05:30 [INF] Content root path: D:\Acess meditech\E-InsuranceApp-Monocept\EInsurance
+2026-04-23 14:40:40.836 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/ - null null
+2026-04-23 14:40:40.849 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-04-23 14:40:40.954 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-23 14:40:40.976 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.HomeController (EInsurance).
+2026-04-23 14:40:41.004 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-23 14:40:41.085 +05:30 [INF] Executed ViewResult - view Index executed in 83.1449ms.
+2026-04-23 14:40:41.093 +05:30 [INF] Executed action EInsurance.Controllers.HomeController.Index (EInsurance) in 108.9151ms
+2026-04-23 14:40:41.099 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.HomeController.Index (EInsurance)'
+2026-04-23 14:40:41.113 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/ - 200 null text/html; charset=utf-8 279.8906ms
+2026-04-23 14:40:45.443 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Account/Login - null null
+2026-04-23 14:40:45.470 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:40:45.475 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:40:45.488 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-23 14:40:45.548 +05:30 [INF] Executed ViewResult - view Login executed in 61.8719ms.
+2026-04-23 14:40:45.587 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 106.2536ms
+2026-04-23 14:40:45.598 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:40:45.608 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Account/Login - 200 null text/html; charset=utf-8 164.9083ms
+2026-04-23 14:40:51.983 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Account/Register - null null
+2026-04-23 14:40:52.002 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-23 14:40:52.008 +05:30 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:40:52.359 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(varchar(11), [i].[AgentID]), [i].[AgentID], [i].[FullName]
+FROM [InsuranceAgent] AS [i]
+ORDER BY [i].[FullName]
+2026-04-23 14:40:52.410 +05:30 [INF] Executing ViewResult, running view Register.
+2026-04-23 14:40:52.470 +05:30 [INF] Executed ViewResult - view Register executed in 61.2862ms.
+2026-04-23 14:40:52.474 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Register (EInsurance) in 461.7083ms
+2026-04-23 14:40:52.478 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-23 14:40:52.484 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Account/Register - 200 null text/html; charset=utf-8 501.1309ms
+2026-04-23 14:42:27.934 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/Account/Register - application/x-www-form-urlencoded 352
+2026-04-23 14:42:27.946 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-23 14:42:27.965 +05:30 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(EInsurance.Models.Auth.CustomerRegistrationViewModel, System.Threading.CancellationToken) on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:42:28.364 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@__emailLower_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Admin] AS [a]
+        WHERE LOWER([a].[Email]) = @__emailLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-23 14:42:28.391 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__emailLower_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Employee] AS [e]
+        WHERE LOWER([e].[Email]) = @__emailLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-23 14:42:28.418 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__emailLower_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [InsuranceAgent] AS [i]
+        WHERE LOWER([i].[Email]) = @__emailLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-23 14:42:28.446 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__emailLower_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Customer] AS [c]
+        WHERE LOWER([c].[Email]) = @__emailLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-23 14:42:28.945 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Date), @p3='?' (Size = 100), @p4='?' (Size = 100), @p5='?' (Size = 255), @p6='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Customer] ([AgentID], [CreatedAt], [DateOfBirth], [Email], [FullName], [PasswordHash], [Phone])
+OUTPUT INSERTED.[CustomerID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2026-04-23 14:42:28.991 +05:30 [INF] Executing RedirectResult, redirecting to /Account/Login.
+2026-04-23 14:42:28.996 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Register (EInsurance) in 1026.8601ms
+2026-04-23 14:42:28.999 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Register (EInsurance)'
+2026-04-23 14:42:29.004 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/Account/Register - 302 0 null 1070.2715ms
+2026-04-23 14:42:29.015 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Account/Login - null null
+2026-04-23 14:42:29.021 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:42:29.024 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:42:29.028 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-23 14:42:29.033 +05:30 [INF] Executed ViewResult - view Login executed in 4.905ms.
+2026-04-23 14:42:29.036 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 8.5627ms
+2026-04-23 14:42:29.039 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:42:29.042 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Account/Login - 200 null text/html; charset=utf-8 26.5145ms
+2026-04-23 14:42:36.942 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/Account/Login - application/x-www-form-urlencoded 236
+2026-04-23 14:42:36.953 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:42:36.966 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EInsurance.Models.Auth.LoginViewModel, System.Threading.CancellationToken) on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:42:37.240 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__identifier_0='?' (Size = 50), @__identifier_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+WHERE [a].[Username] = @__identifier_0 OR [a].[Email] = @__identifier_0_1
+2026-04-23 14:42:37.267 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__identifier_0='?' (Size = 50), @__identifier_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+WHERE [e].[Username] = @__identifier_0 OR [e].[Email] = @__identifier_0_1
+2026-04-23 14:42:37.296 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__identifier_0='?' (Size = 50), @__identifier_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+WHERE [i].[Username] = @__identifier_0 OR [i].[Email] = @__identifier_0_1
+2026-04-23 14:42:37.324 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__identifier_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+WHERE [c].[Email] = @__identifier_0
+2026-04-23 14:42:37.644 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[UserID] = @__userId_0 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[ExpiresAt] > GETUTCDATE()
+ORDER BY [u].[LastActiveAt] DESC
+2026-04-23 14:42:37.677 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[UserID] = @__userId_0 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:42:37.737 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 255), @p3='?' (DbType = DateTime2), @p4='?' (Size = 50), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserSession] ([SessionID], [CreatedAt], [DeviceInfo], [ExpiresAt], [IpAddress], [IsActive], [LastActiveAt], [UserID], [UserType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-04-23 14:42:37.777 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard.
+2026-04-23 14:42:37.780 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 805.3197ms
+2026-04-23 14:42:37.783 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:42:37.786 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/Account/Login - 302 0 null 844.7234ms
+2026-04-23 14:42:37.800 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Dashboard - null null
+2026-04-23 14:42:38.066 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:42:38.088 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:42:38.100 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-23 14:42:38.106 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-23 14:42:38.113 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-23 14:42:38.163 +05:30 [INF] Executed ViewResult - view Index executed in 50.9727ms.
+2026-04-23 14:42:38.170 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 58.7014ms
+2026-04-23 14:42:38.176 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-23 14:42:38.184 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Dashboard - 200 null text/html; charset=utf-8 383.3934ms
+2026-04-23 14:42:38.248 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/css/site.css?v=ftKJ1rH4mQs-wkYe0MG7GvPraQPzxFdl0oKkVqKD46w - null null
+2026-04-23 14:42:38.273 +05:30 [INF] The file /css/site.css was not modified
+2026-04-23 14:42:38.281 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/css/site.css?v=ftKJ1rH4mQs-wkYe0MG7GvPraQPzxFdl0oKkVqKD46w - 304 null text/css 33.2491ms
+2026-04-23 14:42:44.787 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/PolicyPurchase/AvailableSchemes - null null
+2026-04-23 14:42:45.031 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:42:45.052 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:42:45.063 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-23 14:42:45.070 +05:30 [INF] Route matched with {action = "AvailableSchemes", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AvailableSchemes() on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-23 14:42:45.136 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+ORDER BY [i].[PlanName], [s].[SchemeName]
+2026-04-23 14:42:45.156 +05:30 [INF] Executing ViewResult, running view AvailableSchemes.
+2026-04-23 14:42:45.170 +05:30 [INF] Executed ViewResult - view AvailableSchemes executed in 15.1512ms.
+2026-04-23 14:42:45.176 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance) in 101.7211ms
+2026-04-23 14:42:45.181 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-23 14:42:45.186 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/PolicyPurchase/AvailableSchemes - 200 null text/html; charset=utf-8 399.1277ms
+2026-04-23 14:42:58.414 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/PolicyPurchase/CalculatePremium?schemeId=4 - null null
+2026-04-23 14:42:58.666 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:42:58.694 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:42:58.703 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-23 14:42:58.713 +05:30 [INF] Route matched with {action = "CalculatePremium", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CalculatePremium(Int32) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-23 14:42:58.745 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+ORDER BY [i].[PlanName], [s].[SchemeName]
+2026-04-23 14:42:58.818 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-04-23 14:42:59.109 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-23 14:42:59.122 +05:30 [INF] Executing ViewResult, running view CalculatePremium.
+2026-04-23 14:42:59.194 +05:30 [INF] Executed ViewResult - view CalculatePremium executed in 72.7612ms.
+2026-04-23 14:42:59.198 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance) in 479.9539ms
+2026-04-23 14:42:59.211 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-23 14:42:59.214 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/PolicyPurchase/CalculatePremium?schemeId=4 - 200 null text/html; charset=utf-8 800.7762ms
+2026-04-23 14:43:21.538 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/PolicyPurchase/CalculatePremium - application/x-www-form-urlencoded 424
+2026-04-23 14:43:21.762 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:43:21.781 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:43:21.787 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-23 14:43:21.796 +05:30 [INF] Route matched with {action = "CalculatePremium", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CalculatePremium(EInsurance.Models.Policies.PremiumCalculationInputViewModel) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-23 14:43:21.834 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__schemeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+WHERE [s].[SchemeID] = @__schemeId_0
+2026-04-23 14:43:21.880 +05:30 [INF] Executing RedirectResult, redirecting to /PolicyPurchase/ConfirmPremium?schemeId=4.
+2026-04-23 14:43:21.884 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance) in 83.7755ms
+2026-04-23 14:43:21.887 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.CalculatePremium (EInsurance)'
+2026-04-23 14:43:21.890 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/PolicyPurchase/CalculatePremium - 302 0 null 352.3674ms
+2026-04-23 14:43:21.901 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/PolicyPurchase/ConfirmPremium?schemeId=4 - null null
+2026-04-23 14:43:22.132 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:43:22.148 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:43:22.155 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-23 14:43:22.160 +05:30 [INF] Route matched with {action = "ConfirmPremium", controller = "PolicyPurchase"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ConfirmPremium(Int32) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-23 14:43:22.172 +05:30 [INF] Executing ViewResult, running view ConfirmPremium.
+2026-04-23 14:43:22.218 +05:30 [INF] Executed ViewResult - view ConfirmPremium executed in 46.6699ms.
+2026-04-23 14:43:22.221 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance) in 55.7055ms
+2026-04-23 14:43:22.225 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-23 14:43:22.227 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/PolicyPurchase/ConfirmPremium?schemeId=4 - 200 null text/html; charset=utf-8 326.4573ms
+2026-04-23 14:43:44.188 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/PolicyPurchase/ConfirmPremium - application/x-www-form-urlencoded 418
+2026-04-23 14:43:44.437 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:43:44.454 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:43:44.460 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-23 14:43:44.469 +05:30 [INF] Route matched with {action = "ConfirmPremium", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ConfirmPremium(EInsurance.Models.Policies.PremiumConfirmationViewModel) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-23 14:43:44.478 +05:30 [INF] Executing RedirectResult, redirecting to /PolicyPurchase/Payment?quoteId=Q-4-20260423-8EE8AC01&schemeId=4&schemeName=Essential%20Health%20Cover&maturity=48&coverage=500000&premium=8590.97&beneficiary=jaykant.
+2026-04-23 14:43:44.481 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance) in 7.3469ms
+2026-04-23 14:43:44.484 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.ConfirmPremium (EInsurance)'
+2026-04-23 14:43:44.487 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/PolicyPurchase/ConfirmPremium - 302 0 null 298.7208ms
+2026-04-23 14:43:44.501 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/PolicyPurchase/Payment?quoteId=Q-4-20260423-8EE8AC01&schemeId=4&schemeName=Essential%20Health%20Cover&maturity=48&coverage=500000&premium=8590.97&beneficiary=jaykant - null null
+2026-04-23 14:43:44.516 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:43:44.529 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:43:44.535 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.Payment (EInsurance)'
+2026-04-23 14:43:44.540 +05:30 [INF] Route matched with {action = "Payment", controller = "PolicyPurchase"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Payment(System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-23 14:43:44.549 +05:30 [INF] Executing ViewResult, running view Payment.
+2026-04-23 14:43:44.559 +05:30 [INF] Executed ViewResult - view Payment executed in 10.5075ms.
+2026-04-23 14:43:44.562 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.Payment (EInsurance) in 18.0221ms
+2026-04-23 14:43:44.566 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.Payment (EInsurance)'
+2026-04-23 14:43:44.569 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/PolicyPurchase/Payment?quoteId=Q-4-20260423-8EE8AC01&schemeId=4&schemeName=Essential%20Health%20Cover&maturity=48&coverage=500000&premium=8590.97&beneficiary=jaykant - 200 null text/html; charset=utf-8 67.5011ms
+2026-04-23 14:49:15.067 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/stripe/create-payment-intent - application/json 124
+2026-04-23 14:49:15.371 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:49:15.391 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:49:15.396 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.StripeCheckoutController.CreatePaymentIntent (EInsurance)'
+2026-04-23 14:49:15.405 +05:30 [INF] Route matched with {action = "CreatePaymentIntent", controller = "StripeCheckout"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePaymentIntent(EInsurance.Interfaces.CreatePaymentIntentRequest) on controller EInsurance.Controllers.StripeCheckoutController (EInsurance).
+2026-04-23 14:49:17.494 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`6[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-23 14:49:17.509 +05:30 [INF] Executed action EInsurance.Controllers.StripeCheckoutController.CreatePaymentIntent (EInsurance) in 2099.9906ms
+2026-04-23 14:49:17.513 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.StripeCheckoutController.CreatePaymentIntent (EInsurance)'
+2026-04-23 14:49:17.516 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/stripe/create-payment-intent - 200 null application/json; charset=utf-8 2448.5336ms
+2026-04-23 14:49:19.140 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/PolicyPurchase/ProcessPaymentComplete - application/json 100
+2026-04-23 14:49:19.408 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:49:19.424 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:49:19.429 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.ProcessPaymentComplete (EInsurance)'
+2026-04-23 14:49:19.436 +05:30 [INF] Route matched with {action = "ProcessPaymentComplete", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProcessPaymentComplete(EInsurance.Controllers.PaymentCompleteRequest) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-23 14:49:19.470 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__schemeId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+WHERE [s].[SchemeID] = @__schemeId_0
+2026-04-23 14:49:19.507 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-23 14:49:19.851 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (DbType = Date), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Date), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Policy] ([CreatedAt], [CustomerID], [DateIssued], [MaturityPeriod], [PolicyDetails], [PolicyLapseDate], [Premium], [SchemeID])
+OUTPUT INSERTED.[PolicyID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2026-04-23 14:49:19.914 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 500), @p4='?' (DbType = Date), @p5='?' (Size = 50), @p6='?' (DbType = Int32), @p7='?' (Size = 100), @p8='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payment] ([Amount], [CreatedAt], [CustomerID], [FailureReason], [PaymentDate], [PaymentStatus], [PolicyID], [StripeCustomerId], [StripePaymentIntentId])
+OUTPUT INSERTED.[PaymentID]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-04-23 14:49:19.925 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-23 14:49:19.932 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.ProcessPaymentComplete (EInsurance) in 490.4746ms
+2026-04-23 14:49:19.935 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.ProcessPaymentComplete (EInsurance)'
+2026-04-23 14:49:19.938 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/PolicyPurchase/ProcessPaymentComplete - 200 null application/json; charset=utf-8 798.2971ms
+2026-04-23 14:49:19.969 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/PolicyPurchase/Confirmation?policyId=16&paymentSuccess=true - null null
+2026-04-23 14:49:20.213 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:49:20.228 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:49:20.234 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.Confirmation (EInsurance)'
+2026-04-23 14:49:20.242 +05:30 [INF] Route matched with {action = "Confirmation", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Confirmation(Int32, Boolean) on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-23 14:49:20.250 +05:30 [INF] Executing ViewResult, running view Confirmation.
+2026-04-23 14:49:20.262 +05:30 [INF] Executed ViewResult - view Confirmation executed in 13.3694ms.
+2026-04-23 14:49:20.265 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.Confirmation (EInsurance) in 18.3502ms
+2026-04-23 14:49:20.268 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.Confirmation (EInsurance)'
+2026-04-23 14:49:20.271 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/PolicyPurchase/Confirmation?policyId=16&paymentSuccess=true - 200 null text/html; charset=utf-8 301.7031ms
+2026-04-23 14:49:24.124 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Policies/MyPolicies - null null
+2026-04-23 14:49:24.334 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:49:24.348 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:49:24.352 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-23 14:49:24.358 +05:30 [INF] Route matched with {action = "MyPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyPolicies(System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-23 14:49:24.388 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-23 14:49:24.398 +05:30 [INF] Executing ViewResult, running view MyPolicies.
+2026-04-23 14:49:24.416 +05:30 [INF] Executed ViewResult - view MyPolicies executed in 18.7724ms.
+2026-04-23 14:49:24.418 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance) in 56.5538ms
+2026-04-23 14:49:24.421 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-23 14:49:24.424 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Policies/MyPolicies - 200 null text/html; charset=utf-8 299.8778ms
+2026-04-23 14:50:50.480 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Payment/PaymentHistory - null null
+2026-04-23 14:50:50.764 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:50:50.783 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:50:50.790 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PaymentController.PaymentHistory (EInsurance)'
+2026-04-23 14:50:50.797 +05:30 [INF] Route matched with {action = "PaymentHistory", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PaymentHistory(System.Threading.CancellationToken) on controller EInsurance.Controllers.PaymentController (EInsurance).
+2026-04-23 14:50:50.858 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PaymentID], [p].[Amount], [p].[CreatedAt], [p].[CustomerID], [p].[FailureReason], [p].[PaymentDate], [p].[PaymentStatus], [p].[PolicyID], [p].[StripeCustomerId], [p].[StripePaymentIntentId], [p0].[PolicyID], [p0].[CreatedAt], [p0].[CustomerID], [p0].[DateIssued], [p0].[MaturityPeriod], [p0].[PolicyDetails], [p0].[PolicyLapseDate], [p0].[Premium], [p0].[SchemeID], [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName], [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Payment] AS [p]
+INNER JOIN [Policy] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+INNER JOIN [Scheme] AS [s] ON [p0].[SchemeID] = [s].[SchemeID]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+INNER JOIN [Customer] AS [c] ON [p0].[CustomerID] = [c].[CustomerID]
+WHERE [p].[CustomerID] = @__customerId_0
+ORDER BY [p].[PaymentDate] DESC
+2026-04-23 14:50:50.869 +05:30 [INF] Executing ViewResult, running view PaymentHistory.
+2026-04-23 14:50:50.884 +05:30 [INF] Executed ViewResult - view PaymentHistory executed in 15.8015ms.
+2026-04-23 14:50:50.888 +05:30 [INF] Executed action EInsurance.Controllers.PaymentController.PaymentHistory (EInsurance) in 85.9419ms
+2026-04-23 14:50:50.892 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PaymentController.PaymentHistory (EInsurance)'
+2026-04-23 14:50:50.896 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Payment/PaymentHistory - 200 null text/html; charset=utf-8 416.3346ms
+2026-04-23 14:50:52.726 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Policies/MyPolicies - null null
+2026-04-23 14:50:52.938 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:50:52.953 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:50:52.960 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-23 14:50:52.963 +05:30 [INF] Route matched with {action = "MyPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] MyPolicies(System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-23 14:50:52.999 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[CustomerID], [t].[FullName], [t].[Email], [t].[DateOfBirth], [t0].[PolicyID], [t0].[PlanName], [t0].[SchemeName], [t0].[PolicyDetails], [t0].[Premium], [t0].[DateIssued], [t0].[MaturityPeriod], [t0].[PolicyLapseDate], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentID], [t0].[Amount], [t0].[PaymentDate]
+FROM (
+    SELECT TOP(1) [c].[CustomerID], [c].[FullName], [c].[Email], [c].[DateOfBirth]
+    FROM [Customer] AS [c]
+    WHERE [c].[CustomerID] = @__customerId_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p].[PolicyID], [i].[PlanName], [s].[SchemeName], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [s].[SchemeID], [i].[PlanID], [p0].[PaymentID], [p0].[Amount], [p0].[PaymentDate], [p].[CustomerID]
+    FROM [Policy] AS [p]
+    INNER JOIN [Scheme] AS [s] ON [p].[SchemeID] = [s].[SchemeID]
+    INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+    LEFT JOIN [Payment] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+) AS [t0] ON [t].[CustomerID] = [t0].[CustomerID]
+ORDER BY [t].[CustomerID], [t0].[DateIssued] DESC, [t0].[PolicyID], [t0].[SchemeID], [t0].[PlanID], [t0].[PaymentDate] DESC
+2026-04-23 14:50:53.005 +05:30 [INF] Executing ViewResult, running view MyPolicies.
+2026-04-23 14:50:53.011 +05:30 [INF] Executed ViewResult - view MyPolicies executed in 5.8933ms.
+2026-04-23 14:50:53.014 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance) in 46.3454ms
+2026-04-23 14:50:53.017 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.MyPolicies (EInsurance)'
+2026-04-23 14:50:53.021 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Policies/MyPolicies - 200 null text/html; charset=utf-8 294.6207ms
+2026-04-23 14:50:53.888 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/PolicyPurchase/AvailableSchemes - null null
+2026-04-23 14:50:54.109 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:50:54.124 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:50:54.130 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-23 14:50:54.133 +05:30 [INF] Route matched with {action = "AvailableSchemes", controller = "PolicyPurchase"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AvailableSchemes() on controller EInsurance.Controllers.PolicyPurchaseController (EInsurance).
+2026-04-23 14:50:54.150 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName]
+FROM [Scheme] AS [s]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+ORDER BY [i].[PlanName], [s].[SchemeName]
+2026-04-23 14:50:54.156 +05:30 [INF] Executing ViewResult, running view AvailableSchemes.
+2026-04-23 14:50:54.161 +05:30 [INF] Executed ViewResult - view AvailableSchemes executed in 5.3577ms.
+2026-04-23 14:50:54.164 +05:30 [INF] Executed action EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance) in 27.6907ms
+2026-04-23 14:50:54.167 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PolicyPurchaseController.AvailableSchemes (EInsurance)'
+2026-04-23 14:50:54.170 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/PolicyPurchase/AvailableSchemes - 200 null text/html; charset=utf-8 281.4343ms
+2026-04-23 14:50:55.513 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Payment/PaymentHistory - null null
+2026-04-23 14:50:55.723 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:50:55.740 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:50:55.747 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PaymentController.PaymentHistory (EInsurance)'
+2026-04-23 14:50:55.751 +05:30 [INF] Route matched with {action = "PaymentHistory", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PaymentHistory(System.Threading.CancellationToken) on controller EInsurance.Controllers.PaymentController (EInsurance).
+2026-04-23 14:50:55.782 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@__customerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PaymentID], [p].[Amount], [p].[CreatedAt], [p].[CustomerID], [p].[FailureReason], [p].[PaymentDate], [p].[PaymentStatus], [p].[PolicyID], [p].[StripeCustomerId], [p].[StripePaymentIntentId], [p0].[PolicyID], [p0].[CreatedAt], [p0].[CustomerID], [p0].[DateIssued], [p0].[MaturityPeriod], [p0].[PolicyDetails], [p0].[PolicyLapseDate], [p0].[Premium], [p0].[SchemeID], [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName], [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Payment] AS [p]
+INNER JOIN [Policy] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+INNER JOIN [Scheme] AS [s] ON [p0].[SchemeID] = [s].[SchemeID]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+INNER JOIN [Customer] AS [c] ON [p0].[CustomerID] = [c].[CustomerID]
+WHERE [p].[CustomerID] = @__customerId_0
+ORDER BY [p].[PaymentDate] DESC
+2026-04-23 14:50:55.789 +05:30 [INF] Executing ViewResult, running view PaymentHistory.
+2026-04-23 14:50:55.795 +05:30 [INF] Executed ViewResult - view PaymentHistory executed in 5.9172ms.
+2026-04-23 14:50:55.799 +05:30 [INF] Executed action EInsurance.Controllers.PaymentController.PaymentHistory (EInsurance) in 44.206ms
+2026-04-23 14:50:55.804 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PaymentController.PaymentHistory (EInsurance)'
+2026-04-23 14:50:55.807 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Payment/PaymentHistory - 200 null text/html; charset=utf-8 293.8367ms
+2026-04-23 14:50:57.488 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/DownloadReceipt/15 - null null
+2026-04-23 14:50:57.702 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:50:57.718 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:50:57.725 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PaymentController.DownloadReceipt (EInsurance)'
+2026-04-23 14:50:57.732 +05:30 [INF] Route matched with {action = "DownloadReceipt", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadReceipt(Int32, System.Threading.CancellationToken) on controller EInsurance.Controllers.PaymentController (EInsurance).
+2026-04-23 14:50:57.792 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[@__paymentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[PaymentID], [p].[Amount], [p].[CreatedAt], [p].[CustomerID], [p].[FailureReason], [p].[PaymentDate], [p].[PaymentStatus], [p].[PolicyID], [p].[StripeCustomerId], [p].[StripePaymentIntentId], [p0].[PolicyID], [p0].[CreatedAt], [p0].[CustomerID], [p0].[DateIssued], [p0].[MaturityPeriod], [p0].[PolicyDetails], [p0].[PolicyLapseDate], [p0].[Premium], [p0].[SchemeID], [s].[SchemeID], [s].[CreatedAt], [s].[PlanID], [s].[SchemeDetails], [s].[SchemeName], [i].[PlanID], [i].[CreatedAt], [i].[PlanDetails], [i].[PlanName], [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone], [i0].[AgentID], [i0].[CommissionRate], [i0].[CreatedAt], [i0].[Email], [i0].[FullName], [i0].[PasswordHash], [i0].[Username]
+FROM [Payment] AS [p]
+INNER JOIN [Policy] AS [p0] ON [p].[PolicyID] = [p0].[PolicyID]
+INNER JOIN [Scheme] AS [s] ON [p0].[SchemeID] = [s].[SchemeID]
+INNER JOIN [InsurancePlan] AS [i] ON [s].[PlanID] = [i].[PlanID]
+INNER JOIN [Customer] AS [c] ON [p0].[CustomerID] = [c].[CustomerID]
+LEFT JOIN [InsuranceAgent] AS [i0] ON [c].[AgentID] = [i0].[AgentID]
+WHERE [p].[PaymentID] = @__paymentId_0
+2026-04-23 14:50:58.482 +05:30 [INF] Executing FileContentResult, sending file with download name 'Receipt_15.pdf' ...
+2026-04-23 14:50:58.491 +05:30 [INF] Executed action EInsurance.Controllers.PaymentController.DownloadReceipt (EInsurance) in 754.2471ms
+2026-04-23 14:50:58.500 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PaymentController.DownloadReceipt (EInsurance)'
+2026-04-23 14:50:58.524 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/DownloadReceipt/15 - 200 62391 application/pdf 1035.818ms
+2026-04-23 14:51:26.927 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/Account/Logout - application/x-www-form-urlencoded 225
+2026-04-23 14:51:27.194 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:51:27.210 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:51:27.215 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Logout (EInsurance)'
+2026-04-23 14:51:27.223 +05:30 [INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(System.Threading.CancellationToken) on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:51:27.242 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__sessionId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0
+2026-04-23 14:51:27.256 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [IsActive] = @p0
+OUTPUT 1
+WHERE [SessionID] = @p1;
+2026-04-23 14:51:27.261 +05:30 [INF] Executing RedirectResult, redirecting to /Account/Login.
+2026-04-23 14:51:27.264 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Logout (EInsurance) in 36.9837ms
+2026-04-23 14:51:27.267 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Logout (EInsurance)'
+2026-04-23 14:51:27.269 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/Account/Logout - 302 0 null 341.7962ms
+2026-04-23 14:51:27.279 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Account/Login - null null
+2026-04-23 14:51:27.286 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:51:27.289 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:51:27.292 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-23 14:51:27.297 +05:30 [INF] Executed ViewResult - view Login executed in 4.9151ms.
+2026-04-23 14:51:27.300 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 8.079ms
+2026-04-23 14:51:27.303 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:51:27.306 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Account/Login - 200 null text/html; charset=utf-8 26.8763ms
+2026-04-23 14:51:47.259 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/Account/Login - application/x-www-form-urlencoded 220
+2026-04-23 14:51:47.269 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:51:47.272 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EInsurance.Models.Auth.LoginViewModel, System.Threading.CancellationToken) on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:51:47.486 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__identifier_0='?' (Size = 50), @__identifier_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+WHERE [a].[Username] = @__identifier_0 OR [a].[Email] = @__identifier_0_1
+2026-04-23 14:51:47.858 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[UserID] = @__userId_0 AND [u].[IsActive] = CAST(1 AS bit) AND [u].[ExpiresAt] > GETUTCDATE()
+ORDER BY [u].[LastActiveAt] DESC
+2026-04-23 14:51:47.876 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[UserID] = @__userId_0 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:51:47.892 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 255), @p3='?' (DbType = DateTime2), @p4='?' (Size = 50), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserSession] ([SessionID], [CreatedAt], [DeviceInfo], [ExpiresAt], [IpAddress], [IsActive], [LastActiveAt], [UserID], [UserType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-04-23 14:51:47.899 +05:30 [INF] Executing RedirectResult, redirecting to /Dashboard.
+2026-04-23 14:51:47.903 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 626.8583ms
+2026-04-23 14:51:47.908 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:51:47.912 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/Account/Login - 302 0 null 652.7331ms
+2026-04-23 14:51:47.926 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Dashboard - null null
+2026-04-23 14:51:47.943 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:51:47.962 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:51:47.969 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-23 14:51:47.972 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-23 14:51:47.977 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-23 14:51:47.990 +05:30 [INF] Executed ViewResult - view Index executed in 13.9822ms.
+2026-04-23 14:51:47.994 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 17.3191ms
+2026-04-23 14:51:47.997 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-23 14:51:48.000 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Dashboard - 200 null text/html; charset=utf-8 74.8267ms
+2026-04-23 14:51:54.019 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Admin/ManageUsers - null null
+2026-04-23 14:51:54.271 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:51:54.290 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:51:54.298 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-23 14:51:54.307 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers(System.String) on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-23 14:51:54.331 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-23 14:51:54.351 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-23 14:51:54.372 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-23 14:51:54.610 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone], [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [Customer] AS [c]
+LEFT JOIN [InsuranceAgent] AS [i] ON [c].[AgentID] = [i].[AgentID]
+2026-04-23 14:51:54.627 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-23 14:51:54.646 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 20.5839ms.
+2026-04-23 14:51:54.650 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 337.6239ms
+2026-04-23 14:51:54.654 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-23 14:51:54.657 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Admin/ManageUsers - 200 null text/html; charset=utf-8 637.6827ms
+2026-04-23 14:52:05.165 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Admin/EditUser/customer_1009 - null null
+2026-04-23 14:52:05.455 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:05.471 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:05.477 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.EditUser (EInsurance)'
+2026-04-23 14:52:05.486 +05:30 [INF] Route matched with {action = "EditUser", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] EditUser(System.String) on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-23 14:52:05.521 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+WHERE [c].[CustomerID] = @__p_0
+2026-04-23 14:52:05.529 +05:30 [INF] Executing ViewResult, running view EditUser.
+2026-04-23 14:52:05.607 +05:30 [INF] Executed ViewResult - view EditUser executed in 79.7468ms.
+2026-04-23 14:52:05.618 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.EditUser (EInsurance) in 127.3983ms
+2026-04-23 14:52:05.621 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.EditUser (EInsurance)'
+2026-04-23 14:52:05.625 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Admin/EditUser/customer_1009 - 200 null text/html; charset=utf-8 460.3387ms
+2026-04-23 14:52:10.416 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Admin/ManageUsers - null null
+2026-04-23 14:52:10.654 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:10.669 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:10.675 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-23 14:52:10.678 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers(System.String) on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-23 14:52:10.691 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-23 14:52:10.704 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-23 14:52:10.717 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-23 14:52:10.732 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone], [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [Customer] AS [c]
+LEFT JOIN [InsuranceAgent] AS [i] ON [c].[AgentID] = [i].[AgentID]
+2026-04-23 14:52:10.738 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-23 14:52:10.745 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 7.7026ms.
+2026-04-23 14:52:10.749 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 66.5163ms
+2026-04-23 14:52:10.753 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-23 14:52:10.756 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Admin/ManageUsers - 200 null text/html; charset=utf-8 340.2917ms
+2026-04-23 14:52:22.171 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Admin/AssignAgent?customerId=customer_3 - null null
+2026-04-23 14:52:22.399 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:22.417 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:22.424 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.AssignAgent (EInsurance)'
+2026-04-23 14:52:22.432 +05:30 [INF] Route matched with {action = "AssignAgent", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AssignAgent(System.String) on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-23 14:52:22.467 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__customerIdNum_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone], [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [Customer] AS [c]
+LEFT JOIN [InsuranceAgent] AS [i] ON [c].[AgentID] = [i].[AgentID]
+WHERE [c].[CustomerID] = @__customerIdNum_0
+2026-04-23 14:52:22.490 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+ORDER BY [i].[FullName]
+2026-04-23 14:52:22.499 +05:30 [INF] Executing ViewResult, running view AssignAgent.
+2026-04-23 14:52:22.519 +05:30 [INF] Executed ViewResult - view AssignAgent executed in 20.9661ms.
+2026-04-23 14:52:22.523 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.AssignAgent (EInsurance) in 85.2378ms
+2026-04-23 14:52:22.528 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.AssignAgent (EInsurance)'
+2026-04-23 14:52:22.532 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Admin/AssignAgent?customerId=customer_3 - 200 null text/html; charset=utf-8 360.7103ms
+2026-04-23 14:52:30.483 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/Admin/AssignAgent - application/x-www-form-urlencoded 251
+2026-04-23 14:52:30.705 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:30.721 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:30.727 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.AssignAgentPost (EInsurance)'
+2026-04-23 14:52:30.736 +05:30 [INF] Route matched with {action = "AssignAgentPost", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AssignAgentPost(EInsurance.Models.Admin.AssignAgentViewModel) on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-23 14:52:30.755 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone]
+FROM [Customer] AS [c]
+WHERE [c].[CustomerID] = @__p_0
+2026-04-23 14:52:30.776 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Customer] SET [AgentID] = @p0
+OUTPUT 1
+WHERE [CustomerID] = @p1;
+2026-04-23 14:52:30.782 +05:30 [INF] Executing RedirectResult, redirecting to /Admin/ManageUsers.
+2026-04-23 14:52:30.785 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.AssignAgentPost (EInsurance) in 45.0513ms
+2026-04-23 14:52:30.788 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.AssignAgentPost (EInsurance)'
+2026-04-23 14:52:30.790 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/Admin/AssignAgent - 302 0 null 307.1658ms
+2026-04-23 14:52:30.800 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Admin/ManageUsers - null null
+2026-04-23 14:52:30.813 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:30.825 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:30.830 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-23 14:52:30.832 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers(System.String) on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-23 14:52:30.844 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-23 14:52:30.860 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-23 14:52:30.871 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-23 14:52:30.884 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone], [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [Customer] AS [c]
+LEFT JOIN [InsuranceAgent] AS [i] ON [c].[AgentID] = [i].[AgentID]
+2026-04-23 14:52:30.890 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-23 14:52:30.896 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 6.651ms.
+2026-04-23 14:52:30.899 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 63.4928ms
+2026-04-23 14:52:30.902 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-23 14:52:30.904 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Admin/ManageUsers - 200 null text/html; charset=utf-8 104.1282ms
+2026-04-23 14:52:39.014 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Admin/Commission/Dashboard - null null
+2026-04-23 14:52:39.246 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:39.263 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:39.269 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.CommissionCalculatorController.Dashboard (EInsurance)'
+2026-04-23 14:52:39.278 +05:30 [INF] Route matched with {action = "Dashboard", controller = "CommissionCalculator"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard(System.Nullable`1[System.Int32]) on controller EInsurance.Controllers.CommissionCalculatorController (EInsurance).
+2026-04-23 14:52:39.305 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+ORDER BY [i].[FullName]
+2026-04-23 14:52:39.339 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__agent_AgentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID], [p].[CreatedAt], [p].[CustomerID], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyDetails], [p].[PolicyLapseDate], [p].[Premium], [p].[SchemeID]
+FROM [Policy] AS [p]
+INNER JOIN [Customer] AS [c] ON [p].[CustomerID] = [c].[CustomerID]
+WHERE [c].[AgentID] = @__agent_AgentId_0
+2026-04-23 14:52:39.356 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__agent_AgentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID], [p].[CreatedAt], [p].[CustomerID], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyDetails], [p].[PolicyLapseDate], [p].[Premium], [p].[SchemeID]
+FROM [Policy] AS [p]
+INNER JOIN [Customer] AS [c] ON [p].[CustomerID] = [c].[CustomerID]
+WHERE [c].[AgentID] = @__agent_AgentId_0
+2026-04-23 14:52:39.642 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[@__agent_AgentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID], [p].[CreatedAt], [p].[CustomerID], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyDetails], [p].[PolicyLapseDate], [p].[Premium], [p].[SchemeID]
+FROM [Policy] AS [p]
+INNER JOIN [Customer] AS [c] ON [p].[CustomerID] = [c].[CustomerID]
+WHERE [c].[AgentID] = @__agent_AgentId_0
+2026-04-23 14:52:39.657 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__agent_AgentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID], [p].[CreatedAt], [p].[CustomerID], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyDetails], [p].[PolicyLapseDate], [p].[Premium], [p].[SchemeID]
+FROM [Policy] AS [p]
+INNER JOIN [Customer] AS [c] ON [p].[CustomerID] = [c].[CustomerID]
+WHERE [c].[AgentID] = @__agent_AgentId_0
+2026-04-23 14:52:39.668 +05:30 [INF] Executing ViewResult, running view SelectAgent.
+2026-04-23 14:52:39.704 +05:30 [INF] Executed ViewResult - view SelectAgent executed in 36.5779ms.
+2026-04-23 14:52:39.708 +05:30 [INF] Executed action EInsurance.Controllers.CommissionCalculatorController.Dashboard (EInsurance) in 425.8871ms
+2026-04-23 14:52:39.712 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.CommissionCalculatorController.Dashboard (EInsurance)'
+2026-04-23 14:52:39.715 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Admin/Commission/Dashboard - 200 null text/html; charset=utf-8 701.1566ms
+2026-04-23 14:52:41.028 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Policies/AllPolicies - null null
+2026-04-23 14:52:41.235 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:41.250 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:41.256 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance)'
+2026-04-23 14:52:41.265 +05:30 [INF] Route matched with {action = "AllPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AllPolicies(Int32, Int32, System.String, Boolean, System.String, System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-23 14:52:41.296 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Policy] AS [p]
+2026-04-23 14:52:41.317 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID] AS [PolicyId], [p].[CustomerID] AS [CustomerId], [p].[SchemeID] AS [SchemeId], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [p].[CreatedAt]
+FROM [Policy] AS [p]
+ORDER BY [p].[DateIssued] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-04-23 14:52:41.326 +05:30 [INF] Executing ViewResult, running view AllPolicies.
+2026-04-23 14:52:41.346 +05:30 [INF] Executed ViewResult - view AllPolicies executed in 20.3358ms.
+2026-04-23 14:52:41.349 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance) in 79.8185ms
+2026-04-23 14:52:41.355 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance)'
+2026-04-23 14:52:41.362 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Policies/AllPolicies - 200 null text/html; charset=utf-8 333.7836ms
+2026-04-23 14:52:45.787 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Admin/AllCustomers - null null
+2026-04-23 14:52:46.021 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:46.037 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:46.043 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.AllCustomers (EInsurance)'
+2026-04-23 14:52:46.052 +05:30 [INF] Route matched with {action = "AllCustomers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AllCustomers(Int32, Int32, System.String, System.Threading.CancellationToken) on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-23 14:52:46.076 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customer] AS [c]
+2026-04-23 14:52:46.097 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID] AS [CustomerId], [c].[FullName], [c].[Email], [c].[Phone], [c].[DateOfBirth], [c].[AgentID] AS [AgentId], [c].[CreatedAt]
+FROM [Customer] AS [c]
+ORDER BY [c].[CreatedAt] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-04-23 14:52:46.104 +05:30 [INF] Executing ViewResult, running view AllCustomers.
+2026-04-23 14:52:46.120 +05:30 [INF] Executed ViewResult - view AllCustomers executed in 16.9694ms.
+2026-04-23 14:52:46.124 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.AllCustomers (EInsurance) in 67.2329ms
+2026-04-23 14:52:46.127 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.AllCustomers (EInsurance)'
+2026-04-23 14:52:46.130 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Admin/AllCustomers - 200 null text/html; charset=utf-8 342.6587ms
+2026-04-23 14:52:49.611 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Policies/AllPolicies - null null
+2026-04-23 14:52:49.855 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:49.873 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:49.880 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance)'
+2026-04-23 14:52:49.882 +05:30 [INF] Route matched with {action = "AllPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AllPolicies(Int32, Int32, System.String, Boolean, System.String, System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-23 14:52:49.898 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Policy] AS [p]
+2026-04-23 14:52:49.916 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID] AS [PolicyId], [p].[CustomerID] AS [CustomerId], [p].[SchemeID] AS [SchemeId], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [p].[CreatedAt]
+FROM [Policy] AS [p]
+ORDER BY [p].[DateIssued] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-04-23 14:52:49.923 +05:30 [INF] Executing ViewResult, running view AllPolicies.
+2026-04-23 14:52:49.929 +05:30 [INF] Executed ViewResult - view AllPolicies executed in 6.2691ms.
+2026-04-23 14:52:49.932 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance) in 45.9972ms
+2026-04-23 14:52:49.936 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance)'
+2026-04-23 14:52:49.941 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Policies/AllPolicies - 200 null text/html; charset=utf-8 329.8776ms
+2026-04-23 14:52:54.620 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Policies/AllPolicies?sortBy=dateissued&sortDescending=value&searchTerm=&pageSize=10 - null null
+2026-04-23 14:52:54.840 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:54.858 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:54.864 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance)'
+2026-04-23 14:52:54.867 +05:30 [INF] Route matched with {action = "AllPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AllPolicies(Int32, Int32, System.String, Boolean, System.String, System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-23 14:52:54.893 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Policy] AS [p]
+2026-04-23 14:52:54.912 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID] AS [PolicyId], [p].[CustomerID] AS [CustomerId], [p].[SchemeID] AS [SchemeId], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [p].[CreatedAt]
+FROM [Policy] AS [p]
+ORDER BY [p].[DateIssued] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-04-23 14:52:54.919 +05:30 [INF] Executing ViewResult, running view AllPolicies.
+2026-04-23 14:52:54.927 +05:30 [INF] Executed ViewResult - view AllPolicies executed in 8.3109ms.
+2026-04-23 14:52:54.932 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance) in 57.2948ms
+2026-04-23 14:52:54.935 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance)'
+2026-04-23 14:52:54.939 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Policies/AllPolicies?sortBy=dateissued&sortDescending=value&searchTerm=&pageSize=10 - 200 null text/html; charset=utf-8 319.1934ms
+2026-04-23 14:52:56.073 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Policies/AllPolicies?sortBy=dateissued&sortDescending=value&searchTerm=&pageSize=10 - null null
+2026-04-23 14:52:56.295 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:52:56.308 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:52:56.312 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance)'
+2026-04-23 14:52:56.314 +05:30 [INF] Route matched with {action = "AllPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AllPolicies(Int32, Int32, System.String, Boolean, System.String, System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-23 14:52:56.327 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Policy] AS [p]
+2026-04-23 14:52:56.340 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID] AS [PolicyId], [p].[CustomerID] AS [CustomerId], [p].[SchemeID] AS [SchemeId], [p].[PolicyDetails], [p].[Premium], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyLapseDate], [p].[CreatedAt]
+FROM [Policy] AS [p]
+ORDER BY [p].[DateIssued] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2026-04-23 14:52:56.345 +05:30 [INF] Executing ViewResult, running view AllPolicies.
+2026-04-23 14:52:56.350 +05:30 [INF] Executed ViewResult - view AllPolicies executed in 5.1647ms.
+2026-04-23 14:52:56.353 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance) in 35.5929ms
+2026-04-23 14:52:56.357 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.AllPolicies (EInsurance)'
+2026-04-23 14:52:56.361 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Policies/AllPolicies?sortBy=dateissued&sortDescending=value&searchTerm=&pageSize=10 - 200 null text/html; charset=utf-8 287.7042ms
+2026-04-23 14:53:01.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Admin/ManageUsers - null null
+2026-04-23 14:53:01.997 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:53:02.013 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:53:02.018 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-23 14:53:02.022 +05:30 [INF] Route matched with {action = "ManageUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageUsers(System.String) on controller EInsurance.Controllers.AdminController (EInsurance).
+2026-04-23 14:53:02.035 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AdminID], [a].[CreatedAt], [a].[Email], [a].[FullName], [a].[PasswordHash], [a].[Username]
+FROM [Admin] AS [a]
+2026-04-23 14:53:02.049 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EmployeeID], [e].[CreatedAt], [e].[Email], [e].[FullName], [e].[PasswordHash], [e].[Role], [e].[Username]
+FROM [Employee] AS [e]
+2026-04-23 14:53:02.063 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+2026-04-23 14:53:02.077 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CustomerID], [c].[AgentID], [c].[CreatedAt], [c].[DateOfBirth], [c].[Email], [c].[FullName], [c].[PasswordHash], [c].[Phone], [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [Customer] AS [c]
+LEFT JOIN [InsuranceAgent] AS [i] ON [c].[AgentID] = [i].[AgentID]
+2026-04-23 14:53:02.082 +05:30 [INF] Executing ViewResult, running view ManageUsers.
+2026-04-23 14:53:02.089 +05:30 [INF] Executed ViewResult - view ManageUsers executed in 6.9493ms.
+2026-04-23 14:53:02.094 +05:30 [INF] Executed action EInsurance.Controllers.AdminController.ManageUsers (EInsurance) in 67.3553ms
+2026-04-23 14:53:02.097 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AdminController.ManageUsers (EInsurance)'
+2026-04-23 14:53:02.100 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Admin/ManageUsers - 200 null text/html; charset=utf-8 332.9846ms
+2026-04-23 14:53:03.354 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Policies/CustomerPolicies - null null
+2026-04-23 14:53:03.621 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:53:03.640 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:53:03.646 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.CustomerPolicies (EInsurance)'
+2026-04-23 14:53:03.654 +05:30 [INF] Route matched with {action = "CustomerPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CustomerPolicies(System.String, System.Nullable`1[System.Int32], System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-23 14:53:03.663 +05:30 [INF] Executing ViewResult, running view CustomerPolicies.
+2026-04-23 14:53:03.674 +05:30 [INF] Executed ViewResult - view CustomerPolicies executed in 12.2542ms.
+2026-04-23 14:53:03.677 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.CustomerPolicies (EInsurance) in 17.7445ms
+2026-04-23 14:53:03.680 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.CustomerPolicies (EInsurance)'
+2026-04-23 14:53:03.683 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Policies/CustomerPolicies - 200 null text/html; charset=utf-8 328.2113ms
+2026-04-23 14:53:05.883 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Dashboard - null null
+2026-04-23 14:53:06.115 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:53:06.133 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:53:06.139 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-23 14:53:06.142 +05:30 [INF] Route matched with {action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller EInsurance.Controllers.DashboardController (EInsurance).
+2026-04-23 14:53:06.148 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-23 14:53:06.154 +05:30 [INF] Executed ViewResult - view Index executed in 6.15ms.
+2026-04-23 14:53:06.159 +05:30 [INF] Executed action EInsurance.Controllers.DashboardController.Index (EInsurance) in 11.293ms
+2026-04-23 14:53:06.164 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.DashboardController.Index (EInsurance)'
+2026-04-23 14:53:06.170 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Dashboard - 200 null text/html; charset=utf-8 286.7726ms
+2026-04-23 14:54:17.298 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Policies/CustomerPolicies - null null
+2026-04-23 14:54:17.604 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:54:17.621 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:54:17.628 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.PoliciesController.CustomerPolicies (EInsurance)'
+2026-04-23 14:54:17.631 +05:30 [INF] Route matched with {action = "CustomerPolicies", controller = "Policies"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CustomerPolicies(System.String, System.Nullable`1[System.Int32], System.Threading.CancellationToken) on controller EInsurance.Controllers.PoliciesController (EInsurance).
+2026-04-23 14:54:17.637 +05:30 [INF] Executing ViewResult, running view CustomerPolicies.
+2026-04-23 14:54:17.644 +05:30 [INF] Executed ViewResult - view CustomerPolicies executed in 7.325ms.
+2026-04-23 14:54:17.648 +05:30 [INF] Executed action EInsurance.Controllers.PoliciesController.CustomerPolicies (EInsurance) in 11.9903ms
+2026-04-23 14:54:17.651 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.PoliciesController.CustomerPolicies (EInsurance)'
+2026-04-23 14:54:17.653 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Policies/CustomerPolicies - 200 null text/html; charset=utf-8 355.5174ms
+2026-04-23 14:54:21.746 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Admin/Commission/Dashboard - null null
+2026-04-23 14:54:21.964 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:54:21.982 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:54:21.988 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.CommissionCalculatorController.Dashboard (EInsurance)'
+2026-04-23 14:54:21.991 +05:30 [INF] Route matched with {action = "Dashboard", controller = "CommissionCalculator"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Dashboard(System.Nullable`1[System.Int32]) on controller EInsurance.Controllers.CommissionCalculatorController (EInsurance).
+2026-04-23 14:54:22.010 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[AgentID], [i].[CommissionRate], [i].[CreatedAt], [i].[Email], [i].[FullName], [i].[PasswordHash], [i].[Username]
+FROM [InsuranceAgent] AS [i]
+ORDER BY [i].[FullName]
+2026-04-23 14:54:22.032 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__agent_AgentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID], [p].[CreatedAt], [p].[CustomerID], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyDetails], [p].[PolicyLapseDate], [p].[Premium], [p].[SchemeID]
+FROM [Policy] AS [p]
+INNER JOIN [Customer] AS [c] ON [p].[CustomerID] = [c].[CustomerID]
+WHERE [c].[AgentID] = @__agent_AgentId_0
+2026-04-23 14:54:22.045 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__agent_AgentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID], [p].[CreatedAt], [p].[CustomerID], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyDetails], [p].[PolicyLapseDate], [p].[Premium], [p].[SchemeID]
+FROM [Policy] AS [p]
+INNER JOIN [Customer] AS [c] ON [p].[CustomerID] = [c].[CustomerID]
+WHERE [c].[AgentID] = @__agent_AgentId_0
+2026-04-23 14:54:22.058 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__agent_AgentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID], [p].[CreatedAt], [p].[CustomerID], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyDetails], [p].[PolicyLapseDate], [p].[Premium], [p].[SchemeID]
+FROM [Policy] AS [p]
+INNER JOIN [Customer] AS [c] ON [p].[CustomerID] = [c].[CustomerID]
+WHERE [c].[AgentID] = @__agent_AgentId_0
+2026-04-23 14:54:22.072 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__agent_AgentId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PolicyID], [p].[CreatedAt], [p].[CustomerID], [p].[DateIssued], [p].[MaturityPeriod], [p].[PolicyDetails], [p].[PolicyLapseDate], [p].[Premium], [p].[SchemeID]
+FROM [Policy] AS [p]
+INNER JOIN [Customer] AS [c] ON [p].[CustomerID] = [c].[CustomerID]
+WHERE [c].[AgentID] = @__agent_AgentId_0
+2026-04-23 14:54:22.078 +05:30 [INF] Executing ViewResult, running view SelectAgent.
+2026-04-23 14:54:22.084 +05:30 [INF] Executed ViewResult - view SelectAgent executed in 6.7028ms.
+2026-04-23 14:54:22.087 +05:30 [INF] Executed action EInsurance.Controllers.CommissionCalculatorController.Dashboard (EInsurance) in 90.72ms
+2026-04-23 14:54:22.091 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.CommissionCalculatorController.Dashboard (EInsurance)'
+2026-04-23 14:54:22.094 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Admin/Commission/Dashboard - 200 null text/html; charset=utf-8 348.2229ms
+2026-04-23 14:54:27.526 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5105/Account/Logout - application/x-www-form-urlencoded 225
+2026-04-23 14:54:27.744 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__sessionId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0 AND [u].[UserID] = @__userId_1 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-23 14:54:27.783 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [ExpiresAt] = @p0, [LastActiveAt] = @p1
+OUTPUT 1
+WHERE [SessionID] = @p2;
+2026-04-23 14:54:27.788 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Logout (EInsurance)'
+2026-04-23 14:54:27.791 +05:30 [INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(System.Threading.CancellationToken) on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:54:27.806 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__sessionId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[SessionID], [u].[CreatedAt], [u].[DeviceInfo], [u].[ExpiresAt], [u].[IpAddress], [u].[IsActive], [u].[LastActiveAt], [u].[UserID], [u].[UserType]
+FROM [UserSession] AS [u]
+WHERE [u].[SessionID] = @__sessionId_0
+2026-04-23 14:54:27.822 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [UserSession] SET [IsActive] = @p0
+OUTPUT 1
+WHERE [SessionID] = @p1;
+2026-04-23 14:54:27.827 +05:30 [INF] Executing RedirectResult, redirecting to /Account/Login.
+2026-04-23 14:54:27.830 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Logout (EInsurance) in 35.3089ms
+2026-04-23 14:54:27.833 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Logout (EInsurance)'
+2026-04-23 14:54:27.836 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5105/Account/Logout - 302 0 null 309.9009ms
+2026-04-23 14:54:27.848 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5105/Account/Login - null null
+2026-04-23 14:54:27.854 +05:30 [INF] Executing endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:54:27.856 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller EInsurance.Controllers.AccountController (EInsurance).
+2026-04-23 14:54:27.860 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-23 14:54:27.864 +05:30 [INF] Executed ViewResult - view Login executed in 4.591ms.
+2026-04-23 14:54:27.868 +05:30 [INF] Executed action EInsurance.Controllers.AccountController.Login (EInsurance) in 8.5557ms
+2026-04-23 14:54:27.871 +05:30 [INF] Executed endpoint 'EInsurance.Controllers.AccountController.Login (EInsurance)'
+2026-04-23 14:54:27.874 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5105/Account/Login - 200 null text/html; charset=utf-8 26.1787ms
+2026-04-23 14:54:53.081 +05:30 [INF] Application is shutting down...
